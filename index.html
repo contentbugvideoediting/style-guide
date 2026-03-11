@@ -666,54 +666,68 @@ body{margin:0;padding:0}
 .card-3d .card-3d-bar-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--blue),var(--green))}
 
 /* ═══════════════════════════════
-   BOTTOM GLASS BAR (Dock-style)
+   BOTTOM GLASS ISLAND (Dock-style)
+   Compact, retracted into bottom edge. Reveals on hover.
    ═══════════════════════════════ */
-.bottom-island{position:fixed;bottom:12px;left:0;right:0;z-index:100;
-  height:56px;display:flex;align-items:flex-end;justify-content:center;padding:0 24px;
-  pointer-events:none}
-.bottom-island-inner{pointer-events:auto;display:flex;align-items:center;gap:6px;padding:8px 14px;
-  border-radius:20px;background:rgba(22,22,26,.75);border:1px solid rgba(255,255,255,.06);
-  border-top-color:rgba(255,255,255,.1);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);
-  box-shadow:0 -2px 16px rgba(0,0,0,.35),0 4px 24px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.06);
-  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 75%,rgba(0,0,0,.3) 100%);
-  mask-image:linear-gradient(180deg,#000 0%,#000 75%,rgba(0,0,0,.3) 100%)}
-.bottom-island-inner .bi-btn{width:36px;height:36px;border-radius:12px;border:none;cursor:pointer;
-  background:rgba(255,255,255,.04);color:var(--txt3);display:flex;align-items:center;justify-content:center;
-  transition:background .06s,color .06s,transform .06s;
-  border:1px solid rgba(255,255,255,.04)}
-.bottom-island-inner .bi-btn:hover{background:rgba(255,255,255,.1);color:var(--txt);transform:scale(1.1);
+.bottom-island{position:fixed;bottom:8px;left:0;right:0;z-index:100;
+  display:flex;align-items:flex-end;justify-content:center;
+  pointer-events:none;
+  /* Idle: retracted ~40% into bottom edge */
+  transform:translateY(16px);opacity:.3;
+  transition:transform .3s var(--ease),opacity .3s var(--ease);will-change:transform,opacity}
+.bottom-island:hover{transform:translateY(0);opacity:1}
+.shell:hover .bottom-island{transform:translateY(8px);opacity:.5}
+.bottom-island-inner{pointer-events:auto;display:flex;align-items:center;gap:4px;padding:6px 10px;
+  border-radius:16px;background:rgba(18,18,22,.6);border:1px solid rgba(255,255,255,.05);
+  border-top-color:rgba(255,255,255,.08);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  box-shadow:0 -2px 16px rgba(0,0,0,.25),0 4px 16px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.04)}
+.bottom-island-inner .bi-btn{width:30px;height:30px;border-radius:9px;border:1px solid rgba(255,255,255,.04);cursor:pointer;
+  background:transparent;color:var(--txt3);display:flex;align-items:center;justify-content:center;
+  transition:background .06s,color .06s,transform .06s;position:relative}
+.bottom-island-inner .bi-btn:hover{background:rgba(255,255,255,.08);color:var(--txt);transform:scale(1.08);
   border-color:rgba(255,255,255,.1);box-shadow:0 2px 8px rgba(0,0,0,.3)}
-.bottom-island-inner .bi-btn svg{width:17px;height:17px}
+.bottom-island-inner .bi-btn svg{width:15px;height:15px;stroke-width:1.6}
 
 /* ═══════════════════════════════
    LEFT GLASS SIDEBAR NAV
    ═══════════════════════════════ */
-.left-nav{position:fixed;top:50%;left:12px;transform:translateY(-50%);z-index:99;
+.left-nav{position:fixed;top:50%;left:8px;z-index:99;
   display:flex;flex-direction:column;gap:4px;padding:8px 6px;
   border-radius:16px;background:rgba(18,18,22,.6);border:1px solid rgba(255,255,255,.05);
   border-right-color:rgba(255,255,255,.08);
   backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
   box-shadow:2px 0 16px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.04);
-  opacity:.5;transition:opacity .3s ease,transform .3s ease;
-  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.4) 0%,#000 15%,#000 85%,rgba(0,0,0,.4) 100%);
-  mask-image:linear-gradient(180deg,rgba(0,0,0,.4) 0%,#000 15%,#000 85%,rgba(0,0,0,.4) 100%)}
-.left-nav:hover{opacity:1}
+  width:42px;overflow:visible;
+  /* Idle: retracted deep into left edge */
+  transform:translateY(-50%) translateX(-34px);opacity:.25;
+  transition:transform .3s var(--ease),opacity .3s var(--ease);will-change:transform,opacity}
+.left-nav:hover{transform:translateY(-50%) translateX(0);opacity:1}
+.shell:hover .left-nav{transform:translateY(-50%) translateX(-20px);opacity:.45}
+/* Logo */
+.ln-logo{display:block;width:22px;height:22px;margin:0 auto 2px;opacity:.7;transition:opacity .15s;pointer-events:none}
+.left-nav:hover .ln-logo{opacity:1}
+/* Nav buttons — fixed size, icon only */
 .left-nav .ln-btn{width:30px;height:30px;border-radius:9px;border:none;cursor:pointer;
   background:transparent;color:var(--txt3);display:flex;align-items:center;justify-content:center;
-  transition:background .06s,color .06s,transform .06s;position:relative}
-.left-nav .ln-btn:hover{background:rgba(255,255,255,.08);color:var(--txt);transform:scale(1.08)}
+  transition:background .04s,color .04s;position:relative;contain:layout style}
+.left-nav .ln-btn:hover{background:rgba(255,255,255,.08);color:var(--txt)}
 .left-nav .ln-btn.active{background:rgba(255,255,255,.06);color:var(--txt)}
 .left-nav .ln-btn.active::before{content:'';position:absolute;left:-6px;top:50%;transform:translateY(-50%);
   width:2px;height:12px;border-radius:1px;background:var(--blue);opacity:.6}
-.left-nav .ln-btn svg{width:15px;height:15px;stroke-width:1.6}
+.left-nav .ln-btn svg{width:15px;height:15px;stroke-width:1.6;flex-shrink:0}
 .left-nav .ln-sep{width:18px;height:1px;background:rgba(255,255,255,.06);margin:2px auto}
-/* Tooltip on hover */
-.left-nav .ln-btn .ln-tip{position:absolute;left:calc(100% + 10px);top:50%;transform:translateY(-50%) scale(.95);
-  opacity:0;pointer-events:none;transition:opacity .08s,transform .08s var(--ease);
-  padding:4px 8px;border-radius:6px;font:500 10px/1 var(--font);color:var(--txt);white-space:nowrap;
-  background:rgba(20,20,24,.95);border:1px solid rgba(255,255,255,.08);
-  box-shadow:0 4px 16px rgba(0,0,0,.5)}
-.left-nav .ln-btn:hover .ln-tip{opacity:1;transform:translateY(-50%) scale(1)}
+/* Floating labels — appear to the right outside the nav on button hover */
+.ln-label{position:absolute;left:calc(100% + 10px);top:50%;transform:translateY(-50%);
+  font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--txt2);
+  white-space:nowrap;user-select:none;pointer-events:none;
+  opacity:0;transition:opacity .12s;
+  text-shadow:0 1px 4px rgba(0,0,0,.7),0 0 12px rgba(0,0,0,.5)}
+.left-nav .ln-btn:hover .ln-label{opacity:1}
+/* Nav badge (notification count) */
+.ln-badge{position:absolute;top:-2px;right:-2px;min-width:14px;height:14px;padding:0 3px;border-radius:7px;
+  background:var(--blue);color:#fff;font-size:8px;font-weight:700;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 6px rgba(41,151,255,.35)}
+.ln-badge.zero{display:none}
 
 /* ═══════════════════════════════
    ANIMATION SHOWCASE DEMOS
@@ -1584,6 +1598,127 @@ window.pickSize=function(el,group){
   <div class="sg-note" style="margin-top:12px">Trigger: <code style="color:var(--txt2)">contextmenu</code> event → <code style="color:var(--txt2)">.glass-island.visible</code> toggle. 5 universal actions via design system icons. Springs in with <code style="color:var(--txt2)">ease-spring</code>.</div>
 </div>
 
+<!-- ══════════ LEFT GLASS SIDEBAR NAV ══════════ -->
+<div class="sg-sec">
+  <h2>Left Glass Sidebar Nav</h2>
+  <p class="sg-sub">Fixed left-edge nav. Retracted idle state (<code style="color:var(--txt2)">translateX(-34px), opacity .25</code>), partial reveal on shell hover (<code style="color:var(--txt2)">translateX(-20px), .45</code>), full reveal on direct hover. Logo + icon buttons + floating labels + active indicator.</p>
+
+  <div style="position:relative;height:420px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:var(--r-2xl);overflow:hidden">
+    <!-- Static showcase version — not retracted -->
+    <nav class="left-nav" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);opacity:1;pointer-events:auto">
+      <img class="ln-logo" src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/685c436c7dbd377728cdbf85.svg" alt="CB" width="22" height="22" style="opacity:1">
+      <div class="ln-sep"></div>
+      <button class="ln-btn" style="color:var(--txt2)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        <span class="ln-label" style="opacity:0">Chat</span>
+      </button>
+      <div class="ln-sep"></div>
+      <button class="ln-btn active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 3v18M16 3v18"/></svg>
+        <span class="ln-label" style="opacity:0">Pipeline</span>
+        <div class="ln-badge">3</div>
+      </button>
+      <button class="ln-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        <span class="ln-label" style="opacity:0">Request</span>
+      </button>
+      <button class="ln-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        <span class="ln-label" style="opacity:0">Blueprints</span>
+      </button>
+      <button class="ln-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
+        <span class="ln-label" style="opacity:0">Storage</span>
+      </button>
+      <div class="ln-sep"></div>
+      <button class="ln-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        <span class="ln-label" style="opacity:0">Team</span>
+      </button>
+      <button class="ln-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span class="ln-label" style="opacity:0">Admin</span>
+      </button>
+      <div class="ln-sep"></div>
+      <button class="ln-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span class="ln-label" style="opacity:0">Account</span>
+      </button>
+      <button class="ln-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+        <span class="ln-label" style="opacity:0">Settings</span>
+      </button>
+    </nav>
+  </div>
+
+  <div class="sg-note" style="margin-top:12px">
+    <strong>Retract behavior:</strong> Idle <code style="color:var(--txt2)">translateX(-34px), opacity:.25</code> → Shell hover <code style="color:var(--txt2)">translateX(-20px), .45</code> → Direct hover <code style="color:var(--txt2)">translateX(0), 1</code>. Active button gets blue left-edge indicator. Floating <code style="color:var(--txt2)">.ln-label</code> appears right of button on hover. Badge (<code style="color:var(--txt2)">.ln-badge</code>) for notification counts.
+  </div>
+</div>
+
+<!-- ══════════ BOTTOM GLASS ISLAND DOCK ══════════ -->
+<div class="sg-sec">
+  <h2>Bottom Glass Island Dock</h2>
+  <p class="sg-sub">Fixed bottom-center dock. Retracted idle state (<code style="color:var(--txt2)">translateY(16px), opacity .3</code>), partial reveal on shell hover (<code style="color:var(--txt2)">translateY(8px), .5</code>), full reveal on direct hover. Avatar + action buttons + notification badge.</p>
+
+  <div style="position:relative;height:120px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:var(--r-2xl);overflow:hidden;display:flex;align-items:flex-end;justify-content:center;padding-bottom:16px">
+    <!-- Static showcase version — not retracted -->
+    <div class="bottom-island" style="position:relative;bottom:auto;left:auto;right:auto;transform:none;opacity:1;pointer-events:auto">
+      <div class="bottom-island-inner">
+        <div class="bi-avatar" style="width:26px;height:26px;font-size:9px">CB</div>
+        <button class="bi-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <button class="bi-btn" style="position:relative">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+          <div class="bi-badge">2</div>
+        </button>
+        <button class="bi-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 3v18M16 3v18"/></svg>
+        </button>
+        <button class="bi-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sg-note" style="margin-top:12px">
+    <strong>Retract behavior:</strong> Idle <code style="color:var(--txt2)">translateY(16px), opacity:.3</code> → Shell hover <code style="color:var(--txt2)">translateY(8px), .5</code> → Direct hover <code style="color:var(--txt2)">translateY(0), 1</code>. Compact <code style="color:var(--txt2)">gap:4px, padding:6px 10px</code>. Avatar 26px, buttons 30x30. Red badge for unread counts.
+  </div>
+</div>
+
+<!-- ══════════ GLASS CONTAINERS ══════════ -->
+<div class="sg-sec">
+  <h2>Glass Containers</h2>
+  <p class="sg-sub">Three tiers of frosted glass containers. All use <code style="color:var(--txt2)">--glass</code> tokens from design-system.css. Hover lifts <code style="color:var(--txt2)">.glass-card</code> with blue glow accent.</p>
+
+  <span class="sg-label">Glass Card — Primary container with hover lift</span>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px">
+    <div class="glass-card" style="width:260px;min-height:120px;display:flex;align-items:center;justify-content:center">
+      <span style="color:var(--txt2);font-size:13px">.glass-card</span>
+    </div>
+  </div>
+
+  <span class="sg-label">Glass Bubble — Specular highlight + top edge glow</span>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px">
+    <div class="glass-bubble" style="width:260px;min-height:120px;display:flex;align-items:center;justify-content:center">
+      <span style="color:var(--txt2);font-size:13px">.glass-bubble</span>
+    </div>
+  </div>
+
+  <span class="sg-label">Glass Flat — Subtle, lower contrast</span>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px">
+    <div class="glass-flat" style="width:260px;min-height:120px;display:flex;align-items:center;justify-content:center">
+      <span style="color:var(--txt2);font-size:13px">.glass-flat</span>
+    </div>
+  </div>
+
+  <div class="sg-note" style="margin-top:12px">
+    <strong>Tokens:</strong> <code style="color:var(--txt2)">--glass</code> (gradient bg), <code style="color:var(--txt2)">--glass-b</code> (border), <code style="color:var(--txt2)">--glass-bt</code> (brighter top border), <code style="color:var(--txt2)">--glass-btn</code> (button gradient), <code style="color:var(--txt2)">--sh</code> (shadow stack). <code style="color:var(--txt2)">.glass-bubble::before</code> adds specular pseudo with mask fade. <code style="color:var(--txt2)">.glass-bubble::after</code> adds top-edge highlight line.
+  </div>
+</div>
+
 <!-- ══════════ ICONS ══════════ -->
 <div class="sg-sec">
   <h2>Icons</h2>
@@ -2284,28 +2419,32 @@ Make them snappier than Apple itself. Every frame matters. Zero lag tolerance.</
 
 </div>
 
-<!-- Left Glass Sidebar Nav -->
+<!-- Left Glass Sidebar Nav (matches production index.html) -->
 <nav class="left-nav">
-  <button class="ln-btn active" title="Home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg><span class="ln-tip">Home</span></button>
-  <button class="ln-btn" title="Pipeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 3v18M16 3v18"/></svg><span class="ln-tip">Pipeline</span></button>
-  <button class="ln-btn" title="Chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span class="ln-tip">Chat</span></button>
-  <div class="ln-sep"></div>
-  <button class="ln-btn" title="New Request"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span class="ln-tip">New Request</span></button>
-  <button class="ln-btn" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg><span class="ln-tip">Blueprint</span></button>
+  <div class="ln-cat">Studio</div>
+  <button class="ln-btn active" title="Pipeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 3v18M16 3v18"/></svg><span class="ln-tip">Pipeline</span></button>
+  <button class="ln-btn" title="New Request"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg><span class="ln-tip">New Request</span></button>
+  <button class="ln-btn" title="Blueprints"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg><span class="ln-tip">Blueprints</span></button>
   <button class="ln-btn" title="Storage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg><span class="ln-tip">Storage</span></button>
   <div class="ln-sep"></div>
-  <button class="ln-btn" title="Team"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg><span class="ln-tip">Team</span></button>
+  <div class="ln-cat">Team</div>
+  <button class="ln-btn" title="Chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg><span class="ln-tip">Chat</span></button>
+  <button class="ln-btn" title="Team Hub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg><span class="ln-tip">Team Hub</span></button>
+  <button class="ln-btn" title="Meetings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span class="ln-tip">Meetings</span></button>
+  <button class="ln-btn" title="Admin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span class="ln-tip">Admin</span></button>
+  <div class="ln-sep"></div>
+  <button class="ln-btn" title="Account"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span class="ln-tip">Account</span></button>
   <button class="ln-btn" title="Settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg><span class="ln-tip">Settings</span></button>
 </nav>
 
-<!-- Bottom Glass Bar -->
+<!-- Bottom Glass Island (matches production index.html) -->
 <div class="bottom-island">
   <div class="bottom-island-inner">
-    <button class="bi-btn" title="New Request"><!-- + icon --><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-    <button class="bi-btn" title="Blueprint"><!-- book icon --><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></button>
-    <button class="bi-btn" title="Pipeline"><!-- kanban icon --><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 3v18M16 3v18"/></svg></button>
-    <button class="bi-btn" title="Storage"><!-- folder icon --><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg></button>
-    <button class="bi-btn" title="Messages"><!-- message icon --><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></button>
+    <div class="bi-avatar" style="width:32px;height:32px;border-radius:50%;background:var(--purple,#bf5af2);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0;cursor:pointer;border:1px solid rgba(255,255,255,.08)">ST</div>
+    <button class="bi-btn" title="New Request"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+    <button class="bi-btn" title="Notifications"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></button>
+    <button class="bi-btn" title="Pipeline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M8 3v18M16 3v18"/></svg></button>
+    <button class="bi-btn" title="Chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></button>
   </div>
 </div>
 
