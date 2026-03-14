@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ContentBug — Design System Icons</title>
+<link rel="stylesheet" href="./design-system.css">
+<style>
+body{margin:0;background:#0a0a0a;color:#e5e5e5;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;-webkit-font-smoothing:antialiased}
+.icon-page{max-width:1400px;margin:0 auto;padding:40px 32px 80px}
+.icon-page h1{font-size:32px;font-weight:700;letter-spacing:-.5px;margin:0 0 6px;color:#fff}
+.icon-page .subtitle{font-size:14px;color:rgba(255,255,255,.45);margin:0 0 40px}
+.icon-page .subtitle span{color:var(--blue,#2997ff)}
+
+/* ── View toggle ── */
+.view-toggle{display:flex;gap:0;margin-bottom:28px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.08);width:fit-content}
+.view-btn{padding:8px 18px;font:500 12px/1 'Inter',sans-serif;color:rgba(255,255,255,.4);background:transparent;border:none;cursor:pointer;transition:all .15s}
+.view-btn.active{background:rgba(41,151,255,.12);color:#2997ff}
+
+/* ── Category / grid ── */
+.icon-cat{margin-bottom:48px}
+.icon-cat-head{font:600 11px/1 'Inter',sans-serif;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.3);margin:0 0 16px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.06)}
+.icon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+
+/* ── Base icon card (flat view) ── */
+.icon-card{display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px 8px 12px;
+  border-radius:14px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);
+  transition:all .2s cubic-bezier(.4,0,.2,1);cursor:default;position:relative;will-change:transform}
+.icon-card:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);transform:translateY(-2px)}
+.icon-card img{width:36px;height:36px;object-fit:contain;will-change:transform,opacity}
+.icon-card .icon-name{font-size:8px;color:rgba(255,255,255,.35);text-align:center;line-height:1.3;word-break:break-word;max-width:100px}
+.icon-card .icon-size{font:500 7px/1 'Inter',sans-serif;color:rgba(255,255,255,.18);letter-spacing:.2px;margin-top:-2px}
+.icon-card .icon-badge{position:absolute;top:4px;right:4px;font:600 7px/1 'Inter',sans-serif;
+  padding:2px 5px;border-radius:4px;letter-spacing:.3px;text-transform:uppercase}
+.badge-svg{background:rgba(41,151,255,.12);color:var(--blue,#2997ff)}
+.badge-gif{background:rgba(255,255,255,.08);color:rgba(255,255,255,.5)}
+.badge-webp{background:rgba(52,211,153,.12);color:#34d399}
+.badge-png{background:rgba(168,85,247,.12);color:#a855f7}
+
+/* SVG icons — white invert */
+.icon-card.svg-icon img{filter:invert(1);opacity:.85}
+/* Color brand icons — no filter */
+.icon-card.color-icon img{filter:none;opacity:1}
+
+/* ── Animated icon cards ── */
+.gif-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+.gif-card{display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px 8px 12px;
+  border-radius:14px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);
+  transition:all .2s cubic-bezier(.4,0,.2,1);cursor:pointer;position:relative;will-change:transform}
+.gif-card img{width:28px;height:28px;object-fit:contain;filter:invert(1);
+  opacity:.45;transition:opacity .25s cubic-bezier(.4,0,.2,1),transform .25s cubic-bezier(.4,0,.2,1);will-change:transform,opacity}
+.gif-card:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);transform:translateY(-2px)}
+.gif-card:hover img{opacity:1;transform:scale(1.15)}
+.gif-card .icon-name{font-size:8px;color:rgba(255,255,255,.35);text-align:center;line-height:1.3;word-break:break-word;max-width:100px}
+.gif-card .icon-size{font:500 7px/1 'Inter',sans-serif;color:rgba(255,255,255,.18);letter-spacing:.2px;margin-top:-2px}
+.gif-card .icon-badge{position:absolute;top:4px;right:4px;font:600 7px/1 'Inter',sans-serif;
+  padding:2px 5px;border-radius:4px;letter-spacing:.3px;text-transform:uppercase}
+
+/* ── Apple Glass icon cards (blue tint) ── */
+.glass-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+.glass-card{display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px 8px 12px;
+  border-radius:14px;border:1px solid rgba(41,151,255,.08);background:rgba(41,151,255,.02);
+  transition:all .2s cubic-bezier(.4,0,.2,1);cursor:default;position:relative;will-change:transform}
+.glass-card:hover{background:rgba(41,151,255,.06);border-color:rgba(41,151,255,.18);transform:translateY(-2px)}
+.glass-card img{width:36px;height:36px;object-fit:contain;filter:brightness(0) invert(1);opacity:.85}
+.glass-card .icon-name{font-size:8px;color:rgba(255,255,255,.35);text-align:center;line-height:1.3;word-break:break-word;max-width:100px}
+.glass-card .icon-size{font:500 7px/1 'Inter',sans-serif;color:rgba(255,255,255,.18);letter-spacing:.2px;margin-top:-2px}
+.glass-card .icon-badge{position:absolute;top:4px;right:4px;font:600 7px/1 'Inter',sans-serif;
+  padding:2px 5px;border-radius:4px;letter-spacing:.3px;text-transform:uppercase}
+
+/* ═══ Apple Glass Container — squircle app icon ═══ */
+.apple-container{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);
+  -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+  transition:all .25s cubic-bezier(.4,0,.2,1);will-change:transform;flex-shrink:0}
+.apple-container img{width:28px;height:28px;object-fit:contain;
+  image-rendering:auto;
+  filter:invert(1);opacity:1!important}
+.icon-card:hover .apple-container,
+.gif-card:hover .apple-container,
+.glass-card:hover .apple-container{border-color:rgba(255,255,255,.2);
+  box-shadow:0 4px 16px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.08);transform:scale(1.04)}
+.gif-card:hover .apple-container img{transform:scale(1.1)}
+.gif-card .apple-container img{transition:opacity .25s,transform .25s}
+
+/* Container view: show container, hide bare icon */
+.icon-page.view-container .bare-icon{display:none}
+.icon-page.view-container .apple-container{display:flex}
+/* Bare view: show bare icon, hide container */
+.icon-page.view-bare .bare-icon{display:block}
+.icon-page.view-bare .apple-container{display:none}
+
+/* ── Stats & Search ── */
+.icon-stats{display:flex;gap:24px;margin-bottom:28px;flex-wrap:wrap}
+.stat-pill{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);font-size:11px;color:rgba(255,255,255,.5)}
+.stat-pill .stat-num{font-weight:700;color:#fff;font-variant-numeric:tabular-nums}
+.stat-pill .stat-dot{width:6px;height:6px;border-radius:50%}
+.stat-dot.dot-svg{background:#2997ff}.stat-dot.dot-gif{background:rgba(255,255,255,.4)}
+.stat-dot.dot-webp{background:#34d399}.stat-dot.dot-png{background:#a855f7}
+.stat-dot.dot-glass{background:#60a5fa}
+.icon-search{margin-bottom:24px}
+.icon-search input{width:100%;max-width:400px;padding:10px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.03);color:#fff;font-size:13px;outline:none;transition:border-color .15s}
+.icon-search input:focus{border-color:rgba(41,151,255,.3)}
+.icon-search input::placeholder{color:rgba(255,255,255,.25)}
+
+/* ── Section headers ── */
+.style-section{margin-bottom:64px}
+.style-header{display:flex;align-items:center;gap:12px;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.06)}
+.style-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.style-title{font-size:18px;font-weight:600;color:#fff;letter-spacing:-.3px}
+.style-count{font-size:11px;color:rgba(255,255,255,.3);font-weight:400}
+.style-desc{font-size:11px;color:rgba(255,255,255,.25);margin:-16px 0 20px 22px}
+</style>
+</head>
+<body>
+<div class="icon-page">
+<h1>Design System — Icons</h1>
+<p class="subtitle">Icon &amp; animation blueprint — <span>380+ assets</span> across 3 style groups + brand categories.</p>
+<div class="icon-search"><input type="text" id="iconSearch" placeholder="Search icons..."></div>
+<div class="view-toggle">
+  <button class="view-btn active" onclick="setView('bare',this)">Bare Icons</button>
+  <button class="view-btn" onclick="setView('container',this)">Apple Glass Container</button>
+</div>
+<div class="icon-stats">
+  <div class="stat-pill"><span class="stat-dot dot-gif"></span> Animated APNG <span class="stat-num">227</span></div>
+  <div class="stat-pill"><span class="stat-dot dot-glass"></span> Apple Glass <span class="stat-num">~35</span></div>
+  <div class="stat-pill"><span class="stat-dot dot-svg"></span> Flat SVG <span class="stat-num">~100</span></div>
+  <div class="stat-pill"><span class="stat-dot dot-webp"></span> Brand <span class="stat-num">11</span></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION 1 — ANIMATED ICONS (APNG)
+     Transparent backgrounds · dim until hover
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="style-section">
+<div class="style-header"><span class="style-dot" style="background:rgba(255,255,255,.4)"></span><span class="style-title">Animated Icons</span><span class="style-count">227 icons</span></div>
+<p class="style-desc">APNG 100×100 · white on transparent · hover to animate · toggle Apple Glass container view above</p>
+
+<div class="icon-cat">
+<h3 class="icon-cat-head">UI Actions</h3>
+<div class="gif-grid">
+<div class="gif-card"><img src="./icons/icons8-add-100.png" alt="Add"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">add</span></div>
+<div class="gif-card"><img src="./icons/icons8-approval-100.png" alt="Approval"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">approval</span></div>
+<div class="gif-card"><img src="./icons/icons8-bookmark-100.png" alt="Bookmark"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">bookmark</span></div>
+<div class="gif-card"><img src="./icons/icons8-bookmark-100-2.png" alt="Bookmark 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">bookmark-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-check-all-100.png" alt="Check All"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">check-all</span></div>
+<div class="gif-card"><img src="./icons/icons8-check-mark-100.png" alt="Check Mark"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">check-mark</span></div>
+<div class="gif-card"><img src="./icons/icons8-checked-checkbox-100.png" alt="Checked Checkbox"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">checked-checkbox</span></div>
+<div class="gif-card"><img src="./icons/icons8-checklist-100.png" alt="Checklist"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">checklist</span></div>
+<div class="gif-card"><img src="./icons/icons8-checkmark-100.png" alt="Checkmark"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">checkmark</span></div>
+<div class="gif-card"><img src="./icons/icons8-close-100.png" alt="Close"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">close</span></div>
+<div class="gif-card"><img src="./icons/icons8-done-100.png" alt="Done"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">done</span></div>
+<div class="gif-card"><img src="./icons/icons8-done-100-2.png" alt="Done 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">done-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-edit-pencil-100.png" alt="Edit Pencil"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">edit-pencil</span></div>
+<div class="gif-card"><img src="./icons/icons8-filter-100.png" alt="Filter"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">filter</span></div>
+<div class="gif-card"><img src="./icons/icons8-funnel-100.png" alt="Funnel"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">funnel</span></div>
+<div class="gif-card"><img src="./icons/icons8-plus-100.png" alt="Plus"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">plus</span></div>
+<div class="gif-card"><img src="./icons/icons8-refresh-100.png" alt="Refresh"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">refresh</span></div>
+<div class="gif-card"><img src="./icons/icons8-restart-100.png" alt="Restart"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">restart</span></div>
+<div class="gif-card"><img src="./icons/icons8-rotate-100.png" alt="Rotate"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">rotate</span></div>
+<div class="gif-card"><img src="./icons/icons8-save-100.png" alt="Save"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">save</span></div>
+<div class="gif-card"><img src="./icons/icons8-search-100.png" alt="Search"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">search</span></div>
+<div class="gif-card"><img src="./icons/icons8-share-100.png" alt="Share"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">share</span></div>
+<div class="gif-card"><img src="./icons/icons8-tick-box-100.png" alt="Tick Box"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">tick-box</span></div>
+<div class="gif-card"><img src="./icons/icons8-toggle-on-100.png" alt="Toggle On"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">toggle-on</span></div>
+<div class="gif-card"><img src="./icons/icons8-trash-100.png" alt="Trash"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">trash</span></div>
+<div class="gif-card"><img src="./icons/icons8-tune-100.png" alt="Tune"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">tune</span></div>
+</div>
+</div>
+
+<div class="icon-cat">
+<h3 class="icon-cat-head">Navigation & Arrows</h3>
+<div class="gif-grid">
+<div class="gif-card"><img src="./icons/icons8-advance-100.png" alt="Advance"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">advance</span></div>
+<div class="gif-card"><img src="./icons/icons8-arrow-100.png" alt="Arrow"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">arrow</span></div>
+<div class="gif-card"><img src="./icons/icons8-down-100.png" alt="Down"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">down</span></div>
+<div class="gif-card"><img src="./icons/icons8-down-100-2.png" alt="Down 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">down-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-drag-left-100.png" alt="Drag Left"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">drag-left</span></div>
+<div class="gif-card"><img src="./icons/icons8-drag-right-100.png" alt="Drag Right"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">drag-right</span></div>
+<div class="gif-card"><img src="./icons/icons8-expand-arrow-100.png" alt="Expand Arrow"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">expand-arrow</span></div>
+<div class="gif-card"><img src="./icons/icons8-forward-100.png" alt="Forward"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">forward</span></div>
+<div class="gif-card"><img src="./icons/icons8-next-page-100.png" alt="Next Page"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">next-page</span></div>
+<div class="gif-card"><img src="./icons/icons8-up-100.png" alt="Up"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">up</span></div>
+</div>
+</div>
+
+<div class="icon-cat">
+<h3 class="icon-cat-head">Loading & Spinners</h3>
+<div class="gif-grid">
+<div class="gif-card"><img src="./icons/icons8-dots-loading-100.png" alt="Dots Loading"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">dots-loading</span></div>
+<div class="gif-card"><img src="./icons/icons8-dots-loading-100-2.png" alt="Dots Loading 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">dots-loading-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-hourglass-100.png" alt="Hourglass"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">hourglass</span></div>
+<div class="gif-card"><img src="./icons/icons8-installing-updates-100.png" alt="Installing Updates"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">installing-updates</span></div>
+<div class="gif-card"><img src="./icons/icons8-iphone-spinner-100-2.png" alt="Iphone Spinner 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">iphone-spinner-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-iphone-spinner-100-3.png" alt="Iphone Spinner 3"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">iphone-spinner-3</span></div>
+<div class="gif-card"><img src="./icons/icons8-loading-bar-100.png" alt="Loading Bar"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">loading-bar</span></div>
+<div class="gif-card"><img src="./icons/icons8-loading-bar-100-2.png" alt="Loading Bar 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">loading-bar-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-loading-circle-100.png" alt="Loading Circle"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">loading-circle</span></div>
+<div class="gif-card"><img src="./icons/icons8-loading-circle-100-2.png" alt="Loading Circle 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">loading-circle-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-loading-circle-100-3.png" alt="Loading Circle 3"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">loading-circle-3</span></div>
+<div class="gif-card"><img src="./icons/icons8-spinner-100.png" alt="Spinner"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">spinner</span></div>
+<div class="gif-card"><img src="./icons/icons8-spinner-100-2.png" alt="Spinner 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">spinner-2</span></div>
+</div>
+</div>
+
+<div class="icon-cat">
+<h3 class="icon-cat-head">Communication</h3>
+<div class="gif-grid">
+<div class="gif-card"><img src="./icons/icons8-ask-question-100.png" alt="Ask Question"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">ask-question</span></div>
+<div class="gif-card"><img src="./icons/icons8-chat-bubble-100.png" alt="Chat Bubble"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">chat-bubble</span></div>
+<div class="gif-card"><img src="./icons/icons8-comments-100.png" alt="Comments"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">comments</span></div>
+<div class="gif-card"><img src="./icons/icons8-communication-100.png" alt="Communication"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">communication</span></div>
+<div class="gif-card"><img src="./icons/icons8-email-100.png" alt="Email"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">email</span></div>
+<div class="gif-card"><img src="./icons/icons8-letter-100.png" alt="Letter"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">letter</span></div>
+<div class="gif-card"><img src="./icons/icons8-mailbox-100.png" alt="Mailbox"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">mailbox</span></div>
+<div class="gif-card"><img src="./icons/icons8-messages-100.png" alt="Messages"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">messages</span></div>
+<div class="gif-card"><img src="./icons/icons8-online-support-100.png" alt="Online Support"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">online-support</span></div>
+<div class="gif-card"><img src="./icons/icons8-phone-ringing-100.png" alt="Phone Ringing"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">phone-ringing</span></div>
+<div class="gif-card"><img src="./icons/icons8-send-100.png" alt="Send"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">send</span></div>
+<div class="gif-card"><img src="./icons/icons8-sent-100.png" alt="Sent"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">sent</span></div>
+<div class="gif-card"><img src="./icons/icons8-speech-bubble-100.png" alt="Speech Bubble"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">speech-bubble</span></div>
+<div class="gif-card"><img src="./icons/icons8-voice-100.png" alt="Voice"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">voice</span></div>
+</div>
+</div>
+
+<div class="icon-cat">
+<h3 class="icon-cat-head">Social Media</h3>
+<div class="gif-grid">
+<div class="gif-card"><img src="./icons/icons8-chrome-100.png" alt="Chrome"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">chrome</span></div>
+<div class="gif-card"><img src="./icons/icons8-facebook-100.png" alt="Facebook"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">facebook</span></div>
+<div class="gif-card"><img src="./icons/icons8-facebook-100-2.png" alt="Facebook 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">facebook-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-facebook-like-100.png" alt="Facebook Like"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">facebook-like</span></div>
+<div class="gif-card"><img src="./icons/icons8-facebook-messenger-100.png" alt="Facebook Messenger"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">facebook-messenger</span></div>
+<div class="gif-card"><img src="./icons/icons8-facebook-messenger-100-2.png" alt="Facebook Messenger 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">facebook-messenger-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-github-100.png" alt="Github"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">github</span></div>
+<div class="gif-card"><img src="./icons/icons8-google-100.png" alt="Google"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">google</span></div>
+<div class="gif-card"><img src="./icons/icons8-instagram-100.png" alt="Instagram"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">instagram</span></div>
+<div class="gif-card"><img src="./icons/icons8-instagram-100-2.png" alt="Instagram 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">instagram-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-instagram-100-3.png" alt="Instagram 3"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">instagram-3</span></div>
+<div class="gif-card"><img src="./icons/icons8-tiktok-100.png" alt="Tiktok"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">tiktok</span></div>
+<div class="gif-card"><img src="./icons/icons8-tiktok-100-2.png" alt="Tiktok 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">tiktok-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-youtube-100.png" alt="Youtube"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">youtube</span></div>
+</div>
+</div>
+
+<div class="icon-cat">
+<h3 class="icon-cat-head">File & Storage</h3>
+<div class="gif-grid">
+<div class="gif-card"><img src="./icons/icons8-book-100.png" alt="Book"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">book</span></div>
+<div class="gif-card"><img src="./icons/icons8-box-100.png" alt="Box"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">box</span></div>
+<div class="gif-card"><img src="./icons/icons8-cloud-100.png" alt="Cloud"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">cloud</span></div>
+<div class="gif-card"><img src="./icons/icons8-code-100.png" alt="Code"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">code</span></div>
+<div class="gif-card"><img src="./icons/icons8-document-100.png" alt="Document"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">document</span></div>
+<div class="gif-card"><img src="./icons/icons8-folder-100.png" alt="Folder"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">folder</span></div>
+<div class="gif-card"><img src="./icons/icons8-folder-100-2.png" alt="Folder 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">folder-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-folder-100-3.png" alt="Folder 3"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">folder-3</span></div>
+<div class="gif-card"><img src="./icons/icons8-open-book-100.png" alt="Open Book"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">open-book</span></div>
+<div class="gif-card"><img src="./icons/icons8-photo-gallery-100.png" alt="Photo Gallery"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">photo-gallery</span></div>
+<div class="gif-card"><img src="./icons/icons8-upload-to-cloud-100.png" alt="Upload To Cloud"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">upload-to-cloud</span></div>
+<div class="gif-card"><img src="./icons/icons8-download-from-the-cloud-100.png" alt="Download From The Cloud"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">download-from-the-cloud</span></div>
+</div>
+</div>
+
+<div class="icon-cat">
+<h3 class="icon-cat-head">Home & System</h3>
+<div class="gif-grid">
+<div class="gif-card"><img src="./icons/icons8-alarm-100.png" alt="Alarm"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">alarm</span></div>
+<div class="gif-card"><img src="./icons/icons8-battery-100.png" alt="Battery"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">battery</span></div>
+<div class="gif-card"><img src="./icons/icons8-gears-100.png" alt="Gears"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">gears</span></div>
+<div class="gif-card"><img src="./icons/icons8-home-100.png" alt="Home"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">home</span></div>
+<div class="gif-card"><img src="./icons/icons8-home-100-2.png" alt="Home 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">home-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-home-office-100.png" alt="Home Office"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">home-office</span></div>
+<div class="gif-card"><img src="./icons/icons8-internet-100.png" alt="Internet"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">internet</span></div>
+<div class="gif-card"><img src="./icons/icons8-internet-100-2.png" alt="Internet 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">internet-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-laptop-settings-100.png" alt="Laptop Settings"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">laptop-settings</span></div>
+<div class="gif-card"><img src="./icons/icons8-light-on-100.png" alt="Light On"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">light-on</span></div>
+<div class="gif-card"><img src="./icons/icons8-lock-100.png" alt="Lock"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">lock</span></div>
+<div class="gif-card"><img src="./icons/icons8-logout-100.png" alt="Logout"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">logout</span></div>
+<div class="gif-card"><img src="./icons/icons8-menu-100.png" alt="Menu"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">menu</span></div>
+<div class="gif-card"><img src="./icons/icons8-menu-100-2.png" alt="Menu 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">menu-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-menu-100-3.png" alt="Menu 3"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">menu-3</span></div>
+<div class="gif-card"><img src="./icons/icons8-menu-100-4.png" alt="Menu 4"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">menu-4</span></div>
+<div class="gif-card"><img src="./icons/icons8-monitor-100.png" alt="Monitor"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">monitor</span></div>
+<div class="gif-card"><img src="./icons/icons8-mute-unmute-100.png" alt="Mute Unmute"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">mute-unmute</span></div>
+<div class="gif-card"><img src="./icons/icons8-mute-unmute-100-2.png" alt="Mute Unmute 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">mute-unmute-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-night-100.png" alt="Night"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">night</span></div>
+<div class="gif-card"><img src="./icons/icons8-no-reminders-100.png" alt="No Reminders"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">no-reminders</span></div>
+<div class="gif-card"><img src="./icons/icons8-online-100.png" alt="Online"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">online</span></div>
+<div class="gif-card"><img src="./icons/icons8-password-key-100.png" alt="Password Key"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">password-key</span></div>
+<div class="gif-card"><img src="./icons/icons8-protect-100.png" alt="Protect"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">protect</span></div>
+<div class="gif-card"><img src="./icons/icons8-settings-100-2.png" alt="Settings 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">settings-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-sun-100.png" alt="Sun"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">sun</span></div>
+<div class="gif-card"><img src="./icons/icons8-wi-fi-100.png" alt="Wi Fi"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">wi-fi</span></div>
+<div class="gif-card"><img src="./icons/icons8-wi-fi-100-2.png" alt="Wi Fi 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">wi-fi-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-wind-100.png" alt="Wind"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">wind</span></div>
+</div>
+</div>
+
+<div class="icon-cat">
+<h3 class="icon-cat-head">Media & Entertainment</h3>
+<div class="gif-grid">
+<div class="gif-card"><img src="./icons/icons8-audio-100.png" alt="Audio"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">audio</span></div>
+<div class="gif-card"><img src="./icons/icons8-audio-wave-100.png" alt="Audio Wave"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">audio-wave</span></div>
+<div class="gif-card"><img src="./icons/icons8-audio-wave-100-2.png" alt="Audio Wave 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">audio-wave-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-auditorium-100.png" alt="Auditorium"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">auditorium</span></div>
+<div class="gif-card"><img src="./icons/icons8-camera-100.png" alt="Camera"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">camera</span></div>
+<div class="gif-card"><img src="./icons/icons8-cinema-100.png" alt="Cinema"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">cinema</span></div>
+<div class="gif-card"><img src="./icons/icons8-circled-play-button-100.png" alt="Circled Play Button"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">circled-play-button</span></div>
+<div class="gif-card"><img src="./icons/icons8-film-reel-100.png" alt="Film Reel"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">film-reel</span></div>
+<div class="gif-card"><img src="./icons/icons8-movie-100.png" alt="Movie"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">movie</span></div>
+<div class="gif-card"><img src="./icons/icons8-music-library-100.png" alt="Music Library"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">music-library</span></div>
+<div class="gif-card"><img src="./icons/icons8-pause-100.png" alt="Pause"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">pause</span></div>
+<div class="gif-card"><img src="./icons/icons8-play-button-circled-100.png" alt="Play Button Circled"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">play-button-circled</span></div>
+<div class="gif-card"><img src="./icons/icons8-play-record-100.png" alt="Play Record"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">play-record</span></div>
+<div class="gif-card"><img src="./icons/icons8-video-100.png" alt="Video"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">video</span></div>
+<div class="gif-card"><img src="./icons/icons8-video-editing-100.png" alt="Video Editing"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">video-editing</span></div>
+<div class="gif-card"><img src="./icons/icons8-video-record-100.png" alt="Video Record"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">video-record</span></div>
+</div>
+</div>
+
+<div class="icon-cat">
+<h3 class="icon-cat-head">Business & Commerce</h3>
+<div class="gif-grid">
+<div class="gif-card"><img src="./icons/icons8-buy-upgrade-100.png" alt="Buy Upgrade"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">buy-upgrade</span></div>
+<div class="gif-card"><img src="./icons/icons8-calendar-100.png" alt="Calendar"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">calendar</span></div>
+<div class="gif-card"><img src="./icons/icons8-calendar-100-2.png" alt="Calendar 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">calendar-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-calendar-100-3.png" alt="Calendar 3"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">calendar-3</span></div>
+<div class="gif-card"><img src="./icons/icons8-certificate-100.png" alt="Certificate"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">certificate</span></div>
+<div class="gif-card"><img src="./icons/icons8-cheap-100.png" alt="Cheap"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">cheap</span></div>
+<div class="gif-card"><img src="./icons/icons8-customer-insight-100.png" alt="Customer Insight"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">customer-insight</span></div>
+<div class="gif-card"><img src="./icons/icons8-debit-card-100.png" alt="Debit Card"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">debit-card</span></div>
+<div class="gif-card"><img src="./icons/icons8-delivery-time-100.png" alt="Delivery Time"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">delivery-time</span></div>
+<div class="gif-card"><img src="./icons/icons8-delivery-time-100-2.png" alt="Delivery Time 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">delivery-time-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-diamond-100.png" alt="Diamond"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">diamond</span></div>
+<div class="gif-card"><img src="./icons/icons8-discount-100.png" alt="Discount"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">discount</span></div>
+<div class="gif-card"><img src="./icons/icons8-guarantee-100.png" alt="Guarantee"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">guarantee</span></div>
+<div class="gif-card"><img src="./icons/icons8-handshake-100.png" alt="Handshake"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">handshake</span></div>
+<div class="gif-card"><img src="./icons/icons8-in-transit-100.png" alt="In Transit"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">in-transit</span></div>
+<div class="gif-card"><img src="./icons/icons8-magnetic-card-100.png" alt="Magnetic Card"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">magnetic-card</span></div>
+<div class="gif-card"><img src="./icons/icons8-money-box-100.png" alt="Money Box"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">money-box</span></div>
+<div class="gif-card"><img src="./icons/icons8-no-credit-cards-100.png" alt="No Credit Cards"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">no-credit-cards</span></div>
+<div class="gif-card"><img src="./icons/icons8-sale-100.png" alt="Sale"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">sale</span></div>
+<div class="gif-card"><img src="./icons/icons8-schedule-100.png" alt="Schedule"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">schedule</span></div>
+<div class="gif-card"><img src="./icons/icons8-service-100.png" alt="Service"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">service</span></div>
+<div class="gif-card"><img src="./icons/icons8-services-100.png" alt="Services"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">services</span></div>
+<div class="gif-card"><img src="./icons/icons8-shop-100.png" alt="Shop"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">shop</span></div>
+<div class="gif-card"><img src="./icons/icons8-shopping-bag-100.png" alt="Shopping Bag"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">shopping-bag</span></div>
+<div class="gif-card"><img src="./icons/icons8-shopping-cart-100.png" alt="Shopping Cart"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">shopping-cart</span></div>
+<div class="gif-card"><img src="./icons/icons8-subscribe-100.png" alt="Subscribe"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">subscribe</span></div>
+<div class="gif-card"><img src="./icons/icons8-us-dollar-circled-100.png" alt="Us Dollar Circled"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">us-dollar-circled</span></div>
+</div>
+</div>
+
+<div class="icon-cat">
+<h3 class="icon-cat-head">Analytics & Status</h3>
+<div class="gif-grid">
+<div class="gif-card"><img src="./icons/icons8-accuracy-100.png" alt="Accuracy"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">accuracy</span></div>
+<div class="gif-card"><img src="./icons/icons8-activity-100.png" alt="Activity"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">activity</span></div>
+<div class="gif-card"><img src="./icons/icons8-analyze-100.png" alt="Analyze"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">analyze</span></div>
+<div class="gif-card"><img src="./icons/icons8-automation-100.png" alt="Automation"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">automation</span></div>
+<div class="gif-card"><img src="./icons/icons8-brain-100.png" alt="Brain"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">brain</span></div>
+<div class="gif-card"><img src="./icons/icons8-error-100.png" alt="Error"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">error</span></div>
+<div class="gif-card"><img src="./icons/icons8-goal-100.png" alt="Goal"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">goal</span></div>
+<div class="gif-card"><img src="./icons/icons8-info-100.png" alt="Info"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">info</span></div>
+<div class="gif-card"><img src="./icons/icons8-life-cycle-100.png" alt="Life Cycle"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">life-cycle</span></div>
+<div class="gif-card"><img src="./icons/icons8-new-100.png" alt="New"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">new</span></div>
+<div class="gif-card"><img src="./icons/icons8-speed-100.png" alt="Speed"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">speed</span></div>
+<div class="gif-card"><img src="./icons/icons8-test-passed-100.png" alt="Test Passed"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">test-passed</span></div>
+<div class="gif-card"><img src="./icons/icons8-sparkling-100.png" alt="Sparkling"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">sparkling</span></div>
+<div class="gif-card"><img src="./icons/icons8-rocket-100.png" alt="Rocket"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">rocket</span></div>
+<div class="gif-card"><img src="./icons/icons8-star-100.png" alt="Star"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">star</span></div>
+<div class="gif-card"><img src="./icons/icons8-star-100-3.png" alt="Star 3"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">star-3</span></div>
+</div>
+</div>
+
+<div class="icon-cat">
+<h3 class="icon-cat-head">People & Emotions</h3>
+<div class="gif-grid">
+<div class="gif-card"><img src="./icons/icons8-boring-100.png" alt="Boring"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">boring</span></div>
+<div class="gif-card"><img src="./icons/icons8-corgi-100.png" alt="Corgi"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">corgi</span></div>
+<div class="gif-card"><img src="./icons/icons8-crying-100.png" alt="Crying"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">crying</span></div>
+<div class="gif-card"><img src="./icons/icons8-crying-100-2.png" alt="Crying 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">crying-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-disappointed-100.png" alt="Disappointed"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">disappointed</span></div>
+<div class="gif-card"><img src="./icons/icons8-happy-100.png" alt="Happy"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">happy</span></div>
+<div class="gif-card"><img src="./icons/icons8-happy-100-2.png" alt="Happy 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">happy-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-name-100.png" alt="Name"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">name</span></div>
+<div class="gif-card"><img src="./icons/icons8-neutral-100.png" alt="Neutral"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">neutral</span></div>
+<div class="gif-card"><img src="./icons/icons8-profile-100.png" alt="Profile"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">profile</span></div>
+<div class="gif-card"><img src="./icons/icons8-puzzled-100.png" alt="Puzzled"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">puzzled</span></div>
+<div class="gif-card"><img src="./icons/icons8-question-mark-100.png" alt="Question Mark"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">question-mark</span></div>
+<div class="gif-card"><img src="./icons/icons8-shocker-emoji-100.png" alt="Shocker Emoji"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">shocker-emoji</span></div>
+<div class="gif-card"><img src="./icons/icons8-silent-100.png" alt="Silent"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">silent</span></div>
+<div class="gif-card"><img src="./icons/icons8-werewolf-100.png" alt="Werewolf"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">werewolf</span></div>
+</div>
+</div>
+
+<div class="icon-cat">
+<h3 class="icon-cat-head">Health & Fitness</h3>
+<div class="gif-grid">
+<div class="gif-card"><img src="./icons/icons8-bench-press-100.png" alt="Bench Press"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">bench-press</span></div>
+<div class="gif-card"><img src="./icons/icons8-dumbbell-100.png" alt="Dumbbell"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">dumbbell</span></div>
+<div class="gif-card"><img src="./icons/icons8-pullups-100.png" alt="Pullups"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">pullups</span></div>
+<div class="gif-card"><img src="./icons/icons8-running-100.png" alt="Running"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">running</span></div>
+<div class="gif-card"><img src="./icons/icons8-walking-100.png" alt="Walking"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">walking</span></div>
+</div>
+</div>
+
+<div class="icon-cat">
+<h3 class="icon-cat-head">Adobe Creative Suite</h3>
+<div class="gif-grid">
+<div class="gif-card"><img src="./icons/icons8-adobe-after-effects-100.png" alt="Adobe After Effects"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">adobe-after-effects</span></div>
+<div class="gif-card"><img src="./icons/icons8-adobe-indesign-100.png" alt="Adobe Indesign"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">adobe-indesign</span></div>
+<div class="gif-card"><img src="./icons/icons8-adobe-premiere-pro-100.png" alt="Adobe Premiere Pro"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">adobe-premiere-pro</span></div>
+</div>
+</div>
+
+<div class="icon-cat">
+<h3 class="icon-cat-head">Miscellaneous</h3>
+<div class="gif-grid">
+<div class="gif-card"><img src="./icons/icons8-connect-100.png" alt="Connect"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">connect</span></div>
+<div class="gif-card"><img src="./icons/icons8-design-100.png" alt="Design"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">design</span></div>
+<div class="gif-card"><img src="./icons/icons8-gift-100.png" alt="Gift"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">gift</span></div>
+<div class="gif-card"><img src="./icons/icons8-heart-100.png" alt="Heart"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">heart</span></div>
+</div>
+</div>
+
+</div><!-- /style-section: Animated Icons -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION 2 — APPLE GLASS (Filled SVGs)
+     Filled icons with glassy gradient style · blue-tinted cards
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="style-section">
+<div class="style-header"><span class="style-dot" style="background:#60a5fa"></span><span class="style-title">Apple Glass — Filled</span><span class="style-count">~35 icons</span></div>
+<p class="style-desc">Solid-fill icons with glassy gradient aesthetic · used for primary UI actions</p>
+
+<div class="icon-cat">
+<h3 class="icon-cat-head">UI Actions — Filled</h3>
+<div class="glass-grid">
+  <div class="glass-card"><img src="./icons/icons8-bookmark-50-2.svg" alt="Bookmark"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">bookmark</span></div>
+  <div class="glass-card"><img src="./icons/icons8-bookmark-50-4.svg" alt="Bookmark Alt"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">bookmark-alt</span></div>
+  <div class="glass-card"><img src="./icons/icons8-check-all-50-2.svg" alt="Check All"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">check-all</span></div>
+  <div class="glass-card"><img src="./icons/icons8-check-mark-50-4.svg" alt="Check Mark"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">check-mark</span></div>
+  <div class="glass-card"><img src="./icons/icons8-checkmark-50-2.svg" alt="Checkmark"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">checkmark</span></div>
+  <div class="glass-card"><img src="./icons/icons8-close-50-2.svg" alt="Close"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">close</span></div>
+  <div class="glass-card"><img src="./icons/icons8-clock-50-2.svg" alt="Clock"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">clock</span></div>
+  <div class="glass-card"><img src="./icons/icons8-clock-50-3.svg" alt="Clock Alt"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">clock-alt</span></div>
+  <div class="glass-card"><img src="./icons/icons8-comments-50-2.svg" alt="Comments"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">comments</span></div>
+  <div class="glass-card"><img src="./icons/icons8-connect-50-2.svg" alt="Connect"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">connect</span></div>
+  <div class="glass-card"><img src="./icons/icons8-document-50-2.svg" alt="Document"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">document</span></div>
+  <div class="glass-card"><img src="./icons/icons8-done-50-2.svg" alt="Done"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">done</span></div>
+  <div class="glass-card"><img src="./icons/icons8-download-from-the-cloud-50-2.svg" alt="Cloud Download"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">cloud-download</span></div>
+  <div class="glass-card"><img src="./icons/icons8-edit-pencil-50-2.svg" alt="Edit Pencil"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">edit-pencil</span></div>
+  <div class="glass-card"><img src="./icons/icons8-file-50-2.svg" alt="File"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">file</span></div>
+  <div class="glass-card"><img src="./icons/icons8-folder-50-2.svg" alt="Folder"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">folder</span></div>
+  <div class="glass-card"><img src="./icons/icons8-folder-50-3.svg" alt="Folder Alt"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">folder-alt</span></div>
+  <div class="glass-card"><img src="./icons/icons8-heart-50-2.svg" alt="Heart"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">heart</span></div>
+  <div class="glass-card"><img src="./icons/icons8-info-50-3.svg" alt="Info"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">info</span></div>
+  <div class="glass-card"><img src="./icons/icons8-lock-50-2.svg" alt="Lock"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">lock</span></div>
+  <div class="glass-card"><img src="./icons/icons8-mailbox-50-2.svg" alt="Mailbox"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">mailbox</span></div>
+  <div class="glass-card"><img src="./icons/icons8-menu-50-6.svg" alt="Menu"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">menu</span></div>
+  <div class="glass-card"><img src="./icons/icons8-menu-50-7.svg" alt="Menu Alt"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">menu-alt</span></div>
+  <div class="glass-card"><img src="./icons/icons8-messages-50-2.svg" alt="Messages"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">messages</span></div>
+  <div class="glass-card"><img src="./icons/icons8-messages-50-3.svg" alt="Messages Alt"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">messages-alt</span></div>
+  <div class="glass-card"><img src="./icons/icons8-notification-50-2.svg" alt="Notification"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">notification</span></div>
+  <div class="glass-card"><img src="./icons/icons8-plus-50-2.svg" alt="Plus"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">plus</span></div>
+  <div class="glass-card"><img src="./icons/icons8-restart-50-2.svg" alt="Restart"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">restart</span></div>
+  <div class="glass-card"><img src="./icons/icons8-settings-50-2.svg" alt="Settings"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">settings</span></div>
+  <div class="glass-card"><img src="./icons/icons8-share-50-2.svg" alt="Share"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">share</span></div>
+  <div class="glass-card"><img src="./icons/icons8-tick-box-50-3.svg" alt="Tick Box"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">tick-box</span></div>
+  <div class="glass-card"><img src="./icons/icons8-trash-50-2.svg" alt="Trash"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">trash</span></div>
+  <div class="glass-card"><img src="./icons/icons8-box-50-2.svg" alt="Box"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">box</span></div>
+
+<div class="gif-card"><img src="./icons/icons8-clock-100.png" alt="Clock"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">clock</span></div>
+<div class="gif-card"><img src="./icons/icons8-help-100.png" alt="Help"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">help</span></div>
+<div class="gif-card"><img src="./icons/icons8-notification-100.png" alt="Notification"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">notification</span></div>
+<div class="gif-card"><img src="./icons/icons8-settings-100.png" alt="Settings"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">settings</span></div>
+<div class="gif-card"><img src="./icons/icons8-tap-gesture-100.png" alt="Tap Gesture"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">tap-gesture</span></div>
+<div class="gif-card"><img src="./icons/icons8-box-important-100.png" alt="Box Important"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">box-important</span></div>
+
+<div class="gif-card"><img src="./icons/icons8-gmail-logo-100.png" alt="Gmail"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">gmail</span></div>
+<div class="gif-card"><img src="./icons/icons8-whatsapp-100.png" alt="WhatsApp"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">whatsapp</span></div>
+
+<div class="gif-card"><img src="./icons/icons8-globe-100.png" alt="Globe"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">globe</span></div>
+
+<div class="gif-card"><img src="./icons/icons8-reply-arrow-100.png" alt="Reply Arrow"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">reply-arrow</span></div>
+<div class="gif-card"><img src="./icons/icons8-right-arrow-100.png" alt="Right Arrow"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">right-arrow</span></div>
+
+<div class="gif-card"><img src="./icons/icons8-dots-loading-100-3.png" alt="Dots Loading 3"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">dots-loading-3</span></div>
+<div class="gif-card"><img src="./icons/icons8-dots-loading-100-4.png" alt="Dots Loading 4"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">dots-loading-4</span></div>
+<div class="gif-card"><img src="./icons/icons8-iphone-spinner-100.png" alt="iPhone Spinner"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">iphone-spinner</span></div>
+<div class="gif-card"><img src="./icons/icons8-loading-heart-100.png" alt="Loading Heart"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">loading-heart</span></div>
+<div class="gif-card"><img src="./icons/icons8-spinning-circle-100.png" alt="Spinning Circle"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">spinning-circle</span></div>
+<div class="gif-card"><img src="./icons/icons8-spinning-circle-100-2.png" alt="Spinning Circle 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">spinning-circle-2</span></div>
+<div class="gif-card"><img src="./icons/icons8-process-100.png" alt="Process"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">process</span></div>
+<div class="gif-card"><img src="./icons/icons8-time-machine-100.png" alt="Time Machine"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">time-machine</span></div>
+
+<div class="gif-card"><img src="./icons/icons8-cloud-100-2.png" alt="Cloud 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">cloud-2</span></div>
+
+<div class="gif-card"><img src="./icons/icons8-live-video-on-100.png" alt="Live Video"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">live-video</span></div>
+
+<div class="gif-card"><img src="./icons/icons8-error-100-2.png" alt="Error 2"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">error-2</span></div>
+
+<div class="gif-card"><img src="./icons/icons8-user-male-100.png" alt="User Male"><span class="icon-badge badge-gif">GIF</span><span class="icon-name">user-male</span></div>
+</div></div>
+</div><!-- /style-section: Apple Glass -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION 3 — STANDARD OUTLINE (SF-Style SVGs)
+     Stroke/outline icons · no fill · default cards
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="style-section">
+<div class="style-header"><span class="style-dot" style="background:#2997ff"></span><span class="style-title">Standard Outline — SF Style</span><span class="style-count">~100 icons</span></div>
+<p class="style-desc">Stroke-only icons · SF Symbol aesthetic · white-inverted on dark surfaces</p>
+
+<!-- UI Actions — Outline -->
+<div class="icon-cat">
+<h3 class="icon-cat-head">UI Actions</h3>
+<div class="icon-grid">
+  <div class="icon-card svg-icon"><img src="./icons/icons8-bookmark-50.svg" alt="Bookmark"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">bookmark</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-add-bookmark-50.svg" alt="Add Bookmark"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">add-bookmark</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-delete-bookmark-50.svg" alt="Delete Bookmark"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">del-bookmark</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-check-all-50.svg" alt="Check All"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">check-all</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-check-mark-50.svg" alt="Check Mark"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">check-mark</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-checkmark-50.svg" alt="Checkmark"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">checkmark</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-uncheck-all-50.svg" alt="Uncheck All"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">uncheck-all</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-close-50.svg" alt="Close"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">close</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-cancel-50.svg" alt="Cancel"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">cancel</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-done-50.svg" alt="Done"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">done</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-plus-50.svg" alt="Plus"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">plus</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-search-50.svg" alt="Search"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">search</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-settings-50.svg" alt="Settings"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">settings</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-share-50.svg" alt="Share"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">share</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-trash-can-50.svg" alt="Trash Can"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">trash-can</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-lock-50.svg" alt="Lock"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">lock</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-padlock-50.svg" alt="Padlock"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">padlock</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-heart-50.svg" alt="Heart"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">heart</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-favorite-50.svg" alt="Favorite"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">favorite</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-favorites-50.svg" alt="Favorites"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">favorites</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-restart-50.svg" alt="Restart"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">restart</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-refresh-50.svg" alt="Refresh"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">refresh</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-synchronize-50.svg" alt="Synchronize"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">sync</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-no-synchronize-50.svg" alt="No Sync"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">no-sync</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-external-link-50.svg" alt="External Link"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">external-link</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-unavailable-50.svg" alt="Unavailable"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">unavailable</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-round-50.svg" alt="Round"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">round</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-follow-50.svg" alt="Follow"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">follow</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-about-50.svg" alt="About"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">about</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-info-50.svg" alt="Info"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">info</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-idea-50.svg" alt="Idea"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">idea</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-cursor-50.svg" alt="Cursor"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">cursor</span></div>
+</div></div>
+
+<!-- File & Document — Outline -->
+<div class="icon-cat">
+<h3 class="icon-cat-head">File &amp; Document</h3>
+<div class="icon-grid">
+  <div class="icon-card svg-icon"><img src="./icons/icons8-document-50.svg" alt="Document"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">document</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-file-50.svg" alt="File"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">file</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-fill-and-sign-50.svg" alt="Fill & Sign"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">fill-sign</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-image-file-50.svg" alt="Image File"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">image-file</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-picture-50.svg" alt="Picture"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">picture</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-folder-50.svg" alt="Folder"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">folder</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-opened-folder-50.svg" alt="Open Folder"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">open-folder</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-box-50.svg" alt="Box"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">box</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-briefcase-50.svg" alt="Briefcase"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">briefcase</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-toolbox-50.svg" alt="Toolbox"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">toolbox</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-puzzle-50.svg" alt="Puzzle"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">puzzle</span></div>
+</div></div>
+
+<!-- Communication — Outline -->
+<div class="icon-cat">
+<h3 class="icon-cat-head">Communication</h3>
+<div class="icon-grid">
+  <div class="icon-card svg-icon"><img src="./icons/icons8-mail-50.svg" alt="Mail"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">mail</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-speech-bubble-50.svg" alt="Speech Bubble"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">speech-bubble</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-phone-50.svg" alt="Phone"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">phone</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-contacts-50.svg" alt="Contacts"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">contacts</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-community-50.svg" alt="Community"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">community</span></div>
+</div></div>
+
+<!-- Navigation & System — Outline -->
+<div class="icon-cat">
+<h3 class="icon-cat-head">Navigation &amp; System</h3>
+<div class="icon-grid">
+  <div class="icon-card svg-icon"><img src="./icons/icons8-home-50.svg" alt="Home"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">home</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-menu-50.svg" alt="Menu"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">menu</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-clock-50.svg" alt="Clock"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">clock</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-weather-50.svg" alt="Weather"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">weather</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-airdrop-50.svg" alt="AirDrop"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">airdrop</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-launchpad-50.svg" alt="Launchpad"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">launchpad</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-upload-to-the-cloud-50.svg" alt="Cloud Upload"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">cloud-upload</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-facebook-like-50.svg" alt="Like"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">like</span></div>
+</div></div>
+
+<!-- AI & Tech Tools -->
+<div class="icon-cat">
+<h3 class="icon-cat-head">AI &amp; Tech Tools</h3>
+<div class="icon-grid">
+  <div class="icon-card svg-icon"><img src="./icons/icons8-chatgpt-50.svg" alt="ChatGPT"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">chatgpt</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-claude-ai-50.svg" alt="Claude AI"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">claude</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-anthropic-50.svg" alt="Anthropic"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">anthropic</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-gemini-ai-50.svg" alt="Gemini"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">gemini</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-deepseek-50.svg" alt="DeepSeek"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">deepseek</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-grok-50.svg" alt="Grok"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">grok</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-midjourney-50.svg" alt="Midjourney"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">midjourney</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-elevenlabs-50.svg" alt="ElevenLabs"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">elevenlabs</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-ai-50.svg" alt="AI"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">ai</span></div>
+</div></div>
+
+<!-- Adobe Creative Suite — Outline -->
+<div class="icon-cat">
+<h3 class="icon-cat-head">Adobe Creative Suite</h3>
+<div class="icon-grid">
+  <div class="icon-card svg-icon"><img src="./icons/icons8-adobe-50.svg" alt="Adobe"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">adobe</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-adobe-acrobat-reader-50.svg" alt="Acrobat"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">acrobat</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-adobe-after-effects-50-2.svg" alt="After Effects"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">after-effects</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-adobe-animate-50-2.svg" alt="Animate"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">animate</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-adobe-bridge-50.svg" alt="Bridge"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">bridge</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-adobe-creative-cloud-50-2.svg" alt="Creative Cloud"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">creative-cloud</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-adobe-firefly-50.svg" alt="Firefly"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">firefly</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-adobe-lightroom-50-2.svg" alt="Lightroom"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">lightroom</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-adobe-photoshop-50-2.svg" alt="Photoshop"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">photoshop</span></div>
+</div></div>
+
+<!-- Video & Audio Editing -->
+<div class="icon-cat">
+<h3 class="icon-cat-head">Video &amp; Audio Editing</h3>
+<div class="icon-grid">
+  <div class="icon-card svg-icon"><img src="./icons/icons8-davinci-resolve-50.svg" alt="DaVinci Resolve"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">davinci-resolve</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-final-cut-pro-x-50.svg" alt="Final Cut Pro"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">final-cut-pro</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-ableton-50.svg" alt="Ableton"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">ableton</span></div>
+</div></div>
+
+<!-- Design Tools -->
+<div class="icon-cat">
+<h3 class="icon-cat-head">Design Tools</h3>
+<div class="icon-grid">
+  <div class="icon-card svg-icon"><img src="./icons/icons8-figma-50.svg" alt="Figma"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">figma</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-canva-app-50.svg" alt="Canva"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">canva</span></div>
+</div></div>
+
+<!-- Social Media — Outline -->
+<div class="icon-cat">
+<h3 class="icon-cat-head">Social Media</h3>
+<div class="icon-grid">
+  <div class="icon-card svg-icon"><img src="./icons/icons8-facebook-50.svg" alt="Facebook"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">facebook</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-facebook-50-2.svg" alt="Facebook 2"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">facebook-2</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-facebook-50-3.svg" alt="Facebook 3"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">facebook-3</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-facebook-messenger-50-3.svg" alt="Messenger"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">messenger</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-instagram-50-3.svg" alt="Instagram"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">instagram</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-whatsapp-50-3.svg" alt="WhatsApp"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">whatsapp</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-tiktok-50-2.svg" alt="TikTok"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">tiktok</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-threads-50.svg" alt="Threads"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">threads</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-youtube-50-2.svg" alt="YouTube"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">youtube</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-linkedin-50.svg" alt="LinkedIn"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">linkedin</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-behance-50.svg" alt="Behance"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">behance</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-github-50-2.svg" alt="GitHub"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">github</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-google-plus-50.svg" alt="Google+"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">google-plus</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-google-plus-circled-50.svg" alt="Google+ Circle"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">google-plus-circle</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-google-maps-50-2.svg" alt="Google Maps"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">google-maps</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-1dm-50.svg" alt="1DM"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">1dm</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-coursehero-50.svg" alt="CourseHero"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">coursehero</span></div>
+</div></div>
+
+<!-- Cloud & Storage — Outline -->
+<div class="icon-cat">
+<h3 class="icon-cat-head">Cloud &amp; Storage</h3>
+<div class="icon-grid">
+  <div class="icon-card svg-icon"><img src="./icons/icons8-icloud-50.svg" alt="iCloud"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">icloud</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-dropbox-50.svg" alt="Dropbox"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">dropbox</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-onedrive-50.svg" alt="OneDrive"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">onedrive</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-cloudflare-50.svg" alt="Cloudflare"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">cloudflare</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-godaddy-50.svg" alt="GoDaddy"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">godaddy</span></div>
+</div></div>
+
+<!-- Browsers & Apps — Outline -->
+<div class="icon-cat">
+<h3 class="icon-cat-head">Browsers &amp; Apps</h3>
+<div class="icon-grid">
+  <div class="icon-card svg-icon"><img src="./icons/icons8-chrome-50.svg" alt="Chrome"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">chrome</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-safari-50.svg" alt="Safari"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">safari</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-app-store-50.svg" alt="App Store"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">app-store</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-app-store-50-2.svg" alt="App Store 2"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">app-store-2</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-mac-logo-50.svg" alt="Mac Logo"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">mac-logo</span></div>
+</div></div>
+
+<!-- Memes -->
+<div class="icon-cat">
+<h3 class="icon-cat-head">Memes</h3>
+<div class="icon-grid">
+  <div class="icon-card svg-icon"><img src="./icons/icons8-doge-50.svg" alt="Doge"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">doge</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-angry-face-meme-50.svg" alt="Angry Face"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">angry-face</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-feels-guy-50.svg" alt="Feels Guy"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">feels-guy</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-not-bad-meme-50.svg" alt="Not Bad"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">not-bad</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-npc-face-50.svg" alt="NPC"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">npc</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-ricardo-milos-50.svg" alt="Ricardo"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">ricardo</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-salt-bae-50.svg" alt="Salt Bae"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">salt-bae</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-shrug-emoticon-50.svg" alt="Shrug"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">shrug</span></div>
+  <div class="icon-card svg-icon"><img src="./icons/icons8-waluigi-50.svg" alt="Waluigi"><span class="icon-badge badge-svg">SVG</span><span class="icon-name">waluigi</span></div>
+</div></div>
+
+</div><!-- /style-section: Standard Outline -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION 4 — COLOR BRAND MARKS
+     Full-color logos · WEBP/PNG · no filter applied
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="style-section">
+<div class="style-header"><span class="style-dot" style="background:#34d399"></span><span class="style-title">Color Brand Marks</span><span class="style-count">11 icons</span></div>
+<p class="style-desc">Full-color brand logos · WEBP &amp; PNG · no filter applied</p>
+
+<div class="icon-cat">
+<h3 class="icon-cat-head">Social &amp; Apps</h3>
+<div class="icon-grid">
+  <div class="icon-card color-icon"><img src="./icons/apple-icon.webp" alt="Apple"><span class="icon-badge badge-webp">WEBP</span><span class="icon-name">apple</span></div>
+  <div class="icon-card color-icon"><img src="./icons/facebook-square-icon.webp" alt="Facebook"><span class="icon-badge badge-webp">WEBP</span><span class="icon-name">facebook</span></div>
+  <div class="icon-card color-icon"><img src="./icons/ig-instagram-icon.webp" alt="Instagram"><span class="icon-badge badge-webp">WEBP</span><span class="icon-name">instagram</span></div>
+  <div class="icon-card color-icon"><img src="./icons/linkedin-app-icon.webp" alt="LinkedIn"><span class="icon-badge badge-webp">WEBP</span><span class="icon-name">linkedin</span></div>
+  <div class="icon-card color-icon"><img src="./icons/tiktok-rounded-square-icon.webp" alt="TikTok"><span class="icon-badge badge-webp">WEBP</span><span class="icon-name">tiktok</span></div>
+  <div class="icon-card color-icon"><img src="./icons/youtube-app-icon.webp" alt="YouTube"><span class="icon-badge badge-webp">WEBP</span><span class="icon-name">youtube</span></div>
+</div></div>
+
+<div class="icon-cat">
+<h3 class="icon-cat-head">Payment &amp; Finance</h3>
+<div class="icon-grid">
+  <div class="icon-card color-icon"><img src="./icons/google-pay-acceptance-mark-icon.webp" alt="Google Pay"><span class="icon-badge badge-webp">WEBP</span><span class="icon-name">google-pay</span></div>
+  <div class="icon-card color-icon"><img src="./icons/paypal-color-icon.webp" alt="PayPal"><span class="icon-badge badge-webp">WEBP</span><span class="icon-name">paypal</span></div>
+  <div class="icon-card color-icon"><img src="./icons/paypal-icon.webp" alt="PayPal Alt"><span class="icon-badge badge-webp">WEBP</span><span class="icon-name">paypal-alt</span></div>
+  <div class="icon-card color-icon"><img src="./icons/klarna-icon.webp" alt="Klarna"><span class="icon-badge badge-webp">WEBP</span><span class="icon-name">klarna</span></div>
+  <div class="icon-card color-icon"><img src="./icons/wise-logo-icon (1).png" alt="Wise"><span class="icon-badge badge-png">PNG</span><span class="icon-name">wise</span></div>
+</div></div>
+
+</div><!-- /style-section: Color Brand Marks -->
+
+</div><!-- /icon-page -->
+
+<script>
+// ── View toggle ──
+const page = document.querySelector('.icon-page');
+page.classList.add('view-bare');
+
+function setView(mode, btn) {
+  page.classList.remove('view-bare', 'view-container');
+  page.classList.add('view-' + mode);
+  document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ── Inject Apple Glass containers + size details into every card ──
+document.querySelectorAll('.gif-card, .glass-card, .icon-card').forEach(card => {
+  const img = card.querySelector('img');
+  if (!img) return;
+
+  // Mark bare icon
+  img.classList.add('bare-icon');
+
+  // Create Apple glass container with cloned img
+  const container = document.createElement('div');
+  container.className = 'apple-container';
+  const clone = img.cloneNode(true);
+  clone.classList.remove('bare-icon');
+  // White rendering — invert only (preserves antialiasing)
+  if (card.classList.contains('color-icon')) {
+    clone.style.filter = 'none';
+    clone.style.opacity = '1';
+  } else {
+    clone.style.filter = 'invert(1)';
+    clone.style.opacity = '1';
+  }
+  container.appendChild(clone);
+  img.insertAdjacentElement('afterend', container);
+
+  // Add size detail — read actual pixel dimensions
+  const src = img.src;
+  const ext = src.split('.').pop().split('?')[0].toUpperCase();
+  const sizeEl = document.createElement('span');
+  sizeEl.className = 'icon-size';
+  if (ext === 'PNG') {
+    sizeEl.textContent = 'APNG';
+    const probe = new Image();
+    probe.onload = function(){ sizeEl.textContent = 'APNG ' + probe.naturalWidth + '\u00d7' + probe.naturalHeight; };
+    probe.src = img.src;
+  } else if (ext === 'SVG') {
+    sizeEl.textContent = 'SVG vector';
+  } else if (ext === 'WEBP') {
+    sizeEl.textContent = 'WEBP';
+  } else {
+    sizeEl.textContent = ext;
+  }
+  const nameEl = card.querySelector('.icon-name');
+  if (nameEl) nameEl.insertAdjacentElement('afterend', sizeEl);
+});
+
+// ── Live search filter ──
+const search = document.getElementById('iconSearch');
+search.addEventListener('input', () => {
+  const q = search.value.toLowerCase().trim();
+  document.querySelectorAll('.gif-card, .glass-card, .icon-card').forEach(card => {
+    const name = card.querySelector('.icon-name')?.textContent || '';
+    const alt = card.querySelector('img')?.alt || '';
+    const match = !q || name.toLowerCase().includes(q) || alt.toLowerCase().includes(q);
+    card.style.display = match ? '' : 'none';
+  });
+  document.querySelectorAll('.icon-cat').forEach(cat => {
+    const visible = cat.querySelectorAll('.gif-card:not([style*="display: none"]), .glass-card:not([style*="display: none"]), .icon-card:not([style*="display: none"])');
+    cat.style.display = visible.length ? '' : 'none';
+  });
+});
+</script>
+</body>
+</html>
