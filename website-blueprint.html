@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Design System — Content Bug</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/svg+xml" href="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/685c436c7dbd377728cdbf85.svg">
+<link rel="preload" href="./fonts/sf-pro-display_semibold.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="./fonts/sf-pro-display_medium.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="./fonts/sf-pro-text_regular.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="./design-system.css">
+</head>
+<body class="bg-dark">
+
+<!-- Thin intro bar -->
+<div style="padding:24px 40px 16px;background:rgba(5,5,8,.95);border-bottom:1px solid rgba(255,255,255,.06)">
+  <div style="font:600 14px var(--font-display);color:var(--txt);letter-spacing:-.02em">Website Blueprint — Copy any block, swap the text, ship it.</div>
+  <div style="font:400 12px var(--font);color:var(--txt3);margin-top:4px">3 live sections · 227 animated icons · glass containers · scroll animations · 60px top / 40px bottom / 40px sides</div>
+</div>
+
+<div class="ws-page" style="margin:0">
+
+<!-- ═══ HEADER ═══ -->
+<div class="cb-header-bar">
+  <a href="#" class="cb-logo"><img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69b0caadbfc81fcf1a62c4f9.svg" alt="{{ custom_values.business_name }}"></a>
+  <nav class="cb-header nav-fixed">
+    <a href="#" class="cb-nav-link active">Home</a>
+    <a href="#" class="cb-nav-link">Pricing</a>
+    <a href="#" class="cb-nav-link">Portfolio</a>
+    <a href="#" class="cb-nav-link">FAQ</a>
+    <a href="#" class="cb-nav-link cb-nav-cta">Book Free Demo</a>
+  </nav>
+</div><div style="height: 0px; width: 0px; visibility: hidden;"></div><div style="height: 0px; width: 0px; visibility: hidden;"></div><div style="height: 0px; width: 0px; visibility: hidden;"></div>
+
+<main>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     SECTION 1 — WHITE (3n+1)
+     padding: 60px top, 40px sides, 40px bottom
+     ══════════════════════════════════════════════════════════════════ -->
+<div class="section hero" style="text-align:center">
+  <div class="container">
+
+    <!-- Hero Block -->
+    <div class="fade-up" style="margin-bottom: 32px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div style="display:flex;justify-content:center;margin-bottom:16px">
+        <span style="font-size:14px;font-weight:600;color:var(--blue-brand);text-transform:uppercase;letter-spacing:4px">Content Bug Video Editing</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line1">Hero Title</span>
+        <span class="line2">Subtitle Line Two</span>
+      </h1>
+      <p class="hero-sub">Hero subtitle text. SF Pro Text, clamp(16-20px), --t2 color, max 2 lines.</p>
+      <div class="hero-cta">
+        <a href="#" class="btn btn-primary btn-hero">Primary CTA →</a>
+        <p class="hero-note">Note text · <a href="#">Link</a></p>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="fade-up" style="margin-bottom: 48px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="stats-row" style="margin:0">
+        <div class="stat"><div class="stat-value">247</div><div class="stat-label">PROJECTS</div></div>
+        <div class="stat"><div class="stat-value accent">98%</div><div class="stat-label accent">SATISFACTION</div></div>
+        <div class="stat"><div class="stat-value">24h</div><div class="stat-label">TURNAROUND</div></div>
+      </div>
+    </div>
+
+    <!-- Marquee -->
+    <div class="marquee fade-up" style="margin-bottom: 48px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="marquee-track">
+        <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69b0caadbfc81fcf1a62c4f9.svg" alt="Logo" style="height:28px">
+        <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69b0caadbfc81fcf1a62c4f9.svg" alt="Logo" style="height:28px">
+        <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69b0caadbfc81fcf1a62c4f9.svg" alt="Logo" style="height:28px">
+        <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69b0caadbfc81fcf1a62c4f9.svg" alt="Logo" style="height:28px">
+        <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69b0caadbfc81fcf1a62c4f9.svg" alt="Logo" style="height:28px">
+        <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69b0caadbfc81fcf1a62c4f9.svg" alt="Logo" style="height:28px">
+        <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69b0caadbfc81fcf1a62c4f9.svg" alt="Logo" style="height:28px">
+        <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69b0caadbfc81fcf1a62c4f9.svg" alt="Logo" style="height:28px">
+        <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69b0caadbfc81fcf1a62c4f9.svg" alt="Logo" style="height:28px">
+        <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69b0caadbfc81fcf1a62c4f9.svg" alt="Logo" style="height:28px">
+        <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69b0caadbfc81fcf1a62c4f9.svg" alt="Logo" style="height:28px">
+        <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69b0caadbfc81fcf1a62c4f9.svg" alt="Logo" style="height:28px">
+        <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69b0caadbfc81fcf1a62c4f9.svg" alt="Logo" style="height:28px">
+        <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69b0caadbfc81fcf1a62c4f9.svg" alt="Logo" style="height:28px">
+      </div>
+    </div>
+
+    <!-- Steps in Glass Container -->
+    <div class="section-header fade-up" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="section-label">HOW IT WORKS</div>
+      <div class="section-title">Steps Component</div>
+      <div class="section-sub">Each step card with numbered badge, title, description, and checklist items.</div>
+    </div>
+    <div class="steps-grid fade-up" style="margin-bottom: 48px; text-align: left; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="card" style="padding:24px">
+        <div class="step-head"><div class="step-number">1</div><div class="step-title">Step Title</div></div>
+        <div class="step-desc">Step description text. Font 13px, color --t1.</div>
+        <div class="step-list">
+          <div class="step-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Checklist item one</div>
+          <div class="step-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Checklist item two</div>
+        </div>
+      </div>
+      <div class="card" style="padding:24px">
+        <div class="step-head"><div class="step-number">2</div><div class="step-title">Step Title</div></div>
+        <div class="step-desc">Description text for step two.</div>
+        <div class="step-list">
+          <div class="step-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Checklist item</div>
+          <div class="step-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Checklist item</div>
+        </div>
+      </div>
+      <div class="card" style="padding:24px">
+        <div class="step-head"><div class="step-number">3</div><div class="step-title">Step Title</div></div>
+        <div class="step-desc">Description text for step three.</div>
+        <div class="step-list">
+          <div class="step-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Checklist item</div>
+          <div class="step-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Checklist item</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features in Glass Container -->
+    <div class="section-header fade-up" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="section-label">FEATURES</div>
+      <div class="section-title">Feature Cards</div>
+      <div class="section-sub">4-column grid with icon tile, title, description.</div>
+    </div>
+    <div class="features-grid fade-up" style="margin-bottom: 48px; text-align: left; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="card" style="padding:24px">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+        <div class="feature-title">Feature Title</div>
+        <div class="feature-desc">Feature description. Font 12px, --t1, line-height 1.55.</div>
+      </div>
+      <div class="card" style="padding:24px">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+        <div class="feature-title">Feature Title</div>
+        <div class="feature-desc">Description text for feature card component.</div>
+      </div>
+      <div class="card" style="padding:24px">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"></path></svg></div>
+        <div class="feature-title">Feature Title</div>
+        <div class="feature-desc">Description text for feature card component.</div>
+      </div>
+      <div class="card" style="padding:24px">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
+        <div class="feature-title">Feature Title</div>
+        <div class="feature-desc">Description text for feature card component.</div>
+      </div>
+    </div>
+
+    <!-- Reviews in Glass Container -->
+    <div class="section-header fade-up" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="section-label">TESTIMONIALS</div>
+      <div class="section-title">Review Cards</div>
+      <div class="section-sub">Glass cards with avatar, name, badge, stars, and quote.</div>
+    </div>
+    <div class="reviews-grid fade-up" style="text-align: left; margin-bottom: 48px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="review-card card">
+        <div class="review-top">
+          <div style="width:38px;height:38px;border-radius:50%;background:var(--blue-brand);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0">JD</div>
+          <div class="review-info"><div class="review-name">John Doe</div><span class="review-badge">Verified Client</span></div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-quote">"Review quote text. <strong>Bold emphasis</strong> for key phrases."</div>
+      </div>
+      <div class="review-card card">
+        <div class="review-top">
+          <div style="width:38px;height:38px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#000;flex-shrink:0">AB</div>
+          <div class="review-info"><div class="review-name">Alice Brown</div><span class="review-badge">Gold Plan</span></div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-quote">"Another review quote on <strong>white section</strong>."</div>
+      </div>
+      <div class="review-card card">
+        <div class="review-top">
+          <div style="width:38px;height:38px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0">MK</div>
+          <div class="review-info"><div class="review-name">Mike Kim</div><span class="review-badge">Verified Client</span></div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-quote">"Third review card. <strong>Glass card surface</strong> on white."</div>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="fade-up" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <a href="#" class="btn btn-primary btn-hero">Primary CTA →</a>
+      <a href="#" class="btn btn-ghost">Ghost Button →</a>
+    </div>
+
+    <!-- Animated Icon Library — Apple Glass Containers -->
+    <div class="section-header fade-up" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="section-label">ICON LIBRARY</div>
+      <div class="section-title">Animated Icons</div>
+      <div class="section-sub">227 APNG animations at 100×100 in Apple Glass containers. 50×50 squircle, 28px display, 3.57× pixel density.</div>
+    </div>
+    <div class="fade-up" style="margin-bottom: 48px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div style="background:linear-gradient(135deg,#0d0d0f,#050508);border-radius:20px;padding:28px;border:1px solid rgba(255,255,255,.06)">
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Check Mark"><img src="./icons/icons8-check-mark-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Check Mark"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Star"><img src="./icons/icons8-star-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Star"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Sparkling"><img src="./icons/icons8-sparkling-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Lightning"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Heart"><img src="./icons/icons8-heart-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Heart"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Camera"><img src="./icons/icons8-camera-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Camera"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Clock"><img src="./icons/icons8-clock-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Clock"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Notification"><img src="./icons/icons8-notification-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Notification"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Settings"><img src="./icons/icons8-settings-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Settings"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Upload"><img src="./icons/icons8-upload-to-cloud-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Upload"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Download"><img src="./icons/icons8-download-from-the-cloud-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Download"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Brain"><img src="./icons/icons8-brain-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Brain"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Approval"><img src="./icons/icons8-approval-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Approval"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Video"><img src="./icons/icons8-video-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Video"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Chat Bubble"><img src="./icons/icons8-chat-bubble-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Chat Bubble"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Goal"><img src="./icons/icons8-goal-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Fire"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Lock"><img src="./icons/icons8-lock-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Lock"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Rocket"><img src="./icons/icons8-rocket-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Rocket"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Diamond"><img src="./icons/icons8-diamond-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Diamond"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Certificate"><img src="./icons/icons8-certificate-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Trophy"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Automation"><img src="./icons/icons8-automation-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Automation"></div>
+        <div style="width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)" title="Calendar"><img src="./icons/icons8-calendar-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1)" alt="Calendar"></div>
+      </div>
+      <div style="text-align:center;margin-top:16px;font:400 11px var(--font);color:var(--txt3)">20 of 227 animated APNG icons · Full library on Icons tab · 100×100 source → 28px display = 3.57× density</div>
+      </div><!-- end dark wrapper -->
+    </div>
+
+    <!-- Bare Animated Icons (no container) -->
+    <div class="section-header fade-up" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="section-label">BARE ICONS</div>
+      <div class="section-title">Animated Icons — No Container</div>
+      <div class="section-sub">Same icons at 45% opacity, scaling to full on hover. For inline use without glass containers.</div>
+    </div>
+    <div class="fade-up" style="margin-bottom: 48px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div style="background:linear-gradient(135deg,#0d0d0f,#050508);border-radius:20px;padding:28px;border:1px solid rgba(255,255,255,.06)">
+      <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;align-items:center">
+        <img src="./icons/icons8-check-mark-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1);opacity:.45;transition:opacity .25s,transform .25s;cursor:pointer" alt="Check Mark" onmouseover="this.style.opacity='1';this.style.transform='scale(1.15)'" onmouseout="this.style.opacity='.45';this.style.transform='scale(1)'">
+        <img src="./icons/icons8-star-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1);opacity:.45;transition:opacity .25s,transform .25s;cursor:pointer" alt="Star" onmouseover="this.style.opacity='1';this.style.transform='scale(1.15)'" onmouseout="this.style.opacity='.45';this.style.transform='scale(1)'">
+        <img src="./icons/icons8-sparkling-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1);opacity:.45;transition:opacity .25s,transform .25s;cursor:pointer" alt="Sparkling" onmouseover="this.style.opacity='1';this.style.transform='scale(1.15)'" onmouseout="this.style.opacity='.45';this.style.transform='scale(1)'">
+        <img src="./icons/icons8-heart-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1);opacity:.45;transition:opacity .25s,transform .25s;cursor:pointer" alt="Heart" onmouseover="this.style.opacity='1';this.style.transform='scale(1.15)'" onmouseout="this.style.opacity='.45';this.style.transform='scale(1)'">
+        <img src="./icons/icons8-goal-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1);opacity:.45;transition:opacity .25s,transform .25s;cursor:pointer" alt="Fire" onmouseover="this.style.opacity='1';this.style.transform='scale(1.15)'" onmouseout="this.style.opacity='.45';this.style.transform='scale(1)'">
+        <img src="./icons/icons8-rocket-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1);opacity:.45;transition:opacity .25s,transform .25s;cursor:pointer" alt="Rocket" onmouseover="this.style.opacity='1';this.style.transform='scale(1.15)'" onmouseout="this.style.opacity='.45';this.style.transform='scale(1)'">
+        <img src="./icons/icons8-certificate-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1);opacity:.45;transition:opacity .25s,transform .25s;cursor:pointer" alt="Trophy" onmouseover="this.style.opacity='1';this.style.transform='scale(1.15)'" onmouseout="this.style.opacity='.45';this.style.transform='scale(1)'">
+        <img src="./icons/icons8-diamond-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1);opacity:.45;transition:opacity .25s,transform .25s;cursor:pointer" alt="Diamond" onmouseover="this.style.opacity='1';this.style.transform='scale(1.15)'" onmouseout="this.style.opacity='.45';this.style.transform='scale(1)'">
+        <img src="./icons/icons8-brain-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1);opacity:.45;transition:opacity .25s,transform .25s;cursor:pointer" alt="Brain" onmouseover="this.style.opacity='1';this.style.transform='scale(1.15)'" onmouseout="this.style.opacity='.45';this.style.transform='scale(1)'">
+        <img src="./icons/icons8-camera-100.png" style="width:28px;height:28px;object-fit:contain;filter:invert(1);opacity:.45;transition:opacity .25s,transform .25s;cursor:pointer" alt="Camera" onmouseover="this.style.opacity='1';this.style.transform='scale(1.15)'" onmouseout="this.style.opacity='.45';this.style.transform='scale(1)'">
+      </div>
+      <div style="text-align:center;margin-top:12px;font:400 11px var(--font);color:var(--txt3)">Bare mode: filter:invert(1), opacity .45 → 1 on hover, scale 1.15× on hover</div>
+      </div><!-- end dark wrapper -->
+    </div>
+
+    <!-- Section CTA -->
+    <div class="section-cta fade-up" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <a href="#" class="btn btn-primary btn-lg">Full-Width CTA Block</a>
+      <a href="#" class="btn btn-ghost">Secondary Link →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     SECTION 2 — BLUE (3n+2)
+     ══════════════════════════════════════════════════════════════════ -->
+<div class="section" style="text-align:center">
+  <div class="container">
+
+    <div class="section-header fade-up" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="section-label">BLUE SECTION</div>
+      <div class="section-title">Glass Cards on Navy</div>
+      <div class="section-sub">All cards use rgba(255,255,255,.06) bg with rgba(255,255,255,.1) border.</div>
+    </div>
+
+    <!-- 3 Glass Cards -->
+    <div class="fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: left; margin-bottom: 48px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+        <div class="feature-title">Card Title</div>
+        <div class="feature-desc">Glass card with .card class. Hover lifts -4px.</div>
+      </div>
+      <div class="card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+        <div class="feature-title">Card Title</div>
+        <div class="feature-desc">Top highlight line via ::before pseudo.</div>
+      </div>
+      <div class="card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"></path></svg></div>
+        <div class="feature-title">Card Title</div>
+        <div class="feature-desc">Hover border → rgba(41,151,255,.25).</div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="fade-up" style="margin-bottom: 48px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="stats-row" style="margin:0">
+        <div class="stat"><div class="stat-value">1.2K</div><div class="stat-label">CREATORS</div></div>
+        <div class="stat"><div class="stat-value accent">4.9★</div><div class="stat-label accent">RATING</div></div>
+        <div class="stat"><div class="stat-value">48h</div><div class="stat-label">AVG DELIVERY</div></div>
+      </div>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="section-header fade-up" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="section-label">PRICING</div>
+      <div class="section-title">Pricing Cards</div>
+      <div class="section-sub">Tier cards with badge, price, feature list, and CTA button.</div>
+    </div>
+    <div class="cards fade-up" style="margin-bottom: 48px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="card" data-tier="basic" style="position:relative;text-align:left">
+        <div class="card-tier">BASIC</div>
+        <div class="card-name">Starter Plan</div>
+        <div class="card-price-row"><span class="card-price">$497</span><span class="card-mo">/mo</span></div>
+        <div class="card-note">Billed monthly</div>
+        <div class="card-line"></div>
+        <div class="card-label">WHAT'S INCLUDED</div>
+        <ul class="features">
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>5 video edits per month</li>
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>1 revision per edit</li>
+          <li class="off"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>Priority queue</li>
+        </ul>
+        <a href="#" class="card-cta">Get Started →</a>
+      </div>
+      <div class="card" data-tier="silver" style="position:relative;text-align:left">
+        <div class="card-tier">SILVER</div>
+        <div class="card-name">Growth Plan</div>
+        <div class="card-price-row"><span class="card-price">$997</span><span class="card-mo">/mo</span></div>
+        <div class="card-note">Billed monthly</div>
+        <div class="card-line"></div>
+        <div class="card-label">WHAT'S INCLUDED</div>
+        <ul class="features">
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>15 video edits per month</li>
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>Unlimited revisions</li>
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>Priority queue</li>
+        </ul>
+        <a href="#" class="card-cta">Get Started →</a>
+      </div>
+      <div class="card" data-tier="gold" style="position:relative;text-align:left">
+        <div class="card-badge">BEST VALUE</div>
+        <div class="card-tier">GOLD</div>
+        <div class="card-name">Unlimited Plan</div>
+        <div class="card-price-row"><span class="card-price">$1,997</span><span class="card-mo">/mo</span></div>
+        <div class="card-note">Billed monthly · <span class="sv">Save $2,400/yr</span></div>
+        <div class="card-line"></div>
+        <div class="card-label">EVERYTHING IN SILVER, PLUS</div>
+        <ul class="features">
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>Unlimited video edits</li>
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>Unlimited revisions</li>
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>Dedicated editor</li>
+        </ul>
+        <a href="#" class="card-cta">Get Started →</a>
+      </div>
+    </div>
+
+    <!-- Comparison Tables in Glass -->
+    <div class="section-header fade-up" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="section-label">COMPARE</div>
+      <div class="section-title">Comparison Tables</div>
+    </div>
+    <div class="tables-grid fade-up" style="text-align: left; margin-bottom: 48px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="table-card">
+        <div class="table-header"><h3>Basic Plan</h3><p>For solo creators</p></div>
+        <div class="table-cols"><span>Feature</span><span>Basic</span><span>Gold</span></div>
+        <div class="table-row"><span>Video Edits</span><span class="val-no">5/mo</span><span class="val-yes">Unlimited</span></div>
+        <div class="table-row"><span>Revisions</span><span class="val-no">1</span><span class="val-yes">Unlimited</span></div>
+        <div class="table-row"><span>Priority Queue</span><span class="val-no">No</span><span class="val-yes">Yes</span></div>
+      </div>
+      <div class="table-card">
+        <div class="table-header"><h3>Gold Plan</h3><p>For growing brands</p></div>
+        <div class="table-cols"><span>Feature</span><span>Silver</span><span>Gold</span></div>
+        <div class="table-row"><span>Thumbnails</span><span class="val-no">3/mo</span><span class="val-yes">Unlimited</span></div>
+        <div class="table-row"><span>Ad Creatives</span><span class="val-no">No</span><span class="val-yes">Yes</span></div>
+        <div class="table-row"><span>Dedicated Editor</span><span class="val-no">No</span><span class="val-yes">Yes</span></div>
+      </div>
+    </div>
+
+    <!-- Reviews on Blue -->
+    <div class="section-header fade-up" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="section-label">REVIEWS</div>
+      <div class="section-title">Reviews on Dark</div>
+    </div>
+    <div class="reviews-grid fade-up" style="text-align: left; margin-bottom: 48px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="review-card card">
+        <div class="review-top">
+          <div style="width:38px;height:38px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0">SL</div>
+          <div class="review-info"><div class="review-name">Sarah Lee</div><span class="review-badge">Gold Plan</span></div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-quote">"Review on blue. <strong>White text, glass bg</strong>, gold stars."</div>
+      </div>
+      <div class="review-card card">
+        <div class="review-top">
+          <div style="width:38px;height:38px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0">TC</div>
+          <div class="review-info"><div class="review-name">Tom Chen</div><span class="review-badge">Verified</span></div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-quote">"Glass surface with <strong>.08 border</strong> on dark."</div>
+      </div>
+      <div class="review-card card">
+        <div class="review-top">
+          <div style="width:38px;height:38px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff;flex-shrink:0">RJ</div>
+          <div class="review-info"><div class="review-name">Raj Patel</div><span class="review-badge">Verified</span></div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+        <div class="review-quote">"Hover border → <strong>rgba(41,151,255,.25)</strong>."</div>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="fade-up" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <a href="#" class="btn btn-primary btn-hero">Primary on Blue →</a>
+      <a href="#" class="btn btn-ghost">Ghost on Blue →</a>
+    </div>
+
+    <!-- Section CTA -->
+    <div class="section-cta fade-up" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <a href="#" class="btn btn-primary btn-lg">CTA Block on Blue</a>
+      <a href="#" class="btn btn-ghost">Learn More →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     SECTION 3 — BLACK (3n)
+     ══════════════════════════════════════════════════════════════════ -->
+<div class="section" style="text-align:center">
+  <div class="container">
+
+    <div class="section-header fade-up" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="section-label">BLACK SECTION</div>
+      <div class="section-title">Everything on Black</div>
+      <div class="section-sub">Same glass surfaces as blue. Gradient #0d0d0f → #050507 with blue bubble overlays.</div>
+    </div>
+
+    <!-- Features — Individual Glass Cards -->
+    <div class="features-grid fade-up" style="margin-bottom: 48px; text-align: left; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="card" style="padding:24px">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
+        <div class="feature-title">Feature on Black</div>
+        <div class="feature-desc">Same classes. Section handles all colors.</div>
+      </div>
+      <div class="card" style="padding:24px">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+        <div class="feature-title">Feature on Black</div>
+        <div class="feature-desc">Icon tile 40x40, r-lg, blue-alpha bg.</div>
+      </div>
+      <div class="card" style="padding:24px">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+        <div class="feature-title">Feature on Black</div>
+        <div class="feature-desc">nth-child rotation auto-overrides on white.</div>
+      </div>
+      <div class="card" style="padding:24px">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg></div>
+        <div class="feature-title">Feature on Black</div>
+        <div class="feature-desc">4-col → 2 at 1000px → 1 at 768px.</div>
+      </div>
+    </div>
+
+    <!-- Steps in Glass -->
+    <div class="section-header fade-up" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="section-label">PROCESS</div>
+      <div class="section-title">Steps on Black</div>
+    </div>
+    <div class="steps-grid fade-up" style="margin-bottom: 48px; text-align: left; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="card" style="padding:24px">
+        <div class="step-head"><div class="step-number">1</div><div class="step-title">Upload</div></div>
+        <div class="step-desc">Step description. Blue gradient number badge with glow.</div>
+        <div class="step-list">
+          <div class="step-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Check item</div>
+        </div>
+      </div>
+      <div class="card" style="padding:24px">
+        <div class="step-head"><div class="step-number">2</div><div class="step-title">Edit</div></div>
+        <div class="step-desc">Description text. Title is 15px 700 --t1.</div>
+        <div class="step-list">
+          <div class="step-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Check item</div>
+        </div>
+      </div>
+      <div class="card" style="padding:24px">
+        <div class="step-head"><div class="step-number">3</div><div class="step-title">Deliver</div></div>
+        <div class="step-desc">Desc is 13px --t1 line-height 1.55.</div>
+        <div class="step-list">
+          <div class="step-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>Check item</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mini Reviews -->
+    <div class="section-header fade-up" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="section-label">TRUST</div>
+      <div class="section-title">Mini Reviews</div>
+    </div>
+    <div class="mini-grid fade-up" style="text-align: left; margin-bottom: 48px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="mini-card card">
+        <div class="mini-top">
+          <div class="mini-avatar">JD</div>
+          <div><div class="mini-name">Jane Doe</div><div class="mini-role">Creator</div></div>
+          <div class="mini-stars">★★★★★</div>
+        </div>
+        <div class="mini-quote">"Mini review. <strong>Compact card</strong> with avatar, name, role."</div>
+      </div>
+      <div class="mini-card card">
+        <div class="mini-top">
+          <div class="mini-avatar">BW</div>
+          <div><div class="mini-name">Bob Wang</div><div class="mini-role">Brand</div></div>
+          <div class="mini-stars">★★★★★</div>
+        </div>
+        <div class="mini-quote">"Mini card on <strong>black section</strong>."</div>
+      </div>
+      <div class="mini-card card">
+        <div class="mini-top">
+          <div class="mini-avatar">KL</div>
+          <div><div class="mini-name">Kim Lee</div><div class="mini-role">Agency</div></div>
+          <div class="mini-stars">★★★★★</div>
+        </div>
+        <div class="mini-quote">"3-col → 2 at 900px → 1 at 768px."</div>
+      </div>
+    </div>
+
+    <!-- Portfolio -->
+    <div class="section-header fade-up" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="section-label">WORK</div>
+      <div class="section-title">Portfolio Cards</div>
+      <div class="section-sub">9:16 aspect ratio cards. 5-column grid.</div>
+    </div>
+    <div class="portfolio-grid fade-up" style="margin-bottom: 48px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="portfolio-card"><div class="portfolio-badge">Short Form</div><div style="width:100%;height:100%;background:linear-gradient(135deg,rgba(41,151,255,.15),rgba(0,0,0,.3))"></div></div>
+      <div class="portfolio-card"><div class="portfolio-badge">Long Form</div><div style="width:100%;height:100%;background:linear-gradient(135deg,rgba(126,203,161,.15),rgba(0,0,0,.3))"></div></div>
+      <div class="portfolio-card"><div class="portfolio-badge">Ad Creative</div><div style="width:100%;height:100%;background:linear-gradient(135deg,rgba(240,192,64,.15),rgba(0,0,0,.3))"></div></div>
+      <div class="portfolio-card"><div class="portfolio-badge">Thumbnail</div><div style="width:100%;height:100%;background:linear-gradient(135deg,rgba(148,85,247,.15),rgba(0,0,0,.3))"></div></div>
+      <div class="portfolio-card"><div class="portfolio-badge">Reel</div><div style="width:100%;height:100%;background:linear-gradient(135deg,rgba(41,151,255,.15),rgba(0,0,0,.3))"></div></div>
+    </div>
+
+    <!-- Stats -->
+    <div class="fade-up" style="margin-bottom: 48px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <div class="stats-row" style="margin:0">
+        <div class="stat"><div class="stat-value">500+</div><div class="stat-label">VIDEOS</div></div>
+        <div class="stat"><div class="stat-value accent">100%</div><div class="stat-label accent">ON TIME</div></div>
+        <div class="stat"><div class="stat-value">5★</div><div class="stat-label">AVERAGE</div></div>
+      </div>
+    </div>
+
+    <!-- Buttons + CTA -->
+    <div class="fade-up" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <a href="#" class="btn btn-primary btn-hero">Primary on Black →</a>
+      <a href="#" class="btn btn-ghost">Ghost on Black →</a>
+    </div>
+    <div class="section-cta fade-up" style="opacity: 0; transform: translateY(20px); transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);">
+      <a href="#" class="btn btn-primary btn-lg">CTA Block on Black</a>
+      <a href="#" class="btn btn-ghost">See Portfolio →</a>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<div style="padding:40px;background:rgba(5,5,8,.98)">
+  <footer class="cb-footer">
+    <div class="cb-ft-grid">
+      <div class="cb-ft-brand">
+        <a href="#" class="cb-logo"><img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69aee8207c2702858b33014d.svg" alt="{{ custom_values.business_name }}" style="height:40px"></a>
+        <div class="cb-ft-tagline">Unlimited video editing for creators who move fast.</div>
+        <div class="cb-ft-social">
+          <a href="{{ custom_values.twitter }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012 7.5v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5 0-.28-.03-.56-.08-.83A7.72 7.72 0 0023 3z"></path></svg></a>
+          <a href="{{ custom_values.instagram }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="{{ custom_values.youtube }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1C5.12 19.56 12 19.56 12 19.56s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" stroke="none"></polygon></svg></a>
+        </div>
+      </div>
+      <div class="cb-ft-col">
+        <div class="cb-ft-col-title">SERVICES</div>
+        <a href="{{ custom_values.pricing }}">Pricing</a>
+        <a href="{{ custom_values.portfolio }}">Portfolio</a>
+        <a href="{{ custom_values.faq }}">FAQ</a>
+      </div>
+      <div class="cb-ft-col">
+        <div class="cb-ft-col-title">LINKS</div>
+        <a href="{{ custom_values.careers }}">Careers</a>
+        <a href="{{ custom_values.bookfreedemo }}">Book Free Demo</a>
+        <a href="{{ custom_values.portal_login }}">Portal Login</a>
+      </div>
+      <div class="cb-ft-col">
+        <div class="cb-ft-col-title">CONTACT</div>
+        <div class="cb-ft-contact-item"><a href="/cdn-cgi/l/email-protection#403b3b60233533342f2d1f36212c3525336e223533292e2533331f252d21292c603d3d">{{ custom_values.business_email }}</a></div>
+        <div class="cb-ft-contact-item"><a href="tel:{{ custom_values.business_phone }}">{{ custom_values.business_phone }}</a></div>
+        <div class="cb-ft-hours"><strong>Hours:</strong> {{ custom_values.business_hours }}</div>
+      </div>
+    </div>
+    <div class="cb-ft-divider"></div>
+    <div class="cb-ft-legal">
+      <span>© {{ custom_values.current_year }} {{ custom_values.business_legal_name }}. All rights reserved.</span>
+      <div class="cb-ft-legal-links">
+        <a href="{{ custom_values.terms_of_service }}">Terms</a><span class="cb-ft-legal-sep">·</span>
+        <a href="{{ custom_values.privacy_policy }}">Privacy</a><span class="cb-ft-legal-sep">·</span>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</div><!-- end ws-page -->
+
+<!-- Scroll-reveal observer -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function(){
+  var panel=document.getElementById('panel-web');
+  if(!panel)return;
+  var els=panel.querySelectorAll('.fade-up');
+  if(!els.length)return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';io.unobserve(e.target)}
+    });
+  },{threshold:0.1,rootMargin:'0px 0px -30px 0px'});
+  els.forEach(function(el){
+    el.style.opacity='0';el.style.transform='translateY(20px)';
+    el.style.transition='opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)';
+    io.observe(el);
+  });
+})();
+
+// Sticky nav island — only the glass pill sticks, not the header bar or logo
+(function(){
+  var nav = document.querySelector('.ws-page .cb-header');
+  if(!nav) return;
+  var bar = nav.closest('.cb-header-bar');
+  if(!bar) return;
+  var sentinel = document.createElement('div');
+  sentinel.style.cssText = 'height:0;width:0;visibility:hidden';
+  bar.parentNode.insertBefore(sentinel, bar.nextSibling);
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting){
+        nav.classList.add('nav-fixed');
+      } el
