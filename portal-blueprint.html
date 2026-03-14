@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portal Blueprint — Content Bug</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/svg+xml" href="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/685c436c7dbd377728cdbf85.svg">
+<link rel="preload" href="./fonts/sf-pro-display_semibold.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="./fonts/sf-pro-display_medium.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="./fonts/sf-pro-text_regular.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="./design-system.css">
+</head>
+<body class="bg-dark">
+<div id="panel-portal" class="sg-page bg-dark" style="padding:48px 40px 80px">
+
+  <!-- ── Header ── -->
+  <div class="sg-sec" style="text-align:center;margin-bottom:56px">
+    <div style="display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:12px">
+      <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/685c436c7dbd377728cdbf85.svg" alt="CB" style="width:40px;height:40px;opacity:.85">
+      <h1 style="font:700 36px/1 var(--font-display);letter-spacing:-.5px">Portal Blueprint</h1>
+    </div>
+    <p style="font-size:14px;color:var(--txt2);max-width:500px;margin:0 auto">Every portal component — glass surfaces, buttons, inputs, status glows, pipeline, folders, navigation. Copy any block, drop it in.</p>
+  </div>
+
+  <!-- ══ Portal Shell — Empty Page Template (Core Foundation) ══ -->
+  <div class="sg-sec">
+    <h2>Page Shell Template</h2>
+    <p class="sg-sub">Core foundation shell — left nav, bottom island, title bar with subtitle. Every portal page uses this as its base. Copy this shell, drop your page content inside.</p>
+
+    <div class="portal-shell ps-template-shell">
+      <!-- Left Nav -->
+      <nav class="left-nav ps-nav-shell">
+        <img class="ln-logo" src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/685c436c7dbd377728cdbf85.svg" alt="CB" width="22" height="22">
+        <div class="ln-sep"></div>
+        <button class="ln-btn" style="color:var(--txt2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><span class="ln-label">Chat</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg><span class="ln-label">Pipeline</span><div class="ln-badge">3</div></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg><span class="ln-label">Dashboard</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span class="ln-label">Meetings</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg><span class="ln-label">Storage</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg><span class="ln-label">Blueprints</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg><span class="ln-label">Account</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg><span class="ln-label">Settings</span></button>
+      </nav>
+
+      <!-- Bottom Island -->
+      <div class="bottom-island ps-island-shell">
+        <div class="bottom-island-inner">
+          <div class="bi-avatar" style="width:26px;height:26px;font-size:9px">CB</div>
+          <button class="bi-btn" title="Storage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></button>
+          <button class="bi-btn" title="Request"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+          <button class="bi-btn" title="Chat" style="position:relative"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><div class="ln-badge">5</div></button>
+        </div>
+      </div>
+
+      <!-- Main content area -->
+      <div class="ps-main">
+    <div class="ps-page-title-lg">Header <span class="ps-info-dot" title="Hover for page help and tutorials"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11" height="11"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg></span></div>
+    <div class="ps-page-stage-row"><span class="ps-title-stage" style="color:var(--txt3);background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">Subheader</span></div>
+    <div class="ps-content">
+      <div class="ps-empty-area">
+        <span class="ps-empty-label">Page Content Area</span>
+      </div>
+    </div>
+  </div><!-- /.ps-main -->
+    </div>
+    <p class="ps-note">Core foundation: every portal page starts from this shell. Left nav, bottom island, title bar with subtitle, and the main content container where page-specific content loads.</p>
+  </div>
+
+  <!-- ══ Portal Shell — Project Review Template ══ -->
+  <div class="sg-sec">
+    <h2>Project Review Template</h2>
+    <p class="sg-sub">Project opened in review stage — video player with overlay controls, review toolbox underneath, project thread panel on right.</p>
+
+    <div class="portal-shell">
+      <!-- Left Nav — uses real .left-nav component with shell retract behavior -->
+      <nav class="left-nav ps-nav-shell">
+        <img class="ln-logo" src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/685c436c7dbd377728cdbf85.svg" alt="CB" width="22" height="22">
+        <div class="ln-sep"></div>
+        <button class="ln-btn" style="color:var(--txt2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><span class="ln-label">Chat</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg><span class="ln-label">Pipeline</span><div class="ln-badge">3</div></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg><span class="ln-label">Dashboard</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span class="ln-label">Meetings</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg><span class="ln-label">Storage</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg><span class="ln-label">Blueprints</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg><span class="ln-label">Account</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg><span class="ln-label">Settings</span></button>
+      </nav>
+
+      <!-- Bottom Island — 4 icons: Avatar | Storage | Request+ | Chat -->
+      <div class="bottom-island ps-island-shell">
+        <div class="bottom-island-inner">
+          <!-- 1. Far left: User avatar -->
+          <div class="bi-avatar" style="width:26px;height:26px;font-size:9px">CB</div>
+          <!-- 2. Storage -->
+          <button class="bi-btn" title="Storage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></button>
+          <!-- 3. Middle: Request new project -->
+          <button class="bi-btn" title="Request"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+          <!-- 4. Far right: Chat (expandable mini channel view) -->
+          <button class="bi-btn" title="Chat" style="position:relative"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><div class="ln-badge">5</div></button>
+        </div>
+      </div>
+
+      <!-- Main content area -->
+      <div class="ps-main">
+        <div class="ps-page-title-lg">Project Pipeline</div>
+        <div class="ps-page-stage-row"><span class="ps-title-stage">Review</span></div>
+        <div class="ps-content">
+        <!-- Video + Dock column -->
+        <div class="ps-video-col">
+          <!-- Video Player -->
+          <div class="ps-video">
+            <!-- Project name pill — top left -->
+            <div class="ps-vid-name-pill">Meridian Brand Story</div>
+            <!-- Card island — top center -->
+            <div class="ps-card-island ps-vid-island">
+              <span class="ps-ci-type" data-type="LF">LF</span>
+              <span class="ps-ci-tier" data-tier="2">T2</span>
+              <div class="ps-ci-ver-nav">
+                <button class="ps-ci-arr" title="Prev version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+                <span class="ps-ci-ver">v3</span>
+                <button class="ps-ci-arr" title="Next version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button>
+              </div>
+              <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+              <span class="ps-ci-grade" data-grade="A">A</span>
+            </div>
+            <!-- Play button -->
+            <div class="ps-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="8,5 20,12 8,19"></polygon></svg></div>
+            <!-- Video-overlay timeline controls -->
+            <div class="ps-vid-controls">
+              <button class="dk-play"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="6,3 20,12 6,21"></polygon></svg></button>
+              <div class="dk-timeline"><div class="dk-timeline-track"><div class="dk-timeline-bar" style="width:35%"></div><div class="dk-timeline-head"></div></div></div>
+              <div class="dk-knob"><div class="dk-knob-body"><div class="dk-knob-tick"></div></div><span class="dk-knob-lbl">VOL</span></div>
+              <div class="dk-knob"><div class="dk-knob-body"><div class="dk-knob-tick"></div></div><span class="dk-knob-lbl">1×</span></div>
+            </div>
+          </div>
+          <!-- Review Toolbox — UNDER video, single row -->
+          <div class="dock-bubble ps-dock-under">
+            <div class="dk-island-wrap">
+              <div class="dk-row2">
+                <span class="dk-ts">1:24</span>
+                <div class="dk-inp-wrap"><textarea class="dk-textarea" placeholder="Add revision note..." rows="1"></textarea><button class="dk-send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div>
+                <div class="dk-sep"></div>
+                <button class="dk-btn active" title="Note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+                <button class="dk-btn" title="Draw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path></svg></button>
+                <button class="dk-btn" title="Video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2"></rect></svg></button>
+                <button class="dk-btn" title="Audio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path></svg></button>
+                <button class="dk-btn" title="Screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thread Panel -->
+        <div class="ps-thread">
+          <div class="ps-th-hdr">Project Thread</div>
+
+          <!-- Assets section -->
+          <div class="ps-th-section open">
+            <button class="ps-th-toggle" onclick="this.parentElement.classList.toggle('open')">Assets <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+            <div class="ps-th-body">
+              <div class="ps-th-item"><span class="ps-th-dot" style="background:var(--blue)"></span>hero-final.mp4</div>
+              <div class="ps-th-item"><span class="ps-th-dot" style="background:var(--green)"></span>brand-guide.pdf</div>
+              <div class="ps-th-item"><span class="ps-th-dot" style="background:var(--purple)"></span>storyboard-v3.fig</div>
+            </div>
+          </div>
+
+          <!-- Chat messages -->
+          <div class="ps-chat">
+            <div class="ps-chat-msg ps-chat-them">
+              <div class="ps-chat-avatar">JM</div>
+              <div class="ps-chat-msg-body">
+                <div class="ps-chat-meta"><span class="ps-chat-name">Jake Morrison</span><span class="ps-chat-role ps-role-client">CLIENT</span><span class="ps-chat-time">2:14 PM</span></div>
+                <div class="ps-chat-bubble">Color grade on the intro looks great, can we push the blues a bit more?</div>
+              </div>
+            </div>
+            <div class="ps-chat-msg ps-chat-me">
+              <div class="ps-chat-msg-body">
+                <div class="ps-chat-meta"><span class="ps-chat-name">You</span><span class="ps-chat-role ps-role-editor">EDITOR</span><span class="ps-chat-time">2:31 PM</span></div>
+                <div class="ps-chat-bubble">Updated — v3.2 just uploaded. Check the first 15 sec.</div>
+              </div>
+            </div>
+            <div class="ps-chat-msg ps-chat-them">
+              <div class="ps-chat-avatar">JM</div>
+              <div class="ps-chat-msg-body">
+                <div class="ps-chat-meta"><span class="ps-chat-name">Jake Morrison</span><span class="ps-chat-role ps-role-client">CLIENT</span><span class="ps-chat-time">3:02 PM</span></div>
+                <div class="ps-chat-bubble">Perfect. Approved ✓</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat input -->
+          <div class="ps-chat-input">
+            <button class="ps-chat-plus" title="Attach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+            <div class="chat-pill" style="flex:1;min-width:0"><input type="text" placeholder="Message…" disabled="" style="flex:1;min-width:0;background:transparent;border:none;outline:none;color:var(--txt);font-size:11px;padding:6px 0"><button class="chat-voice" title="Voice message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><rect x="4" y="2" width="3" height="20" rx="1.5"></rect><rect x="10.5" y="6" width="3" height="12" rx="1.5"></rect><rect x="17" y="4" width="3" height="16" rx="1.5"></rect></svg></button></div>
+            <button class="chat-emoji" title="Emoji" style="width:24px;height:24px;flex-shrink:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg></button>
+          </div>
+        </div>
+      </div><!-- /.ps-content -->
+      </div><!-- /.ps-main -->
+    </div>
+    <p class="ps-note">Default: black gradient. Portal settings allow white or dark-blue gradient alternatives.</p>
+  </div>
+
+  <!-- ══ Portal Shell — Pipeline Layout ══ -->
+  <div class="sg-sec">
+    <h2>Project Pipeline Template</h2>
+    <p class="sg-sub">Pipeline kanban view — 5 stages (Queue → Active → Review → Revisions → Approved) with draggable project cards and full Project Status Islands.</p>
+
+    <div class="portal-shell ps-pipeline-shell">
+      <!-- Left Nav -->
+      <nav class="left-nav ps-nav-shell">
+        <img class="ln-logo" src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/685c436c7dbd377728cdbf85.svg" alt="CB" width="22" height="22">
+        <div class="ln-sep"></div>
+        <button class="ln-btn" style="color:var(--txt2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><span class="ln-label">Chat</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg><span class="ln-label">Pipeline</span><div class="ln-badge">3</div></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg><span class="ln-label">Dashboard</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span class="ln-label">Meetings</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg><span class="ln-label">Storage</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg><span class="ln-label">Blueprints</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg><span class="ln-label">Account</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg><span class="ln-label">Settings</span></button>
+      </nav>
+
+      <!-- Bottom Island -->
+      <div class="bottom-island ps-island-shell">
+        <div class="bottom-island-inner">
+          <div class="bi-avatar" style="width:26px;height:26px;font-size:9px">CB</div>
+          <button class="bi-btn" title="Storage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></button>
+          <button class="bi-btn" title="Request"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+          <button class="bi-btn" title="Chat" style="position:relative"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><div class="ln-badge">5</div></button>
+        </div>
+      </div>
+
+      <!-- Main content area — Pipeline kanban -->
+      <div class="ps-main">
+    <div class="ps-page-hdr">
+      <div class="ps-page-title-lg">Project Pipeline</div>
+      <div class="ps-page-sub">5 stages: Queue → Active → Review → Revisions → Approved</div>
+    </div>
+    <div class="ps-pipeline-kanban">
+      
+        <div class="ps-kanban-col">
+          <div class="ps-kanban-hdr">
+            <span class="ps-kanban-dot" style="background:#64748b"></span>
+            Queue
+            <span class="ps-kanban-count">2</span>
+          </div>
+          <div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&amp;h=300&amp;fit=crop');cursor:grab">
+      <div class="ps-card-island pipe-island">
+      <span class="ps-ci-type" data-type="SF">SF</span>
+      <span class="ps-ci-tier" data-tier="1">T1</span>
+      <div class="ps-ci-ver-nav">
+        <button class="ps-ci-arr" title="Prev version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+        <span class="ps-ci-ver">v2</span>
+        <button class="ps-ci-arr" title="Next version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button>
+      </div>
+      <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+      <span class="ps-ci-grade" data-grade="B">B</span>
+    </div>
+      <div class="pipe-bottom">
+        <div class="pipe-bottom-row"><span class="pipe-name">Hook Reel v2</span><span class="pipe-timer">2d 14h</span></div>
+        <div class="pipe-tl"><div class="pipe-tl-bar" style="width:65%"></div></div>
+      </div>
+    </div><div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&amp;h=300&amp;fit=crop');cursor:grab">
+      <div class="ps-card-island pipe-island">
+      <span class="ps-ci-type" data-type="LF">LF</span>
+      <span class="ps-ci-tier" data-tier="2">T2</span>
+      <div class="ps-ci-ver-nav">
+        <button class="ps-ci-arr" title="Prev version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+        <span class="ps-ci-ver">v1</span>
+        <button class="ps-ci-arr" title="Next version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button>
+      </div>
+      <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+      <span class="ps-ci-grade" data-grade="C">C</span>
+    </div>
+      <div class="pipe-bottom">
+        <div class="pipe-bottom-row"><span class="pipe-name">March Batch</span><span class="pipe-timer">5d 3h</span></div>
+        <div class="pipe-tl"><div class="pipe-tl-bar" style="width:30%"></div></div>
+      </div>
+    </div>
+        </div>
+      
+        <div class="ps-kanban-col">
+          <div class="ps-kanban-hdr">
+            <span class="ps-kanban-dot" style="background:var(--blue)"></span>
+            Active
+            <span class="ps-kanban-count">2</span>
+          </div>
+          <div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&amp;h=300&amp;fit=crop');cursor:grab">
+      <div class="ps-card-island pipe-island">
+      <span class="ps-ci-type" data-type="LF">LF</span>
+      <span class="ps-ci-tier" data-tier="3">T3</span>
+      <div class="ps-ci-ver-nav">
+        <button class="ps-ci-arr" title="Prev version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+        <span class="ps-ci-ver">v4</span>
+        <button class="ps-ci-arr" title="Next version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button>
+      </div>
+      <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+      <span class="ps-ci-grade" data-grade="A">A</span>
+    </div>
+      <div class="pipe-bottom">
+        <div class="pipe-bottom-row"><span class="pipe-name">Product Launch</span><span class="pipe-timer">1d 8h</span></div>
+        <div class="pipe-tl"><div class="pipe-tl-bar" style="width:80%"></div></div>
+      </div>
+    </div><div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=400&amp;h=300&amp;fit=crop');cursor:grab">
+      <div class="ps-card-island pipe-island">
+      <span class="ps-ci-type" data-type="LF">LF</span>
+      <span class="ps-ci-tier" data-tier="2">T2</span>
+      <div class="ps-ci-ver-nav">
+        <button class="ps-ci-arr" title="Prev version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+        <span class="ps-ci-ver">v3</span>
+        <button class="ps-ci-arr" title="Next version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button>
+      </div>
+      <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+      <span class="ps-ci-grade" data-grade="A">A</span>
+    </div>
+      <div class="pipe-bottom">
+        <div class="pipe-bottom-row"><span class="pipe-name">Brand Story</span><span class="pipe-timer">3d 0h</span></div>
+        <div class="pipe-tl"><div class="pipe-tl-bar" style="width:55%"></div></div>
+      </div>
+    </div>
+        </div>
+      
+        <div class="ps-kanban-col">
+          <div class="ps-kanban-hdr">
+            <span class="ps-kanban-dot" style="background:var(--orange)"></span>
+            Review
+            <span class="ps-kanban-count">1</span>
+          </div>
+          <div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&amp;h=300&amp;fit=crop');cursor:grab">
+      <div class="ps-card-island pipe-island">
+      <span class="ps-ci-type" data-type="SF">SF</span>
+      <span class="ps-ci-tier" data-tier="1">T1</span>
+      <div class="ps-ci-ver-nav">
+        <button class="ps-ci-arr" title="Prev version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+        <span class="ps-ci-ver">v5</span>
+        <button class="ps-ci-arr" title="Next version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button>
+      </div>
+      <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+      <span class="ps-ci-grade" data-grade="B">B</span>
+    </div>
+      <div class="pipe-bottom">
+        <div class="pipe-bottom-row"><span class="pipe-name">Testimonial Cut</span><span class="pipe-timer">0d 6h</span></div>
+        <div class="pipe-tl"><div class="pipe-tl-bar" style="width:90%"></div></div>
+      </div>
+    </div>
+        </div>
+      
+        <div class="ps-kanban-col">
+          <div class="ps-kanban-hdr">
+            <span class="ps-kanban-dot" style="background:#ff5c5c"></span>
+            Revisions
+            <span class="ps-kanban-count">2</span>
+          </div>
+          <div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=400&amp;h=300&amp;fit=crop');cursor:grab">
+      <div class="ps-card-island pipe-island">
+      <span class="ps-ci-type" data-type="SF">SF</span>
+      <span class="ps-ci-tier" data-tier="2">T2</span>
+      <div class="ps-ci-ver-nav">
+        <button class="ps-ci-arr" title="Prev version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+        <span class="ps-ci-ver">v2</span>
+        <button class="ps-ci-arr" title="Next version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button>
+      </div>
+      <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+      <span class="ps-ci-grade" data-grade="D">D</span>
+    </div>
+      <div class="pipe-bottom">
+        <div class="pipe-bottom-row"><span class="pipe-name">Promo Reel v2</span><span class="pipe-timer">4d 12h</span></div>
+        <div class="pipe-tl"><div class="pipe-tl-bar" style="width:40%"></div></div>
+      </div>
+    </div><div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=400&amp;h=300&amp;fit=crop');cursor:grab">
+      <div class="ps-card-island pipe-island">
+      <span class="ps-ci-type" data-type="LF">LF</span>
+      <span class="ps-ci-tier" data-tier="1">T1</span>
+      <div class="ps-ci-ver-nav">
+        <button class="ps-ci-arr" title="Prev version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+        <span class="ps-ci-ver">v6</span>
+        <button class="ps-ci-arr" title="Next version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button>
+      </div>
+      <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+      <span class="ps-ci-grade" data-grade="F">F</span>
+    </div>
+      <div class="pipe-bottom">
+        <div class="pipe-bottom-row"><span class="pipe-name">Intro Sequence</span><span class="pipe-timer">6d 22h</span></div>
+        <div class="pipe-tl"><div class="pipe-tl-bar" style="width:15%"></div></div>
+      </div>
+    </div>
+        </div>
+      
+        <div class="ps-kanban-col">
+          <div class="ps-kanban-hdr">
+            <span class="ps-kanban-dot" style="background:var(--green)"></span>
+            Approved
+            <span class="ps-kanban-count">3</span>
+          </div>
+          <div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&amp;h=300&amp;fit=crop');cursor:grab">
+      <div class="ps-card-island pipe-island">
+      <span class="ps-ci-type" data-type="SF">SF</span>
+      <span class="ps-ci-tier" data-tier="1">T1</span>
+      <div class="ps-ci-ver-nav">
+        <button class="ps-ci-arr" title="Prev version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+        <span class="ps-ci-ver">v3</span>
+        <button class="ps-ci-arr" title="Next version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button>
+      </div>
+      <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+      <span class="ps-ci-grade" data-grade="A">A</span>
+    </div>
+      <div class="pipe-bottom">
+        <div class="pipe-bottom-row"><span class="pipe-name">Brand Recap v3</span><span class="pipe-timer">—</span></div>
+        <div class="pipe-tl"><div class="pipe-tl-bar" style="width:100%"></div></div>
+      </div>
+    </div><div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=400&amp;h=300&amp;fit=crop');cursor:grab">
+      <div class="ps-card-island pipe-island">
+      <span class="ps-ci-type" data-type="LF">LF</span>
+      <span class="ps-ci-tier" data-tier="2">T2</span>
+      <div class="ps-ci-ver-nav">
+        <button class="ps-ci-arr" title="Prev version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+        <span class="ps-ci-ver">v7</span>
+        <button class="ps-ci-arr" title="Next version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button>
+      </div>
+      <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+      <span class="ps-ci-grade" data-grade="A">A</span>
+    </div>
+      <div class="pipe-bottom">
+        <div class="pipe-bottom-row"><span class="pipe-name">Client Promo</span><span class="pipe-timer">—</span></div>
+        <div class="pipe-tl"><div class="pipe-tl-bar" style="width:100%"></div></div>
+      </div>
+    </div><div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1504567961542-e24d9439a724?w=400&amp;h=300&amp;fit=crop');cursor:grab">
+      <div class="ps-card-island pipe-island">
+      <span class="ps-ci-type" data-type="SF">SF</span>
+      <span class="ps-ci-tier" data-tier="1">T1</span>
+      <div class="ps-ci-ver-nav">
+        <button class="ps-ci-arr" title="Prev version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+        <span class="ps-ci-ver">v1</span>
+        <button class="ps-ci-arr" title="Next version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button>
+      </div>
+      <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+      <span class="ps-ci-grade" data-grade="B">B</span>
+    </div>
+      <div class="pipe-bottom">
+        <div class="pipe-bottom-row"><span class="pipe-name">IG Story Pack</span><span class="pipe-timer">—</span></div>
+        <div class="pipe-tl"><div class="pipe-tl-bar" style="width:100%"></div></div>
+      </div>
+    </div>
+        </div>
+      
+    </div>
+  </div><!-- /.ps-main -->
+    </div>
+    <p class="ps-note">Pipeline layout: page header with subheader, kanban columns for all stages, screen-edge padding visible on all sides.</p>
+  </div>
+
+  <!-- ══ 1. Navigation ══ -->
+  <div class="sg-sec">
+    <h2>Navigation</h2>
+    <p class="sg-sub">Left sidebar nav + bottom dock island + right-click action bar.</p>
+    <div style="display:flex;gap:24px;align-items:flex-start;margin-top:24px;position:relative;min-height:320px">
+      <nav class="left-nav" style="position:relative;left:auto;top:auto;transform:none;opacity:1;pointer-events:auto">
+        <img class="ln-logo" src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/685c436c7dbd377728cdbf85.svg" alt="CB" width="22" height="22">
+        <div class="ln-sep"></div>
+        <button class="ln-btn" style="color:var(--txt2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><span class="ln-label">Chat</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg><span class="ln-label">Pipeline</span><div class="ln-badge">3</div></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg><span class="ln-label">Dashboard</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span class="ln-label">Meetings</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg><span class="ln-label">Storage</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg><span class="ln-label">Blueprints</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg><span class="ln-label">Account</span></button>
+        <div class="ln-sep"></div>
+        <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg><span class="ln-label">Settings</span></button>
+      </nav>
+      <div style="flex:1;display:flex;flex-direction:column;gap:16px">
+        <div class="glass-flat" style="padding:20px;text-align:center;color:var(--txt3);font-size:13px;flex:1;display:flex;align-items:center;justify-content:center">Main content area</div>
+        <div style="display:flex;justify-content:center">
+          <div class="bottom-island" style="position:relative;bottom:auto;left:auto;right:auto;transform:none;opacity:1;pointer-events:auto">
+            <div class="bottom-island-inner">
+              <div class="bi-avatar" style="width:26px;height:26px;font-size:9px">CB</div>
+              <button class="bi-btn" title="Storage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></button>
+              <button class="bi-btn" title="Request"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+              <button class="bi-btn" title="Chat" style="position:relative"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><div class="ln-badge">5</div></button>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:center;margin-top:8px">
+          <div class="glass-island" style="position:relative;bottom:auto;left:auto;transform:none;opacity:1;pointer-events:auto">
+            <button class="island-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg><span>Edit</span></button>
+            <div class="island-sep"></div>
+            <button class="island-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span>Copy</span></button>
+            <div class="island-sep"></div>
+            <button class="island-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg><span>Save</span></button>
+            <div class="island-sep"></div>
+            <button class="island-btn" style="color:var(--red)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg><span>Delete</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 2. Glass Surfaces ══ -->
+  <div class="sg-sec">
+    <h2>Glass Containers</h2>
+    <p class="sg-sub">Three glass variants. Standard card, dissolving bubble, and flat panel.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px">
+      <div>
+        <div class="sg-label">Glass Card</div>
+        <div class="glass-card">
+          <div style="font:600 14px/1.3 var(--font);margin-bottom:6px">Standard Glass Card</div>
+          <div style="font-size:12px;color:var(--txt2)">Hover lifts 2px. Specular top-edge. Used for nav panels, stat cards, settings.</div>
+        </div>
+      </div>
+      <div>
+        <div class="sg-label">Glass Bubble (Dissolving)</div>
+        <div class="glass-bubble">
+          <div style="font:600 14px/1.3 var(--font);margin-bottom:6px">Dissolving Bubble</div>
+          <div style="font-size:12px;color:var(--txt2)">Fades at bottom via mask-image. Premium feel.</div>
+        </div>
+      </div>
+      <div>
+        <div class="sg-label">Flat Glass Panel</div>
+        <div class="glass-flat" style="padding:24px">
+          <div style="font:600 14px/1.3 var(--font);margin-bottom:6px">Flat Panel</div>
+          <div style="font-size:12px;color:var(--txt2)">No gradient fill. Used for sidebars, nav sections.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 3. Buttons g1–g6 ══ -->
+  <div class="sg-sec">
+    <h2>Buttons</h2>
+    <p class="sg-sub">Glass intensity spectrum. All neutral — no colors. White text with shadow for depth.</p>
+    <div class="sg-label">Glass Intensity Spectrum (Light → Heavy)</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px">
+      <button class="btn btn-g1">Ultra Light</button>
+      <button class="btn btn-g2">Light</button>
+      <button class="btn btn-g3">Standard</button>
+      <button class="btn btn-g4">Medium</button>
+      <button class="btn btn-g5">Heavy</button>
+      <button class="btn btn-g6">Frosted</button>
+    </div>
+    <div class="sg-label">Accent Glows (Navy · Silver · Gold)</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px">
+      <button class="btn btn-g3 glow-navy">Navy Glow</button>
+      <button class="btn btn-g3 glow-silver">Silver Glow</button>
+      <button class="btn btn-g3 glow-gold">Gold Glow</button>
+    </div>
+    <div class="sg-label">Pill Variants</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px">
+      <button class="btn btn-g2 btn-pill">Cancel</button>
+      <button class="btn btn-g3 btn-pill">Continue</button>
+      <button class="btn btn-g4 btn-pill">Submit</button>
+      <button class="btn btn-g5 btn-pill">Confirm</button>
+      <button class="btn btn-g6 btn-pill">Send</button>
+    </div>
+    <div class="sg-label">Ghost / Text</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn btn-ghost">Resend Code</button>
+      <button class="btn btn-ghost btn-sm">Learn More</button>
+    </div>
+  </div>
+
+  <!-- ══ 4. Inputs ══ -->
+  <div class="sg-sec">
+    <h2>Inputs</h2>
+    <p class="sg-sub">Recessed glass inputs. Inset shadows create depth. Blue focus ring with glow bloom.</p>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:600px;margin-top:24px">
+      <div>
+        <label class="input-label">Project Name</label>
+        <input class="input" type="text" value="YouTube Shorts — March Batch">
+      </div>
+      <div>
+        <label class="input-label">Category</label>
+        <select class="input select">
+          <option>Short Form (9:16)</option>
+          <option>Long Form (16:9)</option>
+          <option>Thumbnail</option>
+        </select>
+      </div>
+      <div style="grid-column:span 2">
+        <label class="input-label">Notes</label>
+        <textarea class="input textarea" placeholder="Any specific instructions for your editor..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 5. Cards ══ -->
+  <div class="sg-sec">
+    <h2>Cards</h2>
+    <p class="sg-sub">Every card type used across the portal.</p>
+    <div class="sg-label">Stat Cards</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px">
+      <div class="stat-card"><div class="stat-value" style="color:var(--blue)">24</div><div class="stat-label">Active Projects</div></div>
+      <div class="stat-card"><div class="stat-value" style="color:var(--green)">94%</div><div class="stat-label">Approval Rate</div></div>
+      <div class="stat-card"><div class="stat-value" style="color:var(--gold)">$2,400</div><div class="stat-label">This Period</div></div>
+    </div>
+    <div class="sg-label">Folder Cards (Glass Icon Tiles)</div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:32px">
+      <!-- Row 1 -->
+      <div class="folder-card"><div class="folder-icon fi-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg></div><div class="folder-label">Raw Footage</div></div>
+      <div class="folder-card"><div class="folder-icon fi-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg></div><div class="folder-label">Cleaned Footage</div></div>
+      <div class="folder-card"><div class="folder-icon fi-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg></div><div class="folder-label">B-Roll</div></div>
+      <div class="folder-card"><div class="folder-icon fi-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></div><div class="folder-label">Sound Effects</div></div>
+      <div class="folder-card"><div class="folder-icon fi-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></div><div class="folder-label">Music</div></div>
+      <div class="folder-card"><div class="folder-icon fi-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></div><div class="folder-label">Raw Thumbnails</div></div>
+      <!-- Row 2 -->
+      <div class="folder-card"><div class="folder-icon fi-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg></div><div class="folder-label">Thumbnails</div></div>
+      <div class="folder-card"><div class="folder-icon fi-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg></div><div class="folder-label">Project Drafts</div></div>
+      <div class="folder-card"><div class="folder-icon fi-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div><div class="folder-label">Scripts</div></div>
+      <div class="folder-card"><div class="folder-icon fi-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></div><div class="folder-label">Projects</div></div>
+      <div class="folder-card"><div class="folder-icon fi-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div><div class="folder-label">Approved Projects</div></div>
+      <div class="folder-card"><div class="folder-icon fi-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg></div><div class="folder-label">Premiere Pro</div></div>
+    </div>
+    <div class="sg-label">Project Card Island (Video Overlay)</div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:32px;padding:20px;background:rgba(0,0,0,.4);border-radius:14px;border:1px solid rgba(255,255,255,.06)">
+      <!-- Example: LF T2 -->
+      <div class="ps-card-island" style="position:relative;top:auto;left:auto;transform:none">
+        <span class="ps-ci-type" data-type="LF">LF</span>
+        <span class="ps-ci-tier" data-tier="2">T2</span>
+        <div class="ps-ci-ver-nav"><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v3</span><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div>
+        <span class="ps-ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+        <span class="ps-ci-grade" data-grade="A">A</span>
+      </div>
+      <!-- Example: SF T1 -->
+      <div class="ps-card-island" style="position:relative;top:auto;left:auto;transform:none">
+        <span class="ps-ci-type" data-type="SF">SF</span>
+        <span class="ps-ci-tier" data-tier="1">T1</span>
+        <div class="ps-ci-ver-nav"><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v7</span><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div>
+        <span class="ps-ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+        <span class="ps-ci-grade" data-grade="C">C</span>
+      </div>
+      <!-- Example: LF T3 -->
+      <div class="ps-card-island" style="position:relative;top:auto;left:auto;transform:none">
+        <span class="ps-ci-type" data-type="LF">LF</span>
+        <span class="ps-ci-tier" data-tier="3">T3</span>
+        <div class="ps-ci-ver-nav"><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v1</span><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div>
+        <span class="ps-ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+        <span class="ps-ci-grade" data-grade="F">F</span>
+      </div>
+    </div>
+    <div class="sg-label">Meeting Cards</div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:500px">
+      <div class="meeting-card" style="padding:20px"><div class="mtg-status live">Live</div><div style="margin-top:40px;font:600 14px/1 var(--font)">Weekly Sync</div><div style="font-size:11px;color:var(--txt3);margin-top:4px">Started 12 min ago</div></div>
+      <div class="meeting-card" style="padding:20px"><div class="mtg-status scheduled">Scheduled</div><div style="margin-top:40px;font:600 14px/1 var(--font)">Sprint Review</div><div style="font-size:11px;color:var(--txt3);margin-top:4px">Tomorrow at 2:00 PM</div></div>
+    </div>
+  </div>
+
+  <!-- ══ 6. Pipeline Columns ══ -->
+  <div class="sg-sec">
+    <h2>Pipeline Columns</h2>
+    <p class="sg-sub">Kanban drag-drop columns. 5 stages: Queue → Active → Review → Revisions → Approved.</p>
+
+    <!-- 5-column pipeline -->
+    <div style="display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;margin-top:24px">
+      <div class="pipeline-col" style="min-width:200px">
+        <div class="col-hdr"><div class="col-dot" style="background:#64748b"></div><div class="col-title">Queue</div><div class="col-count">2</div></div>
+        <div class="col-body">
+          <div class="pipeline-card glass-flat" style="background-image:url(https://picsum.photos/seed/hookreel/400/300)">
+            <div class="ps-card-island pipe-island"><span class="ps-ci-type" data-type="SF">SF</span><span class="ps-ci-tier" data-tier="1">T1</span><span class="ps-ci-ver">v2</span><span class="ps-ci-grade" data-grade="B">B</span></div>
+            <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Hook Reel v2</span><span class="pipe-timer">2d 14h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:45%"></div></div></div>
+          </div>
+          <div class="pipeline-card glass-flat" style="background-image:url(https://picsum.photos/seed/marchbatch/400/300)">
+            <div class="ps-card-island pipe-island"><span class="ps-ci-type" data-type="LF">LF</span><span class="ps-ci-tier" data-tier="2">T2</span><span class="ps-ci-ver">v1</span><span class="ps-ci-grade" data-grade="C">C</span></div>
+            <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">March Batch</span><span class="pipe-timer">5d 3h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:20%"></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="pipeline-col" style="min-width:200px">
+        <div class="col-hdr"><div class="col-dot" style="background:var(--blue)"></div><div class="col-title">Active</div><div class="col-count">2</div></div>
+        <div class="col-body">
+          <div class="pipeline-card glass-flat" style="background-image:url(https://picsum.photos/seed/prodlaunch/400/300)">
+            <div class="ps-card-island pipe-island"><span class="ps-ci-type" data-type="LF">LF</span><span class="ps-ci-tier" data-tier="3">T3</span><span class="ps-ci-ver">v4</span><span class="ps-ci-grade" data-grade="A">A</span></div>
+            <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Product Launch</span><span class="pipe-timer">1d 8h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:72%"></div></div></div>
+          </div>
+          <div class="pipeline-card glass-flat" style="background-image:url(https://picsum.photos/seed/brandstory/400/300)">
+            <div class="ps-card-island pipe-island"><span class="ps-ci-type" data-type="LF">LF</span><span class="ps-ci-tier" data-tier="2">T2</span><span class="ps-ci-ver">v3</span><span class="ps-ci-grade" data-grade="A">A</span></div>
+            <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Brand Story</span><span class="pipe-timer">3d 0h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:55%"></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="pipeline-col" style="min-width:200px">
+        <div class="col-hdr"><div class="col-dot" style="background:var(--orange)"></div><div class="col-title">Review</div><div class="col-count">1</div></div>
+        <div class="col-body">
+          <div class="pipeline-card glass-flat" style="background-image:url(https://picsum.photos/seed/testimcut/400/300)">
+            <div class="ps-card-island pipe-island"><span class="ps-ci-type" data-type="SF">SF</span><span class="ps-ci-tier" data-tier="1">T1</span><span class="ps-ci-ver">v5</span><span class="ps-ci-grade" data-grade="B">B</span></div>
+            <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Testimonial Cut</span><span class="pipe-timer">0d 6h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:88%"></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="pipeline-col" style="min-width:200px">
+        <div class="col-hdr"><div class="col-dot" style="background:var(--red,#c0392b)"></div><div class="col-title">Revisions</div><div class="col-count">2</div></div>
+        <div class="col-body">
+          <div class="pipeline-card glass-flat" style="background-image:url(https://picsum.photos/seed/promoreel/400/300)">
+            <div class="ps-card-island pipe-island"><span class="ps-ci-type" data-type="SF">SF</span><span class="ps-ci-tier" data-tier="2">T2</span><span class="ps-ci-ver">v2</span><span class="ps-ci-grade" data-grade="D">D</span></div>
+            <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Promo Reel v2</span><span class="pipe-timer">4d 12h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:30%"></div></div></div>
+          </div>
+          <div class="pipeline-card glass-flat" style="background-image:url(https://picsum.photos/seed/introseq/400/300)">
+            <div class="ps-card-island pipe-island"><span class="ps-ci-type" data-type="LF">LF</span><span class="ps-ci-tier" data-tier="1">T1</span><span class="ps-ci-ver">v6</span><span class="ps-ci-grade" data-grade="F">F</span></div>
+            <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Intro Sequence</span><span class="pipe-timer">6d 22h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:15%"></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="pipeline-col" style="min-width:200px">
+        <div class="col-hdr"><div class="col-dot" style="background:var(--green)"></div><div class="col-title">Approved</div><div class="col-count">3</div></div>
+        <div class="col-body">
+          <div class="pipeline-card glass-flat" style="background-image:url(https://picsum.photos/seed/brandrecap/400/300)">
+            <div class="ps-card-island pipe-island"><span class="ps-ci-type" data-type="SF">SF</span><span class="ps-ci-tier" data-tier="1">T1</span><span class="ps-ci-ver">v3</span><span class="ps-ci-grade" data-grade="A">A</span></div>
+            <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Brand Recap v3</span><span class="pipe-timer">—</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:100%"></div></div></div>
+          </div>
+          <div class="pipeline-card glass-flat" style="background-image:url(https://picsum.photos/seed/clientpro/400/300)">
+            <div class="ps-card-island pipe-island"><span class="ps-ci-type" data-type="LF">LF</span><span class="ps-ci-tier" data-tier="2">T2</span><span class="ps-ci-ver">v7</span><span class="ps-ci-grade" data-grade="A">A</span></div>
+            <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Client Promo</span><span class="pipe-timer">—</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:100%"></div></div></div>
+          </div>
+          <div class="pipeline-card glass-flat" style="background-image:url(https://picsum.photos/seed/igstory/400/300)">
+            <div class="ps-card-island pipe-island"><span class="ps-ci-type" data-type="SF">SF</span><span class="ps-ci-tier" data-tier="1">T1</span><span class="ps-ci-ver">v1</span><span class="ps-ci-grade" data-grade="B">B</span></div>
+            <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">IG Story Pack</span><span class="pipe-timer">—</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:100%"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 Card Size Options -->
+    <div class="sg-label" style="margin-top:32px">Project Card Sizes (User Preference)</div>
+    <div style="display:flex;gap:20px;align-items:flex-end;margin-top:16px;flex-wrap:wrap">
+      <!-- Small -->
+      <div style="text-align:center">
+        <div class="pipeline-card glass-flat" style="width:180px;background-image:url(https://picsum.photos/seed/smcard/360/270)">
+          <div class="ps-card-island pipe-island"><span class="ps-ci-type" data-type="SF">SF</span><span class="ps-ci-tier" data-tier="1">T1</span><div class="ps-ci-ver-nav"><button class="ps-ci-arr" title="Prev version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v2</span><button class="ps-ci-arr" title="Next version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div><span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span><span class="ps-ci-grade" data-grade="B">B</span></div>
+          <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Compact Card</span><span class="pipe-timer">2d 14h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:45%"></div></div></div>
+        </div>
+        <div style="font-size:9px;color:var(--txt4);margin-top:6px">Small — 180px</div>
+      </div>
+      <!-- Medium -->
+      <div style="text-align:center">
+        <div class="pipeline-card glass-flat" style="width:240px;background-image:url(https://picsum.photos/seed/mdcard/480/360)">
+          <div class="ps-card-island pipe-island"><span class="ps-ci-type" data-type="LF">LF</span><span class="ps-ci-tier" data-tier="2">T2</span><div class="ps-ci-ver-nav"><button class="ps-ci-arr" title="Prev version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v3</span><button class="ps-ci-arr" title="Next version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div><span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span><span class="ps-ci-grade" data-grade="A">A</span></div>
+          <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Default Card</span><span class="pipe-timer">3d 0h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:65%"></div></div></div>
+        </div>
+        <div style="font-size:9px;color:var(--txt4);margin-top:6px">Medium (Default) — 240px</div>
+      </div>
+      <!-- Large -->
+      <div style="text-align:center">
+        <div class="pipeline-card glass-flat" style="width:320px;background-image:url(https://picsum.photos/seed/lgcard/640/480)">
+          <div class="ps-card-island pipe-island"><span class="ps-ci-type" data-type="LF">LF</span><span class="ps-ci-tier" data-tier="3">T3</span><div class="ps-ci-ver-nav"><button class="ps-ci-arr" title="Prev version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v5</span><button class="ps-ci-arr" title="Next version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div><span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span><span class="ps-ci-grade" data-grade="B">B</span></div>
+          <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Expanded Card</span><span class="pipe-timer">1d 8h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:75%"></div></div></div>
+        </div>
+        <div style="font-size:9px;color:var(--txt4);margin-top:6px">Large — 320px</div>
+      </div>
+      <!-- XL -->
+      <div style="text-align:center">
+        <div class="pipeline-card glass-flat" style="width:480px;aspect-ratio:16/10;background-image:url(https://picsum.photos/seed/xlcard/960/600)">
+          <div class="ps-card-island pipe-island" style="padding:4px 10px;gap:6px"><span class="ps-ci-type" data-type="LF">LF</span><span class="ps-ci-tier" data-tier="2">T2</span><div class="ps-ci-ver-nav"><button class="ps-ci-arr" title="Prev version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v8</span><button class="ps-ci-arr" title="Next version"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div><span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span><span class="ps-ci-grade" data-grade="A">A</span></div>
+          <div class="pipe-bottom" style="padding:0 12px 10px"><div class="pipe-bottom-row"><span class="pipe-name" style="font-size:13px;font-weight:600">Full Expanded Card</span><span class="pipe-timer">0d 4h</span></div><div class="pipe-tl" style="height:3px"><div class="pipe-tl-bar" style="width:90%;background:var(--green)"></div></div></div>
+        </div>
+        <div style="font-size:9px;color:var(--txt4);margin-top:6px">XL — 480px</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 7. FrameLab Review Toolbox ══ -->
+  <div class="sg-sec">
+    <h2>FrameLab Review Toolbox</h2>
+    <p class="sg-sub">Video review dock — timestamp input, VOL/SPD knobs, 5 feedback modes, annotation toolbar, recording indicator, and right-click context menu.</p>
+
+    <!-- 7a. Review Dock Bubble (single-row layout) -->
+    <div class="sg-label">Review Dock (Glass Island)</div>
+    <div style="margin-top:16px;margin-bottom:32px;max-width:640px;aspect-ratio:16/9;display:flex;align-items:flex-end">
+      <div class="dock-bubble ps-dock-under" style="width:100%">
+        <div class="dk-island-wrap">
+          <div class="dk-row2">
+            <span class="dk-ts">1:24</span>
+            <div class="dk-inp-wrap">
+              <textarea class="dk-textarea" placeholder="Add revision note..." rows="1"></textarea>
+              <button class="dk-send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
+            </div>
+            <div class="dk-sep"></div>
+            <button class="dk-btn active" title="Note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></button>
+            <button class="dk-btn" title="Draw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path></svg></button>
+            <button class="dk-btn" title="Video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2"></rect></svg></button>
+            <button class="dk-btn" title="Audio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path></svg></button>
+            <button class="dk-btn" title="Screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7b. Drawing Annotation Toolbar -->
+    <div class="sg-label">Drawing Annotation Bar</div>
+    <div style="margin-top:16px;margin-bottom:32px;display:flex;justify-content:center">
+      <div class="draw-bar">
+        <button class="draw-tool active" title="Freehand"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path></svg></button>
+        <button class="draw-tool" title="Arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>
+        <button class="draw-tool" title="Circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg></button>
+        <button class="draw-tool" title="Rectangle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect></svg></button>
+        <button class="draw-tool" title="Line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="20" x2="20" y2="4"></line></svg></button>
+        <button class="draw-tool" title="Text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9.5" y1="20" x2="14.5" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg></button>
+        <div class="draw-sep"></div>
+        <div class="draw-colors">
+          <div class="draw-color active" style="background:#c0392b" title="Red"></div>
+          <div class="draw-color" style="background:#2997ff" title="Blue"></div>
+          <div class="draw-color" style="background:#7ecba1" title="Green"></div>
+          <div class="draw-color" style="background:#ffd60a" title="Yellow"></div>
+          <div class="draw-color" style="background:#ffffff" title="White"></div>
+        </div>
+        <div class="draw-sep"></div>
+        <div class="draw-sizes">
+          <button class="draw-size" style="width:8px;height:8px" title="Thin"></button>
+          <button class="draw-size active" style="width:12px;height:12px" title="Medium"></button>
+          <button class="draw-size" style="width:16px;height:16px" title="Thick"></button>
+        </div>
+        <div class="draw-sep"></div>
+        <button class="draw-tool" title="Undo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg></button>
+        <button class="draw-tool" title="Clear all"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
+        <div class="draw-sep"></div>
+        <button class="draw-tool" title="Save annotation" style="color:var(--green)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg></button>
+      </div>
+    </div>
+
+    <!-- 7c. Recording Indicators -->
+    <div class="sg-label">Recording Indicators</div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-top:16px;margin-bottom:32px">
+      <div class="rec-indicator">
+        <div class="rec-dot"></div>
+        <span class="rec-label">REC</span>
+        <span class="rec-timer">1:24</span>
+        <button class="rec-stop" title="Stop"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg></button>
+      </div>
+      <div class="rec-indicator">
+        <div class="rec-dot"></div>
+        <span class="rec-label">REC</span>
+        <span class="rec-timer">0:42</span>
+        <div class="audio-wave"><span></span><span></span><span></span><span></span><span></span></div>
+        <button class="rec-stop" title="Stop"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"></rect></svg></button>
+      </div>
+    </div>
+
+    <!-- 7d. Right-Click Context Menu -->
+    <div class="sg-label">Right-Click Context Menu</div>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start;margin-top:16px">
+      <div class="rv-ctx">
+        <!-- Row 1: Timestamp above note | X above send -->
+        <div class="rv-ctx-row1">
+          <span class="rv-ctx-ts">1:24</span>
+          <button class="rv-ctx-close">×</button>
+        </div>
+        <!-- Row 2: Revision note input + send -->
+        <div class="rv-ctx-row2">
+          <div class="rv-ctx-inp-wrap">
+            <textarea class="rv-ctx-textarea" placeholder="Leave a revision note..." rows="1"></textarea>
+          </div>
+          <button class="rv-ctx-send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
+        </div>
+        <!-- Row 3: 5 icon-only mode buttons (labels on hover) -->
+        <div class="rv-ctx-modes">
+          <button class="rv-ctx-btn active" title="Note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg><span class="rv-ctx-lbl">Note</span></button>
+          <button class="rv-ctx-btn" title="Draw"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path></svg><span class="rv-ctx-lbl">Draw</span></button>
+          <button class="rv-ctx-btn" title="Video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2"></rect></svg><span class="rv-ctx-lbl">Video</span></button>
+          <button class="rv-ctx-btn" title="Audio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path></svg><span class="rv-ctx-lbl">Audio</span></button>
+          <button class="rv-ctx-btn" title="Screen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg><span class="rv-ctx-lbl">Screen</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 8. Badges & Status ══ -->
+  <div class="sg-sec">
+    <h2>Badges &amp; Status</h2>
+    <p class="sg-sub">Status indicators and role badges.</p>
+    <div class="sg-label">Project Status</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+      <span class="badge-status badge-queue">Queue</span>
+      <span class="badge-status badge-active">Active</span>
+      <span class="badge-status badge-review">Review</span>
+      <span class="badge-status badge-revisions" style="background:rgba(192,57,43,.12);color:var(--red)">Revisions</span>
+      <span class="badge-status badge-approved">Approved</span>
+    </div>
+    <div class="sg-label">Role Badges</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+      <span class="badge-role badge-owner">Owner</span>
+      <span class="badge-role badge-admin">Admin</span>
+      <span class="badge-role badge-editor">Editor</span>
+      <span class="badge-role badge-client">Client</span>
+      <span class="badge-role badge-trial">Trial</span>
+    </div>
+    <div class="sg-label">Project Type Badges</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+      <span class="ps-ci-type" data-type="SF" style="position:relative">SF</span>
+      <span class="ps-ci-type" data-type="LF" style="position:relative">LF</span>
+    </div>
+    <div class="sg-label">Tier Badges</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+      <span class="ps-ci-tier" data-tier="1" style="position:relative">T1</span>
+      <span class="ps-ci-tier" data-tier="2" style="position:relative">T2</span>
+      <span class="ps-ci-tier" data-tier="3" style="position:relative">T3</span>
+    </div>
+    <div class="sg-label">Blueprint Badge</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+      <span class="ps-ci-icon" title="Blueprint" style="position:relative"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+    </div>
+    <div class="sg-label">Project Health / Grade Badges</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;align-items:center">
+      <span class="ps-ci-grade" data-grade="A" style="position:relative">A</span>
+      <span class="ps-ci-grade" data-grade="B" style="position:relative">B</span>
+      <span class="ps-ci-grade" data-grade="C" style="position:relative">C</span>
+      <span class="ps-ci-grade" data-grade="D" style="position:relative">D</span>
+      <span class="ps-ci-grade" data-grade="F" style="position:relative">F</span>
+    </div>
+    <div class="sg-label">Live Project Timer Icons (Health Color-Coded)</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;align-items:center">
+      <div class="health-timer" data-health="A"><div class="ht-dot"></div><span class="ht-time">1d 8h</span></div>
+      <div class="health-timer" data-health="B"><div class="ht-dot"></div><span class="ht-time">2d 14h</span></div>
+      <div class="health-timer" data-health="C"><div class="ht-dot"></div><span class="ht-time">4d 0h</span></div>
+      <div class="health-timer" data-health="D"><div class="ht-dot"></div><span class="ht-time">5d 12h</span></div>
+      <div class="health-timer" data-health="F"><div class="ht-dot"></div><span class="ht-time">7d 22h</span></div>
+    </div>
+    <div class="sg-note" style="margin-top:8px">Health colors: <span style="color:#34d399">Green = A</span>, <span style="color:#86efac">Light Green = B</span>, <span style="color:#fbbf24">Yellow = C</span>, <span style="color:var(--orange)">Orange = D</span>, <span style="color:var(--red)">Red = F</span></div>
+    <div class="sg-label" style="margin-top:20px">Pills &amp; Chips</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <span class="pill active">All</span>
+      <span class="pill">Short Form</span>
+      <span class="pill">Long Form</span>
+      <span class="pill">Thumbnails</span>
+    </div>
+  </div>
+
+  <!-- ══ 8. Chat ══ -->
+  <div class="sg-sec">
+    <h2>Chat Components</h2>
+    <p class="sg-sub">Message bubbles, avatars, timestamps, input row with attachment and send.</p>
+    <div class="chat-glass-container" style="max-width:500px;margin-top:24px;padding:16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;backdrop-filter:blur(12px)">
+      <div class="chat-msg">
+        <div class="chat-avatar" style="background:rgba(41,151,255,.15);color:var(--blue)">JD</div>
+        <div style="flex:1;min-width:0">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px"><span style="font:600 12px/1 var(--font)">John Doe</span><span class="badge-role badge-client">Client</span><span style="font:400 9px/1 var(--mono,'SF Mono',monospace);color:var(--txt4);margin-left:auto">Mar 12, 2026 · 2:14 PM · PST</span></div>
+          <div class="chat-bubble">Hey, can we make the intro a bit punchier? The hook needs to grab attention in the first 2 seconds.</div>
+        </div>
+      </div>
+      <div class="chat-msg" style="margin-top:12px">
+        <div class="chat-avatar" style="background:rgba(126,203,161,.15);color:var(--green)">ME</div>
+        <div style="flex:1;min-width:0">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px"><span style="font:600 12px/1 var(--font)">Mike Editor</span><span class="badge-role badge-editor">Editor</span><span style="font:400 9px/1 var(--mono,'SF Mono',monospace);color:var(--txt4);margin-left:auto">Mar 12, 2026 · 2:18 PM · PST</span></div>
+          <div class="chat-bubble">Absolutely! I'll tighten the first cut and add a zoom transition. Should have draft 2 ready in about an hour.</div>
+        </div>
+      </div>
+      <div class="chat-input-row" style="margin-top:16px">
+        <button class="chat-plus" title="Attach file">+</button>
+        <div class="chat-pill"><input class="chat-input-field" placeholder="Type a message..."><button class="chat-voice" title="Voice message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="4" y="2" width="3" height="20" rx="1.5"></rect><rect x="10.5" y="6" width="3" height="12" rx="1.5"></rect><rect x="17" y="4" width="3" height="16" rx="1.5"></rect></svg></button></div>
+        <button class="chat-emoji" title="Emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 9. Upload Drop Zone ══ -->
+  <div class="sg-sec">
+    <h2>Upload Drop Zone</h2>
+    <div class="drop-zone" style="max-width:500px;margin-top:24px">
+      <div class="dz-icon">📁</div>
+      <div class="dz-title">Drop your footage here</div>
+      <div class="dz-sub">or click to browse — MP4, MOV, up to 10GB</div>
+    </div>
+  </div>
+
+  <!-- ══ 10. Progress Tracker ══ -->
+  <div class="sg-sec">
+    <h2>Progress Tracker</h2>
+    <p class="sg-sub">Submit flow tracker with ring nodes and wire connectors.</p>
+    <div class="tracker" style="margin-top:24px">
+      <div class="tracker-node"><div class="tracker-ring done">1</div><div class="tracker-label">Upload</div></div>
+      <div class="tracker-wire done"></div>
+      <div class="tracker-node"><div class="tracker-ring done">2</div><div class="tracker-label">Details</div></div>
+      <div class="tracker-wire done"></div>
+      <div class="tracker-node"><div class="tracker-ring active">3</div><div class="tracker-label">Review</div></div>
+      <div class="tracker-wire"></div>
+      <div class="tracker-node"><div class="tracker-ring">4</div><div class="tracker-label">Submit</div></div>
+    </div>
+  </div>
+
+</div>
+
+</body></html>
