@@ -1,0 +1,2155 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Design Tokens — Content Bug</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" type="image/svg+xml" href="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/685c436c7dbd377728cdbf85.svg">
+<link rel="preload" href="./fonts/sf-pro-display_semibold.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="./fonts/sf-pro-display_medium.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="./fonts/sf-pro-text_regular.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="stylesheet" href="./design-system.css">
+</head>
+<body style="background:#000;color:#f5f5f7;margin:0;padding:0">
+<div class="sg-page" id="panel-portal" style="padding-top:80px">
+
+<!-- ══════════ HEADER ══════════ -->
+<div class="sg-sec" style="margin-bottom:48px">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">
+    <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/685c436c7dbd377728cdbf85.svg" alt="CB" style="width:64px;height:64px;filter:brightness(0) invert(1);flex-shrink:0">
+    <h1 style="font:700 42px/1 var(--font-display);letter-spacing:-.5px">Design System</h1>
+  </div>
+  <p style="font-size:14px;color:var(--txt2)">Single source of truth for every Content Bug product — portal, website, tools.</p>
+</div>
+
+<!-- ══════════ SPACING & SIZING RULES ══════════ -->
+<div class="sg-sec" style="margin-bottom:64px">
+  <h2>Spacing &amp; Sizing Rules</h2>
+  <p class="sg-sub">Master reference for all spacing, padding, and sizing across every section, container, and component. Follow these exactly — no exceptions.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div style="padding:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px">
+      <div class="sg-label" style="margin-top:0;margin-bottom:12px;color:var(--blue)">Page Layout</div>
+      <div style="font:400 12px/2 var(--font);color:var(--txt2)">
+        <div><code style="color:var(--green);font:500 11px var(--mono)">page-padding</code> — 60px top, 40px sides, 80px bottom</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">section-gap</code> — 80px between sections (margin-bottom on .sg-sec)</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">section-max-width</code> — 1100px centered</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">h2-to-subtitle</code> — 8px</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">subtitle-to-content</code> — 32px</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">sub-label-to-content</code> — 8px</div>
+      </div>
+    </div>
+    <div style="padding:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px">
+      <div class="sg-label" style="margin-top:0;margin-bottom:12px;color:var(--blue)">Component Spacing</div>
+      <div style="font:400 12px/2 var(--font);color:var(--txt2)">
+        <div><code style="color:var(--green);font:500 11px var(--mono)">card-gap</code> — 12px between cards in a row</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">card-padding-sm</code> — 8px 12px</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">card-padding-md</code> — 12px 14px</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">card-padding-lg</code> — 14px 16px</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">card-border-radius</code> — 12px</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">glass-container-gap</code> — 6px</div>
+      </div>
+    </div>
+    <div style="padding:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px">
+      <div class="sg-label" style="margin-top:0;margin-bottom:12px;color:var(--blue)">Base Grid</div>
+      <div style="font:400 12px/2 var(--font);color:var(--txt2)">
+        <div><code style="color:var(--green);font:500 11px var(--mono)">base-unit</code> — 4px (everything snaps to 4px grid)</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">comfortable</code> — 8px (default inner spacing)</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">standard</code> — 16px (between related elements)</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">spacious</code> — 24px (between groups)</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">section-break</code> — 48px (between sub-sections)</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">page-break</code> — 80px (between major sections)</div>
+      </div>
+    </div>
+    <div style="padding:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:12px">
+      <div class="sg-label" style="margin-top:0;margin-bottom:12px;color:var(--blue)">Pipeline Card Sizes</div>
+      <div style="font:400 12px/2 var(--font);color:var(--txt2)">
+        <div><code style="color:var(--green);font:500 11px var(--mono)">card-width</code> — 220px constant (all types, all sizes)</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">project-S</code> — min-height: 60px (name + progress only)</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">project-M</code> — min-height: 100px (+ island + glass tags)</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">project-L</code> — min-height: 150px (+ version nav + icons)</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">blueprint-S</code> — min-height: 50px (title + creator + tags)</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">blueprint-M</code> — min-height: 100px (+ field icon grid)</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">blueprint-L</code> — min-height: 150px (+ full field detail)</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">person-S</code> — min-height: 44px (avatar + name + grade)</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">person-M</code> — min-height: 80px (+ role + status badge)</div>
+        <div><code style="color:var(--green);font:500 11px var(--mono)">person-L</code> — min-height: 120px (+ health bars + detail)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ LOGO ASSETS ══════════ -->
+<div class="sg-sec">
+  <h2>Logo Assets</h2>
+  <p class="sg-sub">Three SVG variants. All self-hosted in /assets/.</p>
+  <div class="sg-row" style="align-items:flex-start;gap:32px">
+    <div style="text-align:center">
+      <div style="width:110px;height:110px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:24px;margin:0 auto 10px;box-shadow:0 2px 12px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.08)">
+        <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/685c436c7dbd377728cdbf85.svg" alt="Bug (white)" style="width:72px;height:72px;opacity:.95">
+      </div>
+      <div class="sg-code">logo-white-bug.svg</div>
+      <div class="sg-note">Bug icon — login orb, favicons, nav</div>
+    </div>
+    <div style="text-align:center">
+      <div style="width:240px;height:110px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:24px;margin:0 auto 10px;box-shadow:0 2px 12px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.08)">
+        <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69aee8207c2702858b33014d.svg" alt="Full logo (white)" style="width:190px;opacity:1;filter:brightness(0) invert(1)">
+      </div>
+      <div class="sg-code">logofr.svg</div>
+      <div class="sg-note">Full wordmark — nav expanded, website header</div>
+    </div>
+    <div style="text-align:center">
+      <div style="width:240px;height:110px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#ffffff 0%,#f5f5f7 100%);border:1px solid rgba(0,0,0,.06);border-radius:24px;margin:0 auto 10px;box-shadow:0 2px 12px rgba(0,0,0,.15),inset 0 1px 0 rgba(255,255,255,.9)">
+        <img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69b0caadbfc81fcf1a62c4f9.svg" alt="Full logo (blue)" style="width:190px;opacity:1">
+      </div>
+      <div class="sg-code">logo-blue-full.svg</div>
+      <div class="sg-note">Blue on white — light backgrounds, marketing</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ BACKGROUNDS ══════════ -->
+<div class="sg-sec">
+  <h2>Core Backgrounds</h2>
+  <p class="sg-sub">Three ambient gradient backgrounds. Same 4-layer blend technique. Copy the class to any page body.</p>
+
+  <div class="sg-bg-sec bg-dark" style="border:1px solid rgba(255,255,255,.06)">
+    <span class="sg-bg-label" style="color:var(--txt3)">.bg-dark — Portal / Login / Tools</span>
+    <div style="text-align:center;padding-top:24px">
+      <span style="font:600 20px/1 var(--font-display);opacity:.6">Black Void</span>
+      <p style="font-size:11px;color:var(--txt3);margin-top:8px">#111 → #0a0a0a → #050505 → #000 + white wash + blue orb + purple orb</p>
+    </div>
+  </div>
+
+  <div class="sg-bg-sec bg-light" style="border:1px solid rgba(0,0,0,.08)">
+    <span class="sg-bg-label" style="color:#86868b">.bg-light — Website / Marketing</span>
+    <div style="text-align:center;padding-top:24px">
+      <span style="font:600 20px/1 var(--font-display);color:#1d1d1f;opacity:.6">White Void</span>
+      <p style="font-size:11px;color:#86868b;margin-top:8px">#fff → #f8f8fa → #f2f2f5 → #eee + dark wash + blue orb + purple orb</p>
+    </div>
+  </div>
+
+  <div class="sg-bg-sec bg-navy" style="border:1px solid rgba(41,151,255,.08)">
+    <span class="sg-bg-label" style="color:rgba(255,255,255,.4)">.bg-navy — Premium / Tool Pages</span>
+    <div style="text-align:center;padding-top:24px">
+      <span style="font:600 20px/1 var(--font-display);opacity:.6">Navy Void</span>
+      <p style="font-size:11px;color:var(--txt3);margin-top:8px">#0c1627 → #080f1c → #050a14 → #020610 + blue wash + blue orb + purple orb</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ TYPOGRAPHY ══════════ -->
+<div class="sg-sec">
+  <h2>Typography</h2>
+  <p class="sg-sub">SF Pro Display for 20px+, SF Pro Text for under 20px, SF Mono for code. Minimum: 11px.</p>
+
+  <div style="display:flex;flex-direction:column;gap:20px">
+    <div><span class="sg-label">Hero Title</span><div class="type-hero">Build Something Elite</div></div>
+    <div><span class="sg-label">Section Title</span><div class="type-section">Premium Video Editing</div></div>
+    <div><span class="sg-label">Subtitle</span><div class="type-sub" style="color:var(--txt2)">Seamless creative workflows for your brand</div></div>
+    <div><span class="sg-label">Section Label</span><div class="type-label">How it works</div></div>
+    <div><span class="sg-label">Body</span><div class="type-body">Every project gets a dedicated editor matched to your niche, with unlimited revisions until you approve.</div></div>
+    <div><span class="sg-label">Card Text</span><div class="type-card" style="color:var(--txt2)">3 projects active · 12 delivered this month</div></div>
+    <div><span class="sg-label">Stat Value</span><div class="type-stat">94.2%</div></div>
+    <div><span class="sg-label">Caption</span><div class="type-caption">Last updated 2 min ago</div></div>
+    <div><span class="sg-label">Monospace</span><div class="type-mono">482910</div></div>
+  </div>
+</div>
+
+<!-- ══════════ COLORS ══════════ -->
+<div class="sg-sec">
+  <h2>Colors</h2>
+  <p class="sg-sub">Apple iOS dark mode palette. Every color is a CSS variable.</p>
+
+  <span class="sg-label">Blues</span>
+  <div class="swatch-row">
+    <div class="swatch" style="background:#2997ff">blue</div>
+    <div class="swatch" style="background:#4dabff">hv</div>
+    <div class="swatch" style="background:#1a6dd4">dk</div>
+    <div class="swatch" style="background:#3da5ff">hi</div>
+    <div class="swatch" style="background:#1f8cf0">deep</div>
+    <div class="swatch" style="background:#0071e3">brand</div>
+    <div class="swatch" style="background:#0b84fe">imsg</div>
+  </div>
+  <span class="sg-label">Accents</span>
+  <div class="swatch-row">
+    <div class="swatch" style="background:#30d158">green</div>
+    <div class="swatch" style="background:#ff453a">red</div>
+    <div class="swatch" style="background:#ff9f0a">orange</div>
+    <div class="swatch" style="background:#bf5af2">purple</div>
+    <div class="swatch" style="background:#f5a623">gold</div>
+    <div class="swatch" style="background:#5ac8fa">cyan</div>
+  </div>
+  <span class="sg-label">Text</span>
+  <div class="swatch-row">
+    <div class="swatch" style="background:#f5f5f7">txt</div>
+    <div class="swatch" style="background:#a1a1a6">txt2</div>
+    <div class="swatch" style="background:#6e6e73">txt3</div>
+    <div class="swatch" style="background:#48484a">txt4</div>
+  </div>
+  <span class="sg-label">Surfaces</span>
+  <div class="swatch-row">
+    <div class="swatch" style="background:#050508;border-color:rgba(255,255,255,.15)">bg</div>
+    <div class="swatch" style="background:#111214;border-color:rgba(255,255,255,.15)">el</div>
+    <div class="swatch" style="background:#161618;border-color:rgba(255,255,255,.15)">sf</div>
+  </div>
+</div>
+
+<!-- ══════════ GLASS CONTAINERS ══════════ -->
+<div class="sg-sec">
+  <h2>Glass Containers</h2>
+  <p class="sg-sub">Three glass variants. Standard card, dissolving bubble (login style), and flat panel.</p>
+
+  <div class="sg-row">
+    <div class="sg-col">
+      <span class="sg-label">Glass Card</span>
+      <div class="glass-card">
+        <div style="font:600 14px/1.3 var(--font);margin-bottom:6px">Standard Glass Card</div>
+        <div style="font-size:12px;color:var(--txt2)">Hover lifts 2px. Specular top-edge. Used for nav panels, stat cards, settings.</div>
+      </div>
+    </div>
+    <div class="sg-col">
+      <span class="sg-label">Glass Bubble (dissolving)</span>
+      <div class="glass-bubble">
+        <div style="font:600 14px/1.3 var(--font);margin-bottom:6px">Dissolving Bubble</div>
+        <div style="font-size:12px;color:var(--txt2)">Fades at bottom via mask-image. Used on login page. Premium feel.</div>
+        <div style="margin-top:24px;font-size:11px;color:var(--txt3)">Content below the fade floats freely</div>
+      </div>
+    </div>
+    <div class="sg-col">
+      <span class="sg-label">Flat Glass Panel</span>
+      <div class="glass-flat">
+        <div style="font:600 14px/1.3 var(--font);margin-bottom:6px">Flat Panel</div>
+        <div style="font-size:12px;color:var(--txt2)">No gradient fill. Used for sidebars, nav sections, secondary panels.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ BUTTONS ══════════ -->
+<div class="sg-sec">
+  <h2>Buttons</h2>
+  <p class="sg-sub">Glass intensity spectrum. All neutral — no colors. White text with shadow for depth. Lightest to heaviest glass fill.</p>
+
+  <span class="sg-label">Glass Intensity Spectrum (Light → Heavy)</span>
+  <div class="sg-row" style="margin-bottom:16px">
+    <button class="btn btn-g1">Ultra Light</button>
+    <button class="btn btn-g2">Light</button>
+    <button class="btn btn-g3">Standard</button>
+    <button class="btn btn-g4">Medium</button>
+    <button class="btn btn-g5">Heavy</button>
+    <button class="btn btn-g6">Frosted</button>
+  </div>
+
+  <span class="sg-label">Accent Glows (Navy · Silver · Gold)</span>
+  <div class="sg-row" style="margin-bottom:16px">
+    <button class="btn btn-g3 glow-navy">Navy Glow</button>
+    <button class="btn btn-g3 glow-silver">Silver Glow</button>
+    <button class="btn btn-g3 glow-gold">Gold Glow</button>
+  </div>
+
+  <span class="sg-label">Pill Variants</span>
+  <div class="sg-row" style="margin-bottom:16px">
+    <button class="btn btn-g2 btn-pill">Cancel</button>
+    <button class="btn btn-g3 btn-pill">Continue</button>
+    <button class="btn btn-g4 btn-pill">Submit</button>
+    <button class="btn btn-g5 btn-pill">Confirm</button>
+    <button class="btn btn-g6 btn-pill">Send</button>
+  </div>
+
+  <span class="sg-label">Sizes</span>
+  <div class="sg-row" style="margin-bottom:16px">
+    <button class="btn btn-g3 btn-sm">Small</button>
+    <button class="btn btn-g3">Default</button>
+    <button class="btn btn-g3 btn-lg">Large</button>
+    <button class="btn btn-g5 btn-sm">Small Heavy</button>
+    <button class="btn btn-g5">Default Heavy</button>
+    <button class="btn btn-g5 btn-lg">Large Heavy</button>
+  </div>
+
+  <span class="sg-label">Disabled</span>
+  <div class="sg-row" style="margin-bottom:16px">
+    <button class="btn btn-g3" disabled="">Disabled Standard</button>
+    <button class="btn btn-g5" disabled="">Disabled Heavy</button>
+    <button class="btn btn-g6 btn-pill" disabled="">Disabled Pill</button>
+  </div>
+
+  <span class="sg-label">Ghost / Text</span>
+  <div class="sg-row">
+    <button class="btn btn-ghost">Resend Code</button>
+    <button class="btn btn-ghost btn-sm">Learn More</button>
+  </div>
+</div>
+
+<!-- ══════════ INPUTS ══════════ -->
+<div class="sg-sec">
+  <h2>Inputs</h2>
+  <p class="sg-sub">Recessed glass inputs. Inset shadows create depth. Blue focus ring with glow bloom.</p>
+
+  <div style="max-width:400px;display:flex;flex-direction:column;gap:20px">
+    <div>
+      <label class="input-label">Email Address</label>
+      <input class="input" type="email" placeholder="you@example.com">
+    </div>
+    <div>
+      <label class="input-label">Project Name</label>
+      <input class="input" type="text" value="YouTube Shorts — March Batch">
+    </div>
+    <div>
+      <label class="input-label">Category</label>
+      <select class="input select">
+        <option>Short Form (9:16)</option>
+        <option>Long Form (16:9)</option>
+        <option>Thumbnail</option>
+      </select>
+    </div>
+    <div>
+      <label class="input-label">Notes</label>
+      <textarea class="input textarea" placeholder="Any specific instructions for your editor..."></textarea>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ CARDS ══════════ -->
+<div class="sg-sec">
+  <h2>Cards</h2>
+  <p class="sg-sub">Every card type used across the portal.</p>
+
+  <span class="sg-label">9:16 Project Cards</span>
+  <div class="sg-row" style="margin-bottom:24px">
+    <div class="card-916" style="background:linear-gradient(180deg,#1a1a2e,#0a0a14)">
+      <div class="card-overlay">
+        <div class="card-title">YouTube Shorts — Hook Reel</div>
+        <div class="card-meta">Draft 2 · 3h ago</div>
+      </div>
+    </div>
+    <div class="card-916" style="background:linear-gradient(180deg,#1e2a1a,#0a140a)">
+      <div class="card-overlay">
+        <div class="card-title">TikTok Batch — March</div>
+        <div class="card-meta">Review · 12h ago</div>
+      </div>
+    </div>
+    <div class="card-916" style="background:linear-gradient(180deg,#2a1a1e,#140a0c)">
+      <div class="card-overlay">
+        <div class="card-title">Instagram Reels — Product</div>
+        <div class="card-meta">Approved</div>
+      </div>
+    </div>
+  </div>
+
+  <span class="sg-label">Stat Cards</span>
+  <div class="sg-grid c3" style="margin-bottom:24px">
+    <div class="stat-card"><div class="stat-value" style="color:var(--blue)">24</div><div class="stat-label">Active Projects</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--green)">94%</div><div class="stat-label">Approval Rate</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--gold)">$2,400</div><div class="stat-label">This Period</div></div>
+  </div>
+
+  <span class="sg-label">Folder Cards (Glass Icon Tiles)</span>
+  <div class="sg-grid c4" style="margin-bottom:24px">
+    <div class="folder-card">
+      <div class="folder-icon fi-gold"><svg viewBox="0 0 24 24" fill="none" stroke="#ffd60a"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"></path></svg></div>
+      <div class="folder-label">Projects</div>
+    </div>
+    <div class="folder-card">
+      <div class="folder-icon fi-blue"><svg viewBox="0 0 24 24" fill="none" stroke="#2997ff"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><path d="M14 2v6h6"></path></svg></div>
+      <div class="folder-label">Documents</div>
+    </div>
+    <div class="folder-card">
+      <div class="folder-icon fi-purple"><svg viewBox="0 0 24 24" fill="none" stroke="#bf5af2"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2"></rect></svg></div>
+      <div class="folder-label">Footage</div>
+    </div>
+    <div class="folder-card">
+      <div class="folder-icon fi-green"><svg viewBox="0 0 24 24" fill="none" stroke="#30d158"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="M21 15l-5-5L5 21"></path></svg></div>
+      <div class="folder-label">Thumbnails</div>
+    </div>
+    <div class="folder-card">
+      <div class="folder-icon fi-orange"><svg viewBox="0 0 24 24" fill="none" stroke="#ff9f0a"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg></div>
+      <div class="folder-label">Templates</div>
+    </div>
+    <div class="folder-card">
+      <div class="folder-icon fi-cyan"><svg viewBox="0 0 24 24" fill="none" stroke="#5ac8fa"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"></path></svg></div>
+      <div class="folder-label">Published</div>
+    </div>
+  </div>
+
+  <span class="sg-label">Desktop Icons (macOS Finder — draggable)</span>
+  <div style="display:flex;flex-wrap:wrap;gap:4px;padding:20px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:var(--r-2xl);margin-bottom:24px">
+    <div class="desktop-icon selected">
+      <div class="di-icon" style="color:#ffd60a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"></path></svg></div>
+      <div class="di-label">March Batch</div>
+    </div>
+    <div class="desktop-icon">
+      <div class="di-icon" style="color:#bf5af2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2"></rect></svg></div>
+      <div class="di-label">Raw Footage</div>
+    </div>
+    <div class="desktop-icon">
+      <div class="di-icon" style="color:#2997ff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><path d="M14 2v6h6"></path></svg></div>
+      <div class="di-label">Brief.pdf</div>
+    </div>
+    <div class="desktop-icon">
+      <div class="di-icon" style="color:#30d158"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="M21 15l-5-5L5 21"></path></svg></div>
+      <div class="di-label">thumb_v3.png</div>
+    </div>
+    <div class="desktop-icon">
+      <div class="di-icon" style="color:#ff9f0a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></div>
+      <div class="di-label">audio_mix.wav</div>
+    </div>
+  </div>
+
+  <span class="sg-label">Meeting Cards</span>
+  <div class="sg-grid c2" style="margin-bottom:24px">
+    <div class="meeting-card" style="padding:20px">
+      <div class="mtg-status live">Live</div>
+      <div style="margin-top:40px;font:600 14px/1 var(--font)">Weekly Sync</div>
+      <div style="font-size:11px;color:var(--txt3);margin-top:4px">Started 12 min ago</div>
+    </div>
+    <div class="meeting-card" style="padding:20px">
+      <div class="mtg-status scheduled">Scheduled</div>
+      <div style="margin-top:40px;font:600 14px/1 var(--font)">Sprint Review</div>
+      <div style="font-size:11px;color:var(--txt3);margin-top:4px">Tomorrow at 2:00 PM</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ PIPELINE COLUMNS ══════════ -->
+<div class="sg-sec">
+  <h2>Pipeline Columns</h2>
+  <p class="sg-sub">Kanban drag-drop columns. 5 stages: Queue → Active → Review → Revisions → Approved.</p>
+
+  <div class="ps-kanban" style="display:flex;gap:12px;overflow-x:auto;padding:4px 4px 8px">
+    <!-- Queue -->
+    <div class="ps-kanban-col" style="min-width:200px;flex:1">
+      <div class="ps-kanban-hdr"><span class="ps-kanban-dot" style="background:#64748b"></span>Queue<span class="ps-kanban-count">2</span></div>
+      <div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop');cursor:grab">
+        <div class="ps-card-island pipe-island">
+          <span class="ps-ci-type" data-type="SF">SF</span>
+          <span class="ps-ci-tier" data-tier="1">T1</span>
+          <div class="ps-ci-ver-nav"><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v2</span><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div>
+          <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+          <span class="ps-ci-grade" data-grade="B">B</span>
+        </div>
+        <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Hook Reel v2</span><span class="pipe-timer">2d 14h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:65%"></div></div></div>
+      </div>
+      <div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=300&fit=crop');cursor:grab">
+        <div class="ps-card-island pipe-island">
+          <span class="ps-ci-type" data-type="LF">LF</span>
+          <span class="ps-ci-tier" data-tier="2">T2</span>
+          <div class="ps-ci-ver-nav"><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v1</span><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div>
+          <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+          <span class="ps-ci-grade" data-grade="C">C</span>
+        </div>
+        <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">March Batch</span><span class="pipe-timer">5d 3h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:30%"></div></div></div>
+      </div>
+    </div>
+
+    <!-- Active -->
+    <div class="ps-kanban-col" style="min-width:200px;flex:1">
+      <div class="ps-kanban-hdr"><span class="ps-kanban-dot" style="background:var(--blue)"></span>Active<span class="ps-kanban-count">2</span></div>
+      <div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop');cursor:grab">
+        <div class="ps-card-island pipe-island">
+          <span class="ps-ci-type" data-type="LF">LF</span>
+          <span class="ps-ci-tier" data-tier="3">T3</span>
+          <div class="ps-ci-ver-nav"><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v4</span><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div>
+          <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+          <span class="ps-ci-grade" data-grade="A">A</span>
+        </div>
+        <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Product Launch</span><span class="pipe-timer">1d 8h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:80%"></div></div></div>
+      </div>
+      <div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=400&h=300&fit=crop');cursor:grab">
+        <div class="ps-card-island pipe-island">
+          <span class="ps-ci-type" data-type="LF">LF</span>
+          <span class="ps-ci-tier" data-tier="2">T2</span>
+          <div class="ps-ci-ver-nav"><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v3</span><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div>
+          <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+          <span class="ps-ci-grade" data-grade="A">A</span>
+        </div>
+        <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Brand Story</span><span class="pipe-timer">3d 0h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:55%"></div></div></div>
+      </div>
+    </div>
+
+    <!-- Review -->
+    <div class="ps-kanban-col" style="min-width:200px;flex:1">
+      <div class="ps-kanban-hdr"><span class="ps-kanban-dot" style="background:var(--orange)"></span>Review<span class="ps-kanban-count">1</span></div>
+      <div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=300&fit=crop');cursor:grab">
+        <div class="ps-card-island pipe-island">
+          <span class="ps-ci-type" data-type="SF">SF</span>
+          <span class="ps-ci-tier" data-tier="1">T1</span>
+          <div class="ps-ci-ver-nav"><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v5</span><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div>
+          <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+          <span class="ps-ci-grade" data-grade="B">B</span>
+        </div>
+        <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Testimonial Cut</span><span class="pipe-timer">0d 6h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:90%"></div></div></div>
+      </div>
+    </div>
+
+    <!-- Revisions -->
+    <div class="ps-kanban-col" style="min-width:200px;flex:1">
+      <div class="ps-kanban-hdr"><span class="ps-kanban-dot" style="background:var(--red)"></span>Revisions<span class="ps-kanban-count">2</span></div>
+      <div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=400&h=300&fit=crop');cursor:grab">
+        <div class="ps-card-island pipe-island">
+          <span class="ps-ci-type" data-type="SF">SF</span>
+          <span class="ps-ci-tier" data-tier="2">T2</span>
+          <div class="ps-ci-ver-nav"><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v2</span><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div>
+          <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+          <span class="ps-ci-grade" data-grade="D">D</span>
+        </div>
+        <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Promo Reel v2</span><span class="pipe-timer">4d 12h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:40%"></div></div></div>
+      </div>
+      <div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=400&h=300&fit=crop');cursor:grab">
+        <div class="ps-card-island pipe-island">
+          <span class="ps-ci-type" data-type="LF">LF</span>
+          <span class="ps-ci-tier" data-tier="1">T1</span>
+          <div class="ps-ci-ver-nav"><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v6</span><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div>
+          <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+          <span class="ps-ci-grade" data-grade="F">F</span>
+        </div>
+        <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Intro Sequence</span><span class="pipe-timer">6d 22h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:20%"></div></div></div>
+      </div>
+    </div>
+
+    <!-- Approved -->
+    <div class="ps-kanban-col" style="min-width:200px;flex:1">
+      <div class="ps-kanban-hdr"><span class="ps-kanban-dot" style="background:var(--green)"></span>Approved<span class="ps-kanban-count">3</span></div>
+      <div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=300&fit=crop');cursor:grab">
+        <div class="ps-card-island pipe-island">
+          <span class="ps-ci-type" data-type="SF">SF</span>
+          <span class="ps-ci-tier" data-tier="1">T1</span>
+          <div class="ps-ci-ver-nav"><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v3</span><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div>
+          <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+          <span class="ps-ci-grade" data-grade="A">A</span>
+        </div>
+        <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Brand Recap v3</span><span class="pipe-timer">—</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:100%"></div></div></div>
+      </div>
+      <div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=400&h=300&fit=crop');cursor:grab">
+        <div class="ps-card-island pipe-island">
+          <span class="ps-ci-type" data-type="LF">LF</span>
+          <span class="ps-ci-tier" data-tier="2">T2</span>
+          <div class="ps-ci-ver-nav"><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v7</span><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div>
+          <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+          <span class="ps-ci-grade" data-grade="A">A</span>
+        </div>
+        <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Client Promo</span><span class="pipe-timer">—</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:100%"></div></div></div>
+      </div>
+      <div class="pipeline-card" draggable="true" style="background-image:url('https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=400&h=300&fit=crop');cursor:grab">
+        <div class="ps-card-island pipe-island">
+          <span class="ps-ci-type" data-type="SF">SF</span>
+          <span class="ps-ci-tier" data-tier="1">T1</span>
+          <div class="ps-ci-ver-nav"><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v1</span><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div>
+          <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+          <span class="ps-ci-grade" data-grade="B">B</span>
+        </div>
+        <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">IG Story Pack</span><span class="pipe-timer">—</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:100%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ WIZARD QUESTIONNAIRE ══════════ -->
+<div class="sg-sec">
+  <h2>Wizard Questionnaire</h2>
+  <p class="sg-sub">Universal multi-step form system. 3 sizes (SM / MD / LG). Answer choice formats: pill containers, glass grid cards, 9:16 portrait cards (image/video hover), radio list, chip toggle, slider. Animated transitions, selection pops, progress tracking.</p>
+
+  <!-- ── SIZE: SMALL (320px) — Up to 5 questions ── -->
+  <div class="sg-label" style="margin-bottom:12px">Small — <code>.wiz-sm</code> · 320 px · <strong>Up to 5 questions</strong> · Sidebar / modal embed · Pill answer choices</div>
+  <div class="wizard wiz-sm wizard-glass" style="margin-bottom:32px">
+    <div class="wizard-title">Quick Setup</div>
+    <div class="wizard-title-sub">Step 3 of 5</div>
+    <div class="wizard-pills">
+      <div class="wizard-pill done"></div>
+      <div class="wizard-pill done"></div>
+      <div class="wizard-pill active"></div>
+      <div class="wizard-pill"></div>
+      <div class="wizard-pill"></div>
+    </div>
+    <div class="wizard-progress"><div class="wizard-progress-fill" style="width:40%"></div></div>
+    <div class="wizard-body wiz-page">
+      <div class="wiz-q">What format?</div>
+      <div class="wiz-hint">Select your content type.</div>
+      <div class="opt-pill-list">
+        <div class="opt-pill selected" onclick="this.parentElement.querySelectorAll('.opt-pill').forEach(p=>p.classList.remove('selected'));this.classList.add('selected')"><span class="opt-pill-dot"></span>Short Form</div>
+        <div class="opt-pill" onclick="this.parentElement.querySelectorAll('.opt-pill').forEach(p=>p.classList.remove('selected'));this.classList.add('selected')"><span class="opt-pill-dot"></span>Long Form</div>
+        <div class="opt-pill" onclick="this.parentElement.querySelectorAll('.opt-pill').forEach(p=>p.classList.remove('selected'));this.classList.add('selected')"><span class="opt-pill-dot"></span>Thumbnail Only</div>
+      </div>
+    </div>
+    <div class="wizard-foot">
+      <button class="btn btn-g2">Back</button>
+      <button class="btn btn-g5">Next</button>
+    </div>
+  </div>
+
+  <!-- ── SIZE: MEDIUM (640px) — Up to 10 questions ── -->
+  <div class="sg-label" style="margin-bottom:12px">Medium — <code>.wiz-md</code> · 640 px · <strong>Up to 10 questions</strong> · Default / standalone page · Glass card + radio + chip answer choices</div>
+  <div class="wizard wiz-md wizard-glass" id="wizardDemo">
+    <div class="wizard-title">Create Your Blueprint</div>
+    <div class="wizard-title-sub">Step 4 of 10</div>
+    <!-- Step indicator — 10 compact dots -->
+    <div class="wizard-steps steps-compact" id="wizSteps">
+      <div class="wizard-step"><div class="wizard-dot done" id="wd1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></div></div>
+      <div class="wizard-wire done"></div>
+      <div class="wizard-step"><div class="wizard-dot done" id="wd2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></div></div>
+      <div class="wizard-wire done"></div>
+      <div class="wizard-step"><div class="wizard-dot done" id="wd3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"></path></svg></div></div>
+      <div class="wizard-wire done" id="ww3"></div>
+      <div class="wizard-step"><div class="wizard-dot active" id="wd4">4</div></div>
+      <div class="wizard-wire" id="ww4"></div>
+      <div class="wizard-step"><div class="wizard-dot" id="wd5">5</div></div>
+      <div class="wizard-wire" id="ww5"></div>
+      <div class="wizard-step"><div class="wizard-dot" id="wd6">6</div></div>
+      <div class="wizard-wire" id="ww6"></div>
+      <div class="wizard-step"><div class="wizard-dot" id="wd7">7</div></div>
+      <div class="wizard-wire" id="ww7"></div>
+      <div class="wizard-step"><div class="wizard-dot" id="wd8">8</div></div>
+      <div class="wizard-wire" id="ww8"></div>
+      <div class="wizard-step"><div class="wizard-dot" id="wd9">9</div></div>
+      <div class="wizard-wire" id="ww9"></div>
+      <div class="wizard-step"><div class="wizard-dot" id="wd10">10</div></div>
+    </div>
+    <div class="wizard-progress"><div class="wizard-progress-fill" id="wizProg" style="width:30%;--prog:30%"></div></div>
+
+    <div id="wizPages">
+      <!-- Page 1: Glass Grid Cards (answer choice selection) -->
+      <div class="wizard-body wiz-page" data-page="1" style="display:none">
+        <div class="wiz-q">What format do you need?</div>
+        <div class="wiz-hint">Select one or more content formats for your project.</div>
+        <div class="opt-grid">
+          <div class="opt-card" onclick="this.classList.toggle('selected')">
+            <div class="opt-check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"></path></svg></div>
+            <div class="opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:28px;height:28px;stroke-width:1.5"><rect x="5" y="2" width="14" height="20" rx="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg></div>
+            <div class="opt-title">Short Form</div><div class="opt-desc">9:16 vertical — TikTok, Reels, Shorts</div>
+          </div>
+          <div class="opt-card" onclick="this.classList.toggle('selected')">
+            <div class="opt-check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"></path></svg></div>
+            <div class="opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:28px;height:28px;stroke-width:1.5"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
+            <div class="opt-title">Long Form</div><div class="opt-desc">16:9 horizontal — YouTube, Vimeo</div>
+          </div>
+          <div class="opt-card selected" onclick="this.classList.toggle('selected')">
+            <div class="opt-check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"></path></svg></div>
+            <div class="opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:28px;height:28px;stroke-width:1.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="M21 15l-5-5L5 21"></path></svg></div>
+            <div class="opt-title">Thumbnail</div><div class="opt-desc">Custom thumbnail design</div>
+          </div>
+          <div class="opt-card" onclick="this.classList.toggle('selected')">
+            <div class="opt-check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"></path></svg></div>
+            <div class="opt-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width:28px;height:28px;stroke-width:1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"></path></svg></div>
+            <div class="opt-title">Bundle</div><div class="opt-desc">Multiple formats from one source</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page 2: Chip Toggle (multi-select) -->
+      <div class="wizard-body wiz-page" data-page="2" style="display:none">
+        <div class="wiz-q">What platforms are you posting on?</div>
+        <div class="wiz-hint">Select all that apply — we'll optimize for each.</div>
+        <div class="chip-row" style="justify-content:center">
+          <div class="chip selected" onclick="this.classList.toggle('selected')">YouTube</div>
+          <div class="chip" onclick="this.classList.toggle('selected')">TikTok</div>
+          <div class="chip selected" onclick="this.classList.toggle('selected')">Instagram</div>
+          <div class="chip" onclick="this.classList.toggle('selected')">Twitter / X</div>
+          <div class="chip" onclick="this.classList.toggle('selected')">Facebook</div>
+          <div class="chip" onclick="this.classList.toggle('selected')">LinkedIn</div>
+          <div class="chip" onclick="this.classList.toggle('selected')">Podcast</div>
+          <div class="chip" onclick="this.classList.toggle('selected')">Website</div>
+        </div>
+      </div>
+
+      <!-- Page 3: 9:16 Portrait Cards (video/image hover preview) -->
+      <div class="wizard-body wiz-page" data-page="3" style="display:none">
+        <div class="wiz-q">Choose a B-Roll style</div>
+        <div class="wiz-hint">Select a visual treatment for your secondary footage.</div>
+        <div class="opt-grid-portrait">
+          <div class="opt-portrait selected" onclick="this.parentElement.querySelectorAll('.opt-portrait').forEach(p=>p.classList.remove('selected'));this.classList.add('selected')">
+            <div class="opt-check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"></path></svg></div>
+            <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(41,151,255,.2) 0%,rgba(100,50,200,.15) 100%);z-index:0"></div>
+            <div class="opt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"></polygon></svg></div>
+            <div class="opt-portrait-info"><div class="opt-title">Cinematic</div><div class="opt-desc">Moody, slow motion</div></div>
+          </div>
+          <div class="opt-portrait" onclick="this.parentElement.querySelectorAll('.opt-portrait').forEach(p=>p.classList.remove('selected'));this.classList.add('selected')">
+            <div class="opt-check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"></path></svg></div>
+            <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(126,203,161,.2) 0%,rgba(41,151,255,.1) 100%);z-index:0"></div>
+            <div class="opt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"></polygon></svg></div>
+            <div class="opt-portrait-info"><div class="opt-title">Energetic</div><div class="opt-desc">Fast cuts, dynamic</div></div>
+          </div>
+          <div class="opt-portrait" onclick="this.parentElement.querySelectorAll('.opt-portrait').forEach(p=>p.classList.remove('selected'));this.classList.add('selected')">
+            <div class="opt-check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"></path></svg></div>
+            <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,170,60,.15) 0%,rgba(192,57,43,.1) 100%);z-index:0"></div>
+            <div class="opt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"></polygon></svg></div>
+            <div class="opt-portrait-info"><div class="opt-title">Minimal</div><div class="opt-desc">Clean, subtle motion</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page 4: Radio List (single select) — VISIBLE BY DEFAULT -->
+      <div class="wizard-body wiz-page" data-page="4">
+        <div class="wiz-q">What's your turnaround preference?</div>
+        <div class="wiz-hint">Choose the speed that fits your workflow.</div>
+        <div class="radio-list">
+          <div class="radio-item" onclick="this.closest('.radio-list').querySelectorAll('.radio-item').forEach(r=>r.classList.remove('selected'));this.classList.add('selected')">
+            <div class="radio-dot"></div>
+            <div><div class="radio-label">Standard — 5 business days</div><div class="radio-sub">Best for batch content with no rush</div></div>
+          </div>
+          <div class="radio-item selected" onclick="this.closest('.radio-list').querySelectorAll('.radio-item').forEach(r=>r.classList.remove('selected'));this.classList.add('selected')">
+            <div class="radio-dot"></div>
+            <div><div class="radio-label">Priority — 48 hours</div><div class="radio-sub">Fast delivery, dedicated editor assigned</div></div>
+          </div>
+          <div class="radio-item" onclick="this.closest('.radio-list').querySelectorAll('.radio-item').forEach(r=>r.classList.remove('selected'));this.classList.add('selected')">
+            <div class="radio-dot"></div>
+            <div><div class="radio-label">Rush — 24 hours</div><div class="radio-sub">Urgent. Editor starts immediately</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page 5: Slider / Range -->
+      <div class="wizard-body wiz-page" data-page="5" style="display:none">
+        <div class="wiz-q">How many videos per month?</div>
+        <div class="wiz-hint">Drag to set your monthly volume. We'll recommend a plan.</div>
+        <div class="wiz-range-val" id="rangeVal">12</div>
+        <div class="wiz-range-wrap">
+          <input type="range" class="wiz-range" min="1" max="50" value="12" oninput="document.getElementById('rangeVal').textContent=this.value">
+          <div class="wiz-range-labels"><span>1</span><span>10</span><span>25</span><span>50+</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wizard-foot">
+      <button class="btn btn-g2" onclick="wizNav(-1)">Back</button>
+      <button class="btn btn-g5" onclick="wizNav(1)" id="wizNext">Next</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  let page=4;const total=10;
+  window.wizNav=function(dir){
+    const cur=document.querySelector('.wiz-page[data-page="'+page+'"]');
+    if(!cur)return;
+    const next=page+dir;
+    if(next<1||next>total)return;
+    cur.style.display='none';
+    page=next;
+    const np=document.querySelector('.wiz-page[data-page="'+page+'"]');
+    if(!np)return;
+    np.style.display='';
+    np.className='wizard-body wiz-page'+(dir<0?' reverse':'');
+    for(let i=1;i<=total;i++){
+      const d=document.getElementById('wd'+i);
+      if(!d)continue;
+      d.className='wizard-dot'+(i<page?' done':i===page?' active':'');
+      d.innerHTML=i<page?'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 6L9 17l-5-5"/></svg>':i;
+    }
+    for(let i=3;i<=9;i++){
+      const w=document.getElementById('ww'+i);
+      if(w)w.className='wizard-wire'+(i<page?' done':'');
+    }
+    document.getElementById('wizProg').style.width=((page-1)/(total-1)*100)+'%';
+    document.getElementById('wizNext').textContent=page===total?'Submit':'Next';
+  };
+})();
+</script>
+
+  <!-- ── SIZE: LARGE (100%) — Up to 20 questions ── -->
+  <div class="sg-label" style="margin-top:32px;margin-bottom:12px">Large — <code>.wiz-lg</code> · 100% width · <strong>Up to 20 questions</strong> · Fullscreen / onboarding flow · 9:16 portrait cards with video hover</div>
+  <div class="wizard wiz-lg wizard-glass" style="margin-bottom:0">
+    <div class="wizard-title" style="font-size:42px;letter-spacing:-.03em">Blueprint Builder</div>
+    <div class="wizard-title-sub">Step 8 of 20</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:16px">
+      <span style="font:700 22px/1 var(--font);color:var(--blue)">8</span>
+      <span style="font:400 14px/1 var(--font);color:var(--txt3)">of</span>
+      <span style="font:700 22px/1 var(--font);color:var(--txt2)">20</span>
+    </div>
+    <div class="wizard-pills pills-20">
+      <div class="wizard-pill done"></div>
+      <div class="wizard-pill done"></div>
+      <div class="wizard-pill done"></div>
+      <div class="wizard-pill done"></div>
+      <div class="wizard-pill done"></div>
+      <div class="wizard-pill done"></div>
+      <div class="wizard-pill done"></div>
+      <div class="wizard-pill active"></div>
+      <div class="wizard-pill"></div>
+      <div class="wizard-pill"></div>
+      <div class="wizard-pill"></div>
+      <div class="wizard-pill"></div>
+      <div class="wizard-pill"></div>
+      <div class="wizard-pill"></div>
+      <div class="wizard-pill"></div>
+      <div class="wizard-pill"></div>
+      <div class="wizard-pill"></div>
+      <div class="wizard-pill"></div>
+      <div class="wizard-pill"></div>
+      <div class="wizard-pill"></div>
+    </div>
+    <div class="wizard-progress"><div class="wizard-progress-fill" style="width:35%"></div></div>
+    <div class="wizard-body wiz-page">
+      <div class="wiz-q" style="text-align:center">Choose a B-Roll style</div>
+      <div class="wiz-hint" style="text-align:center">Select a visual treatment for your secondary footage. Hover to preview.</div>
+      <div class="opt-grid-portrait">
+        <div class="opt-portrait selected" onclick="this.parentElement.querySelectorAll('.opt-portrait').forEach(p=>p.classList.remove('selected'));this.classList.add('selected')">
+          <div class="opt-check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"></path></svg></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(41,151,255,.25) 0%,rgba(100,50,200,.15) 100%);z-index:0"></div>
+          <div class="opt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"></polygon></svg></div>
+          <div class="opt-portrait-info"><div class="opt-title">Cinematic</div><div class="opt-desc">Moody slow-motion footage with color grading</div></div>
+        </div>
+        <div class="opt-portrait" onclick="this.parentElement.querySelectorAll('.opt-portrait').forEach(p=>p.classList.remove('selected'));this.classList.add('selected')">
+          <div class="opt-check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"></path></svg></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(126,203,161,.2) 0%,rgba(41,151,255,.12) 100%);z-index:0"></div>
+          <div class="opt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"></polygon></svg></div>
+          <div class="opt-portrait-info"><div class="opt-title">Energetic</div><div class="opt-desc">Fast jump cuts, dynamic transitions</div></div>
+        </div>
+        <div class="opt-portrait" onclick="this.parentElement.querySelectorAll('.opt-portrait').forEach(p=>p.classList.remove('selected'));this.classList.add('selected')">
+          <div class="opt-check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"></path></svg></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,170,60,.15) 0%,rgba(192,57,43,.1) 100%);z-index:0"></div>
+          <div class="opt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"></polygon></svg></div>
+          <div class="opt-portrait-info"><div class="opt-title">Minimal</div><div class="opt-desc">Clean, subtle motion, whitespace</div></div>
+        </div>
+        <div class="opt-portrait" onclick="this.parentElement.querySelectorAll('.opt-portrait').forEach(p=>p.classList.remove('selected'));this.classList.add('selected')">
+          <div class="opt-check"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5"></path></svg></div>
+          <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,50,200,.15) 0%,rgba(41,80,255,.12) 100%);z-index:0"></div>
+          <div class="opt-play"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"></polygon></svg></div>
+          <div class="opt-portrait-info"><div class="opt-title">Stock Mix</div><div class="opt-desc">Curated stock footage with AI matching</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="wizard-foot">
+      <button class="btn btn-g2">Back</button>
+      <button class="btn btn-g5">Next</button>
+    </div>
+  </div>
+
+<!-- ══════════ BADGES ══════════ -->
+<div class="sg-sec">
+  <h2>Badges &amp; Status</h2>
+  <p class="sg-sub">Status indicators and role badges.</p>
+
+  <!-- PROJECT STATUS → project_status -->
+  <div class="sg-label">Project Status <span style="font:400 10px/1 var(--font);color:var(--txt3);text-transform:none;letter-spacing:0">→ <code style="color:var(--green)">project_status</code></span></div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+    <span class="badge-status badge-queue">Queue</span>
+    <span class="badge-status badge-active">Active</span>
+    <span class="badge-status badge-review">Review</span>
+    <span class="badge-status badge-revisions">Revisions</span>
+    <span class="badge-status badge-approved">Approved</span>
+  </div>
+
+  <!-- ROLE → role -->
+  <div class="sg-label">Role Badges <span style="font:400 10px/1 var(--font);color:var(--txt3);text-transform:none;letter-spacing:0">→ <code style="color:var(--green)">role</code></span></div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+    <span class="badge-role badge-owner">Owner</span>
+    <span class="badge-role badge-admin">Admin</span>
+    <span class="badge-role badge-editor">Editor</span>
+    <span class="badge-role badge-client">Client</span>
+    <span class="badge-role badge-trial">Trial</span>
+    <span class="badge-role badge-lead">Lead</span>
+  </div>
+
+  <!-- CLIENT STATUS → client_status_mc -->
+  <div class="sg-label">Client Status <span style="font:400 10px/1 var(--font);color:var(--txt3);text-transform:none;letter-spacing:0">→ <code style="color:var(--green)">client_status_mc</code></span></div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+    <span class="badge-status badge-cs-onboarding">🔵 Onboarding</span>
+    <span class="badge-status badge-cs-new">⚪️ New</span>
+    <span class="badge-status badge-cs-active">🟢 Active</span>
+    <span class="badge-status badge-cs-failed">⚠️ Failed Payment</span>
+    <span class="badge-status badge-cs-canceled">🛑 Canceled</span>
+  </div>
+
+  <!-- TRIAL STATUS → trial_status_mc -->
+  <div class="sg-label">Trial Status <span style="font:400 10px/1 var(--font);color:var(--txt3);text-transform:none;letter-spacing:0">→ <code style="color:var(--green)">trial_status_mc</code> · sales pipeline</span></div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+    <span class="badge-status badge-ts-loggedin">🔵 Logged In</span>
+    <span class="badge-status badge-ts-blueprint">🟡 Blueprint Created</span>
+    <span class="badge-status badge-ts-edit">🟡 Edit Requested</span>
+    <span class="badge-status badge-ts-approved">🟢 Edit Approved</span>
+    <span class="badge-status badge-ts-offer">🔥 Offer Sent</span>
+    <span class="badge-status badge-ts-converted">✅ Converted</span>
+    <span class="badge-status badge-ts-expired">🛑 Expired</span>
+  </div>
+
+  <!-- EDITOR STATUS → editor_status -->
+  <div class="sg-label">Editor Status <span style="font:400 10px/1 var(--font);color:var(--txt3);text-transform:none;letter-spacing:0">→ <code style="color:var(--green)">editor_status</code></span></div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+    <span class="badge-status badge-es-applied">Applied</span>
+    <span class="badge-status badge-es-training">Training</span>
+    <span class="badge-status badge-es-new">New</span>
+    <span class="badge-status badge-es-core">Core</span>
+    <span class="badge-status badge-es-master">Master</span>
+    <span class="badge-status badge-es-removed">Removed</span>
+  </div>
+
+  <!-- SUBSCRIPTION STATUS → subscription_status_mc -->
+  <div class="sg-label">Subscription Status <span style="font:400 10px/1 var(--font);color:var(--txt3);text-transform:none;letter-spacing:0">→ <code style="color:var(--green)">subscription_status_mc</code></span></div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+    <span class="badge-status badge-sub-active">Active</span>
+    <span class="badge-status badge-sub-trialing">Trialing</span>
+    <span class="badge-status badge-sub-trial-ending">Trial Ending</span>
+    <span class="badge-status badge-sub-pastdue">Past Due</span>
+    <span class="badge-status badge-sub-unpaid">Unpaid</span>
+    <span class="badge-status badge-sub-paused">Paused</span>
+    <span class="badge-status badge-sub-incomplete">Incomplete</span>
+    <span class="badge-status badge-sub-canceled">Canceled</span>
+  </div>
+
+  <!-- PAYMENT STATUS → payment_status_mc -->
+  <div class="sg-label">Payment Status <span style="font:400 10px/1 var(--font);color:var(--txt3);text-transform:none;letter-spacing:0">→ <code style="color:var(--green)">payment_status_mc</code></span></div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+    <span class="badge-status badge-pay-succeeded">Succeeded</span>
+    <span class="badge-status badge-pay-failed">Failed</span>
+    <span class="badge-status badge-pay-refunded">Refunded</span>
+    <span class="badge-status badge-pay-partial">Partially Refunded</span>
+    <span class="badge-status badge-pay-invoice-failed">Invoice Failed</span>
+    <span class="badge-status badge-pay-disputed">Disputed</span>
+    <span class="badge-status badge-pay-dispute-won">Dispute Won</span>
+    <span class="badge-status badge-pay-dispute-lost">Dispute Lost</span>
+    <span class="badge-status badge-pay-completed">Completed</span>
+  </div>
+
+  <!-- SUBSCRIPTION TIER → subscription_tier_mc -->
+  <div class="sg-label">Subscription Tier <span style="font:400 10px/1 var(--font);color:var(--txt3);text-transform:none;letter-spacing:0">→ <code style="color:var(--green)">subscription_tier_mc</code></span></div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+    <span class="badge-status badge-tier-basic">Basic</span>
+    <span class="badge-status badge-tier-silver">Silver</span>
+    <span class="badge-status badge-tier-gold">Gold</span>
+    <span class="badge-status badge-tier-pro">Pro</span>
+    <span class="badge-status badge-tier-agency">Agency</span>
+  </div>
+
+  <!-- CALL STATUS → demo/strategy/review_call_status_mc -->
+  <div class="sg-label">Call Status <span style="font:400 10px/1 var(--font);color:var(--txt3);text-transform:none;letter-spacing:0">→ <code style="color:var(--green)">demo/strategy/review_call_status_mc</code></span></div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+    <span class="badge-status badge-call-booked">Booked</span>
+    <span class="badge-status badge-call-showed">Showed</span>
+    <span class="badge-status badge-call-noshow">No-Show</span>
+    <span class="badge-status badge-call-canceled">Canceled</span>
+    <span class="badge-status badge-call-rescheduled">Rescheduled</span>
+  </div>
+
+  <!-- PORTAL ACCESS → portal_access_mc -->
+  <div class="sg-label">Portal Access <span style="font:400 10px/1 var(--font);color:var(--txt3);text-transform:none;letter-spacing:0">→ <code style="color:var(--green)">portal_access_mc</code></span></div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+    <span class="badge-status badge-access-enabled">🟢 Enabled</span>
+    <span class="badge-status badge-access-disabled">🔴 Disabled</span>
+  </div>
+
+  <!-- LOGIN STATUS → login_status_mc -->
+  <div class="sg-label">Login Status <span style="font:400 10px/1 var(--font);color:var(--txt3);text-transform:none;letter-spacing:0">→ <code style="color:var(--green)">login_status_mc</code></span></div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+    <span class="badge-status badge-online">🟢 Online</span>
+    <span class="badge-status badge-offline">🔴 Offline</span>
+  </div>
+
+  <div class="sg-label">Project Type Badges</div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;align-items:center">
+    <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:inline-flex;align-items:center;justify-content:center" title="Short Form"><span class="ps-ci-type" data-type="SF" style="position:relative;margin:0;background:none;border:none">SF</span></div>
+    <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:inline-flex;align-items:center;justify-content:center" title="Long Form"><span class="ps-ci-type" data-type="LF" style="position:relative;margin:0;background:none;border:none">LF</span></div>
+  </div>
+
+  <div class="sg-label">Tier Badges</div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;align-items:center">
+    <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:inline-flex;align-items:center;justify-content:center" title="Tier 1"><span class="ps-ci-tier" data-tier="1" style="position:relative;margin:0;background:none;border:none">T1</span></div>
+    <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:inline-flex;align-items:center;justify-content:center" title="Tier 2"><span class="ps-ci-tier" data-tier="2" style="position:relative;margin:0;background:none;border:none">T2</span></div>
+    <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:inline-flex;align-items:center;justify-content:center" title="Tier 3"><span class="ps-ci-tier" data-tier="3" style="position:relative;margin:0;background:none;border:none">T3</span></div>
+  </div>
+
+  <div class="sg-label">Blueprint Badge</div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;align-items:center">
+    <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:inline-flex;align-items:center;justify-content:center" title="Blueprint"><span class="ps-ci-icon" title="Blueprint" style="position:relative;margin:0;background:none;border:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span></div>
+  </div>
+
+  <div class="sg-label">Project Health / Grade Badges</div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;align-items:center">
+    <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:inline-flex;align-items:center;justify-content:center" title="Grade A"><span class="ps-ci-grade" data-grade="A" style="position:relative;margin:0;background:none;border:none">A</span></div>
+    <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:inline-flex;align-items:center;justify-content:center" title="Grade B"><span class="ps-ci-grade" data-grade="B" style="position:relative;margin:0;background:none;border:none">B</span></div>
+    <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:inline-flex;align-items:center;justify-content:center" title="Grade C"><span class="ps-ci-grade" data-grade="C" style="position:relative;margin:0;background:none;border:none">C</span></div>
+    <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:inline-flex;align-items:center;justify-content:center" title="Grade D"><span class="ps-ci-grade" data-grade="D" style="position:relative;margin:0;background:none;border:none">D</span></div>
+    <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,.06) 0%,rgba(255,255,255,.02) 100%);border:1px solid rgba(255,255,255,.10);box-shadow:0 2px 8px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:inline-flex;align-items:center;justify-content:center" title="Grade F"><span class="ps-ci-grade" data-grade="F" style="position:relative;margin:0;background:none;border:none">F</span></div>
+  </div>
+
+  <div class="sg-label">Live Project Timer Icons (Health Color-Coded)</div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;align-items:center">
+    <div class="health-timer" data-health="A"><div class="ht-dot"></div><span class="ht-time">1d 8h</span></div>
+    <div class="health-timer" data-health="B"><div class="ht-dot"></div><span class="ht-time">2d 14h</span></div>
+    <div class="health-timer" data-health="C"><div class="ht-dot"></div><span class="ht-time">4d 0h</span></div>
+    <div class="health-timer" data-health="D"><div class="ht-dot"></div><span class="ht-time">5d 12h</span></div>
+    <div class="health-timer" data-health="F"><div class="ht-dot"></div><span class="ht-time">7d 22h</span></div>
+  </div>
+  <div class="sg-note" style="margin-top:8px">Health colors: <span style="color:#34d399">Green = A</span>, <span style="color:#86efac">Light Green = B</span>, <span style="color:#fbbf24">Yellow = C</span>, <span style="color:var(--orange)">Orange = D</span>, <span style="color:var(--red)">Red = F</span></div>
+
+  <div class="sg-label" style="margin-top:20px">Nav Badge</div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+    <div class="nav-badge-demo">3</div>
+    <div class="nav-badge-demo">12</div>
+    <div class="nav-badge-demo">99+</div>
+  </div>
+
+  <div class="sg-label">Pills &amp; Chips</div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <span class="pill active">All</span>
+    <span class="pill">Short Form</span>
+    <span class="pill">Long Form</span>
+    <span class="pill">Thumbnails</span>
+  </div>
+</div>
+
+<!-- ══════════ CHAT ══════════ -->
+<div class="sg-sec">
+  <h2>Chat Components</h2>
+  <p class="sg-sub">Message bubbles, avatars, timestamps, input row with attachment and send.</p>
+  <div class="chat-glass-container" style="max-width:500px;margin-top:24px;padding:16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;backdrop-filter:blur(12px)">
+    <!-- iMessage-style centered timestamp -->
+    <div style="text-align:center;margin-bottom:14px"><span style="font:500 11px/1 var(--font);color:var(--txt4);letter-spacing:.2px">Wed, Mar 12, 2026 · 2:14 PM</span></div>
+
+    <div class="chat-msg">
+      <div class="chat-avatar" style="background:rgba(41,151,255,.15);color:var(--blue)">JD</div>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px"><span style="font:600 12px/1 var(--font)">John Doe</span><span class="badge-role badge-client">Client</span></div>
+        <div class="chat-bubble">Hey, can we make the intro a bit punchier? The hook needs to grab attention in the first 2 seconds.</div>
+      </div>
+    </div>
+
+    <div class="chat-msg" style="margin-top:12px">
+      <div class="chat-avatar" style="background:rgba(126,203,161,.15);color:var(--green)">ME</div>
+      <div style="flex:1;min-width:0">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px"><span style="font:600 12px/1 var(--font)">Mike Editor</span><span class="badge-role badge-editor">Editor</span></div>
+        <div class="chat-bubble">Absolutely! I'll tighten the first cut and add a zoom transition. Should have draft 2 ready in about an hour.</div>
+        <div style="text-align:right;margin-top:3px"><span style="font:400 10px/1 var(--font);color:var(--txt4)">2:18 PM</span></div>
+      </div>
+    </div>
+
+    <div class="chat-input-row" style="margin-top:16px">
+      <button class="chat-plus" title="Attach file">+</button>
+      <div class="chat-pill"><input class="chat-input-field" placeholder="Type a message..."><button class="chat-voice" title="Voice message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="4" y="2" width="3" height="20" rx="1.5"></rect><rect x="10.5" y="6" width="3" height="12" rx="1.5"></rect><rect x="17" y="4" width="3" height="16" rx="1.5"></rect></svg></button></div>
+      <button class="chat-emoji" title="Emoji"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><circle cx="9" cy="9" r="1" fill="currentColor" stroke="none"></circle><circle cx="15" cy="9" r="1" fill="currentColor" stroke="none"></circle></svg></button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ UPLOAD ══════════ -->
+<div class="sg-sec">
+  <h2>Upload Drop Zone</h2>
+  <div class="drop-zone" style="max-width:500px">
+    <div class="dz-icon">📁</div>
+    <div class="dz-title">Drop your footage here</div>
+    <div class="dz-sub">or click to browse — MP4, MOV, up to 10GB</div>
+  </div>
+</div>
+
+<!-- ══════════ PROGRESS TRACKER ══════════ -->
+<div class="sg-sec">
+  <h2>Progress Tracker</h2>
+  <p class="sg-sub">Submit flow tracker with ring nodes and wire connectors.</p>
+
+  <div class="tracker">
+    <div class="tracker-node"><div class="tracker-ring done">1</div><div class="tracker-label">Upload</div></div>
+    <div class="tracker-wire done"></div>
+    <div class="tracker-node"><div class="tracker-ring done">2</div><div class="tracker-label">Details</div></div>
+    <div class="tracker-wire done"></div>
+    <div class="tracker-node"><div class="tracker-ring active">3</div><div class="tracker-label">Review</div></div>
+    <div class="tracker-wire"></div>
+    <div class="tracker-node"><div class="tracker-ring">4</div><div class="tracker-label">Submit</div></div>
+  </div>
+</div>
+
+<!-- ══════════ SPACING & RADIUS ══════════ -->
+<div class="sg-sec">
+  <h2>Spacing &amp; Radius</h2>
+  <p class="sg-sub">8px base rhythm. Every measurement is a multiple of 8.</p>
+
+  <span class="sg-label">Spacing Scale</span>
+  <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px">
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:8px;height:24px;background:var(--blue);border-radius:3px;opacity:.5"></div><span class="sg-code">--s1: 8px</span></div>
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:16px;height:24px;background:var(--blue);border-radius:3px;opacity:.5"></div><span class="sg-code">--s2: 16px</span></div>
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:24px;height:24px;background:var(--blue);border-radius:3px;opacity:.5"></div><span class="sg-code">--s3: 24px</span></div>
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:32px;height:24px;background:var(--blue);border-radius:3px;opacity:.5"></div><span class="sg-code">--s4: 32px</span></div>
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:48px;height:24px;background:var(--blue);border-radius:3px;opacity:.5"></div><span class="sg-code">--s6: 48px</span></div>
+    <div style="display:flex;align-items:center;gap:8px"><div style="width:64px;height:24px;background:var(--blue);border-radius:3px;opacity:.5"></div><span class="sg-code">--s8: 64px</span></div>
+  </div>
+
+  <span class="sg-label">Border Radius</span>
+  <div style="display:flex;flex-wrap:wrap;gap:16px">
+    <div style="width:60px;height:60px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;display:flex;align-items:center;justify-content:center"><span class="sg-code" style="font-size:9px">6px</span></div>
+    <div style="width:60px;height:60px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;display:flex;align-items:center;justify-content:center"><span class="sg-code" style="font-size:9px">10px</span></div>
+    <div style="width:60px;height:60px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;display:flex;align-items:center;justify-content:center"><span class="sg-code" style="font-size:9px">14px</span></div>
+    <div style="width:60px;height:60px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:18px;display:flex;align-items:center;justify-content:center"><span class="sg-code" style="font-size:9px">18px</span></div>
+    <div style="width:60px;height:60px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:24px;display:flex;align-items:center;justify-content:center"><span class="sg-code" style="font-size:9px">24px</span></div>
+    <div style="width:80px;height:40px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:100px;display:flex;align-items:center;justify-content:center"><span class="sg-code" style="font-size:9px">pill</span></div>
+  </div>
+</div>
+
+<!-- ══════════ NAVIGATION ══════════ -->
+<div class="sg-sec">
+  <h2>Navigation</h2>
+  <p class="sg-sub">Left sidebar nav + bottom dock island + right-click action bar. Pulled from portal blueprint.</p>
+  <div style="display:flex;gap:24px;align-items:flex-start;margin-top:24px;position:relative;min-height:320px">
+    <nav class="left-nav" style="position:relative;left:auto;top:auto;transform:none;opacity:1;pointer-events:auto">
+      <img class="ln-logo" src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/685c436c7dbd377728cdbf85.svg" alt="CB" width="22" height="22">
+      <div class="ln-sep"></div>
+      <button class="ln-btn" style="color:var(--txt2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><span class="ln-label">Chat</span></button>
+      <div class="ln-sep"></div>
+      <button class="ln-btn active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg><span class="ln-label">Pipeline</span><div class="ln-badge">3</div></button>
+      <div class="ln-sep"></div>
+      <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg><span class="ln-label">Dashboard</span></button>
+      <div class="ln-sep"></div>
+      <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span class="ln-label">Meetings</span></button>
+      <div class="ln-sep"></div>
+      <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg><span class="ln-label">Storage</span></button>
+      <div class="ln-sep"></div>
+      <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg><span class="ln-label">Blueprints</span></button>
+      <div class="ln-sep"></div>
+      <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg><span class="ln-label">Account</span></button>
+      <div class="ln-sep"></div>
+      <button class="ln-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg><span class="ln-label">Settings</span></button>
+    </nav>
+    <div style="flex:1;display:flex;flex-direction:column;gap:16px">
+      <div class="glass-flat" style="padding:20px;text-align:center;color:var(--txt3);font-size:13px;flex:1;display:flex;align-items:center;justify-content:center">Main content area</div>
+      <div style="display:flex;justify-content:center">
+        <div class="bottom-island" style="position:relative;bottom:auto;left:auto;right:auto;transform:none;opacity:1;pointer-events:auto">
+          <div class="bottom-island-inner">
+            <div class="bi-avatar" style="width:26px;height:26px;font-size:9px">CB</div>
+            <button class="bi-btn" title="Storage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></button>
+            <button class="bi-btn" title="Request"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button>
+            <button class="bi-btn" title="Chat" style="position:relative"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><div class="ln-badge">5</div></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ SHADOWS ══════════ -->
+<div class="sg-sec">
+  <h2>Shadows</h2>
+  <p class="sg-sub">Shadow stacking for 3D depth. Every floating element gets contact + elevation + specular.</p>
+
+  <div class="sg-grid c3">
+    <div style="padding:24px;border-radius:var(--r-2xl);background:rgba(255,255,255,.04);box-shadow:var(--sh)">
+      <span class="sg-label">--sh (card)</span>
+    </div>
+    <div style="padding:24px;border-radius:var(--r-lg);background:rgba(255,255,255,.04);box-shadow:var(--sh-btn)">
+      <span class="sg-label">--sh-btn (button)</span>
+    </div>
+    <div style="padding:24px;border-radius:var(--r-2xl);background:rgba(255,255,255,.04);box-shadow:var(--sh-glow)">
+      <span class="sg-label">--sh-glow (accent)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ANIMATIONS ══════════ -->
+<div class="sg-sec">
+  <h2>Animations</h2>
+  <p class="sg-sub">All GPU-composited — transform + opacity ONLY. Zero main thread repaints.</p>
+
+  <div class="sg-grid c2" style="gap:20px">
+    <div class="glass-flat">
+      <span class="sg-label">stepIn</span>
+      <div style="font-size:12px;color:var(--txt2);margin-top:8px">opacity 0→1, translateY 10→0<br><span class="sg-code">0.2s ease-q</span></div>
+    </div>
+    <div class="glass-flat">
+      <span class="sg-label">colIn</span>
+      <div style="font-size:12px;color:var(--txt2);margin-top:8px">opacity 0→1, scale .96→1<br><span class="sg-code">0.3s ease</span></div>
+    </div>
+    <div class="glass-flat">
+      <span class="sg-label">fadeUp</span>
+      <div style="font-size:12px;color:var(--txt2);margin-top:8px">opacity 0→1, translateY 20→0<br><span class="sg-code">0.3s ease</span></div>
+    </div>
+    <div class="glass-flat">
+      <span class="sg-label">logoSpin</span>
+      <div style="font-size:12px;color:var(--txt2);margin-top:8px">rotate 0→360deg<br><span class="sg-code">8s linear infinite</span></div>
+    </div>
+  </div>
+
+  <div style="margin-top:20px">
+    <span class="sg-label">Easing Curves</span>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+      <span class="sg-code">--ease: cubic-bezier(.22,1,.36,1)</span>
+      <span class="sg-code">--ease-q: cubic-bezier(.25,1,.5,1)</span>
+      <span class="sg-code">--ease-spring: cubic-bezier(.34,1.56,.64,1)</span>
+    </div>
+    <div style="margin-top:12px;display:flex;flex-wrap:wrap;gap:12px">
+      <span class="sg-code">Hover: 80ms</span>
+      <span class="sg-code">Active: 40ms</span>
+      <span class="sg-code">Focus: 80ms</span>
+      <span class="sg-code">Step: 200ms</span>
+      <span class="sg-code">UI: 300ms</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ANIMATION SHOWCASE ══════════ -->
+<div class="sg-sec">
+  <h2>Animation Showcase</h2>
+  <p class="sg-sub">Live looping demos — loading, sending, reviewing, celebrating. All GPU-composited 60fps.</p>
+
+  <div class="anim-grid">
+    <div class="anim-demo">
+      <div class="anim-loading"><span></span><span></span><span></span></div>
+      <div class="anim-demo-label">Loading</div>
+    </div>
+    <div class="anim-demo">
+      <div class="anim-spinner"></div>
+      <div class="anim-demo-label">Spinner</div>
+    </div>
+    <div class="anim-demo">
+      <div class="anim-bar-wrap"><div class="anim-bar-fill"></div></div>
+      <div class="anim-demo-label">Progress</div>
+    </div>
+    <div class="anim-demo">
+      <div class="anim-send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 2L11 13"></path><path d="M22 2l-7 20-4-9-9-4z"></path></svg></div>
+      <div class="anim-demo-label">Sending</div>
+    </div>
+    <div class="anim-demo">
+      <div class="anim-review"></div>
+      <div class="anim-demo-label">Reviewing</div>
+    </div>
+    <div class="anim-demo">
+      <div class="anim-clap">👏</div>
+      <div class="anim-demo-label">Clap</div>
+    </div>
+    <div class="anim-demo">
+      <div class="anim-confetti">
+        <span class="confetti-dot"></span><span class="confetti-dot"></span><span class="confetti-dot"></span>
+        <span class="confetti-dot"></span><span class="confetti-dot"></span>
+      </div>
+      <div class="anim-demo-label">Confetti</div>
+    </div>
+    <div class="anim-demo">
+      <div class="anim-firework">
+        <div class="fw-ring"></div><div class="fw-ring"></div><div class="fw-ring"></div>
+      </div>
+      <div class="anim-demo-label">Firework</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ICONS ══════════ -->
+<div class="sg-sec">
+  <h2>Icons</h2>
+  <p class="sg-sub">Full icon library with 227 animated APNGs + 100 flat SVGs + 35 Apple Glass icons + 11 brand icons. Search, filter, and toggle glass containers.</p>
+  <div style="margin-top:24px;padding:24px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;text-align:center">
+    <div style="font:600 16px/1.4 var(--font);margin-bottom:8px">380+ icons → <a href="./icon-library.html" style="color:var(--blue);text-decoration:none">icon-library.html</a></div>
+    <div style="font-size:12px;color:var(--txt3)">Dedicated page with search, category filters, bare/glass toggle, and all icon assets.</div>
+  </div>
+</div>
+
+<!-- ══════════ PIPELINE CARDS ══════════ -->
+<div class="sg-sec">
+  <h2>Pipeline Cards</h2>
+  <p class="sg-sub">Three card types across kanban pipelines: Project (cover image + metadata island), Blueprint (glass card), People (avatar + role + health). Each shown at S · M · L.</p>
+
+  <div class="sg-label" style="margin-top:24px">Project Pipeline Cards — S · M · L</div>
+  <p class="sg-sub" style="margin-top:0;margin-bottom:8px;font-size:11px;color:var(--txt4)">Same width, height varies. Full island on every size. Fits uniform pipeline columns.</p>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:0;align-items:flex-start">
+    <!-- S: 200px × 120px -->
+    <div class="pipeline-card" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop');width:200px;height:120px;aspect-ratio:auto;cursor:grab" draggable="true">
+      <div class="ps-card-island pipe-island">
+        <span class="ps-ci-type" data-type="SF">SF</span>
+        <span class="ps-ci-tier" data-tier="1">T1</span>
+        <div class="ps-ci-ver-nav"><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v2</span><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div>
+        <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+        <span class="ps-ci-grade" data-grade="B">B</span>
+      </div>
+      <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Hook Reel v2</span><span class="pipe-timer">2d 14h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:65%"></div></div></div>
+    </div>
+    <!-- M: 200px × 180px -->
+    <div class="pipeline-card" style="background-image:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop');width:200px;height:180px;aspect-ratio:auto;cursor:grab" draggable="true">
+      <div class="ps-card-island pipe-island">
+        <span class="ps-ci-type" data-type="LF">LF</span>
+        <span class="ps-ci-tier" data-tier="3">T3</span>
+        <div class="ps-ci-ver-nav"><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v4</span><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div>
+        <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+        <span class="ps-ci-grade" data-grade="A">A</span>
+      </div>
+      <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Product Launch</span><span class="pipe-timer">1d 8h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:80%"></div></div></div>
+    </div>
+    <!-- L: 200px × 260px -->
+    <div class="pipeline-card" style="background-image:url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=400&h=300&fit=crop');width:200px;height:260px;aspect-ratio:auto;cursor:grab" draggable="true">
+      <div class="ps-card-island pipe-island">
+        <span class="ps-ci-type" data-type="LF">LF</span>
+        <span class="ps-ci-tier" data-tier="2">T2</span>
+        <div class="ps-ci-ver-nav"><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="15 18 9 12 15 6"></polyline></svg></button><span class="ps-ci-ver">v3</span><button class="ps-ci-arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="10" height="10"><polyline points="9 6 15 12 9 18"></polyline></svg></button></div>
+        <span class="ps-ci-icon" title="Blueprint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+        <span class="ps-ci-grade" data-grade="A">A</span>
+      </div>
+      <div class="pipe-bottom"><div class="pipe-bottom-row"><span class="pipe-name">Brand Story</span><span class="pipe-timer">3d 0h</span></div><div class="pipe-tl"><div class="pipe-tl-bar" style="width:55%"></div></div></div>
+    </div>
+  </div>
+
+  <div class="sg-label" style="margin-top:32px">Blueprint Pipeline Card</div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+      <div style="width:200px;padding:10px 12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;cursor:grab" draggable="true">
+        <div style="font:600 11px/1.3 var(--font)">Brand Video Template</div>
+        <div style="font:400 10px/1.2 var(--font);color:var(--txt3);margin-top:2px">Sean Conley</div>
+        <div class="ps-card-island" style="display:inline-flex;margin-top:8px">
+          <span class="ps-ci-type" data-type="SF">SF</span>
+          <span class="ps-ci-tier" data-tier="1">T1</span>
+          <span class="ps-ci-grade" data-grade="B">B</span>
+        </div>
+      </div>
+  </div>
+
+  <div class="sg-label" style="margin-top:32px">People Pipeline Card</div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+      <div style="width:200px;padding:8px 12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;cursor:grab;display:flex;align-items:center;gap:8px" draggable="true">
+        <div class="p-avatar editor-av" style="width:28px;height:28px;font-size:10px">MW</div>
+        <div style="flex:1;min-width:0"><div style="font:600 11px/1.2 var(--font);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Marcus Webb</div></div>
+        <span class="ps-ci-grade" data-grade="A">A</span>
+      </div>
+  </div>
+
+</div>
+
+
+<!-- ══════════ COPY-PASTE REFERENCE ══════════ -->
+<div class="sg-sec">
+  <h2>Copy-Paste Reference</h2>
+  <p class="sg-sub">Exact SVG codes, logo paths, and CSS keyframes — ready to drop into any page.</p>
+
+  <!-- LOGO PATHS -->
+  <span class="sg-label">Logo SVG Paths</span>
+  <div class="glass-flat" style="margin-bottom:20px">
+    <pre style="font:500 11px/1.6 var(--mono);color:var(--txt2);white-space:pre-wrap;word-break:break-all;margin:0">&lt;!-- Bug icon (white) — nav, favicon, login orb --&gt;
+&lt;img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/685c436c7dbd377728cdbf85.svg" alt="CB" style="width:40px;height:40px;opacity:.8"&gt;
+
+&lt;!-- Full wordmark (white) — expanded nav --&gt;
+&lt;img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69aee8207c2702858b33014d.svg" alt="Content Bug" style="width:140px;opacity:.85"&gt;
+
+&lt;!-- Full wordmark (blue) — light backgrounds --&gt;
+&lt;img src="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/69b0caadbfc81fcf1a62c4f9.svg" alt="Content Bug" style="width:140px;opacity:.85"&gt;
+
+&lt;!-- Favicon link --&gt;
+&lt;link rel="icon" type="image/svg+xml" href="https://assets.cdn.filesafe.space/mCNHhjy593eUueqfuqyU/media/685c436c7dbd377728cdbf85.svg"&gt;</pre>
+  </div>
+
+  <!-- ICON SVG CODES -->
+  <span class="sg-label">Icon SVGs (20×20, stroke:1.8)</span>
+  <div class="glass-flat" style="margin-bottom:20px">
+    <pre style="font:500 11px/1.6 var(--mono);color:var(--txt2);white-space:pre-wrap;word-break:break-all;margin:0">&lt;!-- Home --&gt;
+&lt;svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"&gt;&lt;path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/&gt;&lt;path d="M9 22V12h6v10"/&gt;&lt;/svg&gt;
+
+&lt;!-- Pipeline --&gt;
+&lt;svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"&gt;&lt;rect x="3" y="3" width="7" height="7" rx="1"/&gt;&lt;rect x="14" y="3" width="7" height="7" rx="1"/&gt;&lt;rect x="3" y="14" width="7" height="7" rx="1"/&gt;&lt;rect x="14" y="14" width="7" height="7" rx="1"/&gt;&lt;/svg&gt;
+
+&lt;!-- Chat --&gt;
+&lt;svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"&gt;&lt;path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/&gt;&lt;/svg&gt;
+
+&lt;!-- Request / File --&gt;
+&lt;svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"&gt;&lt;path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/&gt;&lt;path d="M14 2v6h6"/&gt;&lt;/svg&gt;
+
+&lt;!-- Storage / Folder --&gt;
+&lt;svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"&gt;&lt;path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/&gt;&lt;/svg&gt;
+
+&lt;!-- Team / Users --&gt;
+&lt;svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"&gt;&lt;path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/&gt;&lt;circle cx="9" cy="7" r="4"/&gt;&lt;path d="M23 21v-2a4 4 0 00-3-3.87"/&gt;&lt;path d="M16 3.13a4 4 0 010 7.75"/&gt;&lt;/svg&gt;
+
+&lt;!-- Settings / Gear --&gt;
+&lt;svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"&gt;&lt;circle cx="12" cy="12" r="3"/&gt;&lt;path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/&gt;&lt;/svg&gt;
+
+&lt;!-- Blueprint / Star --&gt;
+&lt;svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"&gt;&lt;polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/&gt;&lt;/svg&gt;
+
+&lt;!-- Meetings / Monitor --&gt;
+&lt;svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"&gt;&lt;rect x="2" y="3" width="20" height="14" rx="2"/&gt;&lt;path d="M8 21h8M12 17v4"/&gt;&lt;/svg&gt;
+
+&lt;!-- Admin / Shield --&gt;
+&lt;svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"&gt;&lt;path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/&gt;&lt;/svg&gt;
+
+&lt;!-- Edit / Pencil --&gt;
+&lt;svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"&gt;&lt;path d="M12 20h9"/&gt;&lt;path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/&gt;&lt;/svg&gt;
+
+&lt;!-- Check --&gt;
+&lt;svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"&gt;&lt;polyline points="20 6 9 17 4 12"/&gt;&lt;/svg&gt;
+
+&lt;!-- Close / X --&gt;
+&lt;svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"&gt;&lt;line x1="18" y1="6" x2="6" y2="18"/&gt;&lt;line x1="6" y1="6" x2="18" y2="18"/&gt;&lt;/svg&gt;
+
+&lt;!-- Search --&gt;
+&lt;svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"&gt;&lt;circle cx="11" cy="11" r="8"/&gt;&lt;line x1="21" y1="21" x2="16.65" y2="16.65"/&gt;&lt;/svg&gt;
+
+&lt;!-- Info --&gt;
+&lt;svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"&gt;&lt;circle cx="12" cy="12" r="10"/&gt;&lt;line x1="12" y1="8" x2="12" y2="12"/&gt;&lt;line x1="12" y1="16" x2="12.01" y2="16"/&gt;&lt;/svg&gt;
+
+&lt;!-- Dark / Moon --&gt;
+&lt;svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"&gt;&lt;path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/&gt;&lt;/svg&gt;</pre>
+  </div>
+
+  <!-- ANIMATION KEYFRAMES -->
+  <span class="sg-label">CSS Animation Keyframes</span>
+  <div class="glass-flat" style="margin-bottom:20px">
+    <pre style="font:500 11px/1.6 var(--mono);color:var(--txt2);white-space:pre-wrap;margin:0">/* Step entrance — cards, list items */
+@keyframes stepIn {
+  from { opacity:0; transform:translateY(10px) }
+  to   { opacity:1; transform:translateY(0) }
+}
+/* Usage: animation: stepIn .2s var(--ease-q) both;
+   Stagger: animation-delay: calc(var(--i,0) * 40ms); */
+
+/* Column entrance — pipeline cols, grid items */
+@keyframes colIn {
+  from { opacity:0; transform:scale(.96) }
+  to   { opacity:1; transform:scale(1) }
+}
+/* Usage: animation: colIn .3s var(--ease) both; */
+
+/* Fade up — modals, sections, hero content */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(20px) }
+  to   { opacity:1; transform:translateY(0) }
+}
+/* Usage: animation: fadeUp .3s var(--ease) both; */
+
+/* Slide in — sidebars, drawers, toasts */
+@keyframes slideIn {
+  from { opacity:0; transform:translateX(10px) }
+  to   { opacity:1; transform:translateX(0) }
+}
+/* Usage: animation: slideIn .25s var(--ease) both; */
+
+/* Spin — loading spinners */
+@keyframes spin {
+  to { transform:rotate(360deg) }
+}
+/* Usage: animation: spin .8s linear infinite; */
+
+/* Logo spin — login orb ring */
+@keyframes logoSpin {
+  to { transform:rotate(360deg) }
+}
+/* Usage: animation: logoSpin 8s linear infinite; */
+
+/* Digit pop — counters, stat numbers */
+@keyframes digitPop {
+  0%   { transform:scale(.85); opacity:0 }
+  60%  { transform:scale(1.05) }
+  100% { transform:scale(1); opacity:1 }
+}
+/* Usage: animation: digitPop .3s var(--ease-spring) both; */
+
+/* Shake — error states, invalid inputs */
+@keyframes shake {
+  0%,100% { transform:translateX(0) }
+  25%     { transform:translateX(-8px) }
+  75%     { transform:translateX(8px) }
+}
+/* Usage: animation: shake .3s ease; */
+
+/* Glass entrance — from glass.css shared layer */
+@keyframes glassIn {
+  from { opacity:0; transform:translateY(12px) }
+  to   { opacity:1; transform:translateY(0) }
+}
+/* Usage: animation: glassIn .3s var(--ease) both; */
+
+/* Badge pulse — notification badges */
+@keyframes badgePulse {
+  0%,100% { transform:scale(1) }
+  50%     { transform:scale(1.05) }
+}
+/* Usage: animation: badgePulse 2s var(--ease) infinite; */
+
+/* ── EASING CURVES ── */
+/* --ease:        cubic-bezier(.22,1,.36,1)     — default UI    */
+/* --ease-q:      cubic-bezier(.25,1,.5,1)      — quick snaps   */
+/* --ease-spring: cubic-bezier(.34,1.56,.64,1)  — bouncy pop    */
+
+/* ── TIMING ── */
+/* Hover:  80ms  | Active: 40ms  | Focus: 80ms */
+/* Step:  200ms  | UI:    300ms  | Orb: 20-25s  */</pre>
+  </div>
+
+  <!-- GLASS CONTAINER (login bubble) -->
+  <span class="sg-label">Glass Dissolve Container (login style)</span>
+  <div class="glass-flat">
+    <pre style="font:500 11px/1.6 var(--mono);color:var(--txt2);white-space:pre-wrap;margin:0">/* 3D glass bubble with dissolving bottom edge */
+.glass-bubble {
+  background: linear-gradient(135deg,
+    rgba(20,20,24,.92) 0%,
+    rgba(12,12,16,.95) 100%);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 24px;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,.3),
+    0 8px 32px rgba(0,0,0,.4),
+    inset 0 .5px 0 rgba(255,255,255,.1);
+  -webkit-mask-image: linear-gradient(180deg,
+    black 0%, black 72%, transparent 88%);
+  mask-image: linear-gradient(180deg,
+    black 0%, black 72%, transparent 88%);
+  padding: 48px 40px;
+}
+
+/* Specular highlight on top edge */
+.glass-bubble::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 8%; right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(255,255,255,.15) 30%,
+    rgba(255,255,255,.25) 50%,
+    rgba(255,255,255,.15) 70%,
+    transparent);
+  border-radius: 1px;
+  pointer-events: none;
+}</pre>
+  </div>
+</div>
+
+<!-- ══════════ MOBILE RESPONSIVE SPECS ══════════ -->
+<div class="sg-sec">
+  <h2>Mobile &amp; iPhone Specs</h2>
+  <p class="sg-sub">Responsive breakpoints, iPhone model dimensions, safe areas, and bottom dock integration. All sizing on 8px grid.</p>
+
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div style="font-weight:600;color:var(--txt);margin-bottom:8px">BREAKPOINTS</div>
+    <div><span style="color:var(--blue);font-weight:600">xs</span> &nbsp; 0–389px &nbsp;&nbsp; 1 column &nbsp;&nbsp; padding: 12px &nbsp;&nbsp; font-scale: 0.9</div>
+    <div><span style="color:var(--blue);font-weight:600">sm</span> &nbsp; 390–429px &nbsp;&nbsp; 1 column &nbsp;&nbsp; padding: 16px &nbsp;&nbsp; font-scale: 1.0</div>
+    <div><span style="color:var(--blue);font-weight:600">md</span> &nbsp; 430–767px &nbsp;&nbsp; 2 columns &nbsp;&nbsp; padding: 20px &nbsp;&nbsp; font-scale: 1.0</div>
+    <div><span style="color:var(--blue);font-weight:600">lg</span> &nbsp; 768–1023px &nbsp;&nbsp; 3 columns &nbsp;&nbsp; padding: 24px &nbsp;&nbsp; font-scale: 1.0</div>
+    <div><span style="color:var(--blue);font-weight:600">xl</span> &nbsp; 1024–1439px &nbsp;&nbsp; 4 columns &nbsp;&nbsp; padding: 32px &nbsp;&nbsp; font-scale: 1.0</div>
+    <div><span style="color:var(--blue);font-weight:600">2xl</span> 1440px+ &nbsp;&nbsp; 4-6 columns &nbsp;&nbsp; padding: 40px &nbsp;&nbsp; max-width: 1440px</div>
+
+    <div style="font-weight:600;color:var(--txt);margin-top:16px;margin-bottom:8px">iPHONE MODELS (Last 10)</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:4px 16px;font:400 11px/1.6 var(--mono)">
+      <div style="font-weight:600;color:var(--txt)">Model</div><div style="font-weight:600;color:var(--txt)">Viewport</div><div style="font-weight:600;color:var(--txt)">Safe Area</div><div style="font-weight:600;color:var(--txt)">Scale</div>
+      <div>iPhone 16 Pro Max</div><div>440×956</div><div>top:59 bot:34</div><div>3x</div>
+      <div>iPhone 16 Pro</div><div>402×874</div><div>top:59 bot:34</div><div>3x</div>
+      <div>iPhone 16 Plus</div><div>430×932</div><div>top:59 bot:34</div><div>3x</div>
+      <div>iPhone 16</div><div>393×852</div><div>top:59 bot:34</div><div>3x</div>
+      <div>iPhone 15 Pro Max</div><div>430×932</div><div>top:59 bot:34</div><div>3x</div>
+      <div>iPhone 15 Pro</div><div>393×852</div><div>top:59 bot:34</div><div>3x</div>
+      <div>iPhone 15 Plus</div><div>430×932</div><div>top:47 bot:34</div><div>3x</div>
+      <div>iPhone 15</div><div>393×852</div><div>top:47 bot:34</div><div>3x</div>
+      <div>iPhone 14 Pro Max</div><div>430×932</div><div>top:59 bot:34</div><div>3x</div>
+      <div>iPhone 14 Pro</div><div>393×852</div><div>top:59 bot:34</div><div>3x</div>
+    </div>
+
+    <div style="font-weight:600;color:var(--txt);margin-top:16px;margin-bottom:8px">BOTTOM DOCK INTEGRATION</div>
+    <div>Bottom glass bar sits 12px above screen edge (above iPhone home indicator)</div>
+    <div>env(safe-area-inset-bottom) respected via padding-bottom on body</div>
+    <div>Glass bar mask-image fades bottom 25% for seamless bleed</div>
+    <div>Touch targets: minimum 44×44px per Apple HIG</div>
+    <div>Bottom bar icons: 36×36px (above 44px min with padding)</div>
+
+    <div style="font-weight:600;color:var(--txt);margin-top:16px;margin-bottom:8px">MOBILE COMPONENT SIZING</div>
+    <div>Pipeline cards: full-width on xs/sm, 2-col on md+</div>
+    <div>3D project cards: 140px wide on xs, 160px on sm, 180px on md+</div>
+    <div>Dynamic island: scales to 90% width on xs, 100% on sm+</div>
+    <div>Blueprint popup: full-screen modal on xs/sm, hover popup on md+</div>
+    <div>Glass island action bar: full-width fixed bottom on xs/sm</div>
+    <div>Font min: 11px body, 9px labels, 8px badges</div>
+    <div>Border-radius: reduced by 25% on xs (--r-2xl: 16px → 12px)</div>
+  </div>
+</div>
+
+<!-- ══════════ PORTAL BLUEPRINT SPECS ══════════ -->
+<div class="sg-sec">
+  <h2>Portal Blueprint — Layout Specs</h2>
+  <p class="sg-sub">Every padding, container width, gap, and sizing rule from the portal shell. If these are wrong, the entire portal breaks. Treat as law.</p>
+
+  <div class="sg-label">Portal Shell Container</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div><span style="color:var(--blue);font-weight:600">.portal-shell</span> — height: <strong>680px</strong> · border-radius: <strong>20px</strong> · margin-bottom: <strong>48px</strong> · border: 1px solid rgba(255,255,255,.06)</div>
+    <div><span style="color:var(--blue);font-weight:600">#panel-portal</span> wrapper — padding: <strong>48px 40px 80px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-main</span> (content area) — top: <strong>12px</strong> · left: <strong>20px</strong> · right: <strong>20px</strong> · bottom: <strong>20px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-content</span> (flex row: video + thread) — gap: <strong>16px</strong></div>
+  </div>
+
+  <div class="sg-label">Left Navigation</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div><span style="color:var(--blue);font-weight:600">.left-nav</span> — width: <strong>42px</strong> · padding: <strong>8px 6px</strong> · gap: <strong>4px</strong> · border-radius: <strong>16px</strong> · left: <strong>8px</strong></div>
+    <div>Retract idle: <strong>translateX(-34px)</strong> real | <strong>translateX(-42px)</strong> shell demo · Hover: <strong>translateX(0)</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ln-btn</span> — <strong>30×30px</strong> · border-radius: <strong>9px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ln-logo</span> — <strong>22×22px</strong> · margin-bottom: <strong>2px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ln-sep</span> — <strong>18px</strong> wide × <strong>1px</strong> tall · margin: <strong>2px auto</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ln-badge</span> — min-width: <strong>14px</strong> · height: <strong>14px</strong> · padding: <strong>0 3px</strong> · radius: <strong>7px</strong> · top: <strong>-2px</strong> right: <strong>-2px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ln-label</span> — font: <strong>8px 700</strong> uppercase · letter-spacing: <strong>1.2px</strong> · offset: <strong>left: calc(100% + 10px)</strong></div>
+    <div>Active pill indicator: <strong>2px × 12px</strong> · left: <strong>-6px</strong> · radius: <strong>1px</strong></div>
+  </div>
+
+  <div class="sg-label">Bottom Island</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div><span style="color:var(--blue);font-weight:600">.bottom-island</span> — bottom: <strong>8px</strong> from viewport (real) · <strong>4px</strong> in shell demo</div>
+    <div><span style="color:var(--blue);font-weight:600">.bottom-island-inner</span> — padding: <strong>6px 10px</strong> · gap: <strong>4px</strong> · border-radius: <strong>16px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.bi-btn</span> — <strong>30×30px</strong> · border-radius: <strong>9px</strong> · SVG: <strong>15×15px</strong> stroke-width: <strong>1.6</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.bi-avatar</span> — <strong>26×26px</strong> · font-size: <strong>9px</strong></div>
+    <div>Shell demo override: <strong>scale(.75)</strong> · idle translateY: <strong>32px</strong></div>
+  </div>
+
+  <div class="sg-label">Page Title System</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div><span style="color:var(--blue);font-weight:600">.ps-page-title-lg</span> — font: <strong>700 22px/1</strong> · letter-spacing: <strong>-0.4px</strong> · padding-bottom: <strong>4px</strong> · gap: <strong>10px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-page-sub</span> — font: <strong>400 11px/1.3</strong> · padding-bottom: <strong>12px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-title-stage</span> — font: <strong>10px 700</strong> · letter-spacing: <strong>.4px</strong> · padding: <strong>3px 10px</strong> · radius: <strong>6px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-page-hdr</span> — padding-bottom: <strong>16px</strong></div>
+  </div>
+
+  <div class="sg-label">Video Player &amp; Review Toolbox</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div><span style="color:var(--blue);font-weight:600">.ps-video</span> — border-radius: <strong>14px</strong> · border: 1px solid rgba(255,255,255,.08) · <strong>flex:1</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-play-btn</span> — <strong>56×56px</strong> · border-radius: <strong>50%</strong> · SVG: <strong>24×24px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-vid-name-pill</span> — top: <strong>8px</strong> left: <strong>10px</strong> · padding: <strong>6px 14px</strong> · radius: <strong>12px</strong> · font: <strong>12px 600</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-vid-controls</span> — padding: <strong>10px 14px</strong> · gap: <strong>10px</strong></div>
+    <div>Controls: .dk-play <strong>30×30px</strong> · .dk-knob <strong>28×28px</strong> · .dk-timeline-track height: <strong>5px</strong> · .dk-timeline-head: <strong>12×12px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-dock-under</span> (review toolbox) — padding: <strong>10px 14px</strong> · radius: <strong>14px</strong> · margin-top: <strong>6px</strong> · max-width: <strong>none</strong></div>
+    <div>Toolbox buttons: .dk-btn <strong>30×30px</strong> · .dk-send <strong>30×30px</strong> · .dk-ts min-width: <strong>44px</strong></div>
+  </div>
+
+  <div class="sg-label">Thread Panel (Right Sidebar)</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div><span style="color:var(--blue);font-weight:600">.ps-thread</span> — width: <strong>240px</strong> (fixed, flex-shrink:0) · border-radius: <strong>14px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-th-hdr</span> — padding: <strong>14px 16px 10px</strong> · font: <strong>13px 600</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-th-toggle</span> — padding: <strong>10px 16px</strong> · font: <strong>11px 600</strong> uppercase</div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-th-item</span> — padding: <strong>6px 16px</strong> · font: <strong>11px</strong> · gap: <strong>8px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-th-dot</span> — <strong>6×6px</strong> · border-radius: <strong>50%</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-th-body</span> — max-height: <strong>200px</strong> (open state)</div>
+  </div>
+
+  <div class="sg-label">Card Island (Metadata Bar)</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div><span style="color:var(--blue);font-weight:600">.ps-card-island</span> — padding: <strong>5px 12px</strong> (video) / <strong>3px 8px</strong> (pipeline) · gap: <strong>8px</strong> / <strong>5px</strong> · radius: <strong>12px</strong></div>
+    <div>.ps-ci-type (SF/LF): font <strong>9px 800</strong> · padding <strong>2px 6px</strong> · radius <strong>4px</strong></div>
+    <div>.ps-ci-tier (T1-T3): font <strong>8px 800</strong> · padding <strong>2px 5px</strong> · radius <strong>4px</strong></div>
+    <div>.ps-ci-arr: <strong>16×16px</strong> · radius <strong>4px</strong> · SVG: <strong>10×10px</strong></div>
+    <div>.ps-ci-ver: font <strong>10px 700</strong> · min-width <strong>18px</strong></div>
+    <div>.ps-ci-grade: font <strong>9px 800</strong> · padding <strong>2px 6px</strong> · radius <strong>4px</strong></div>
+  </div>
+
+  <div class="sg-label">Chat Components</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div><span style="color:var(--blue);font-weight:600">.ps-chat</span> — padding: <strong>10px 12px</strong> · gap: <strong>8px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-chat-avatar</span> — <strong>20×20px</strong> · border-radius: <strong>50%</strong> · font-size: <strong>7px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-chat-bubble</span> — max-width: <strong>85%</strong> · padding: <strong>6px 10px</strong> · radius: <strong>10px</strong> · font: <strong>10px/1.4</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-chat-input</span> — padding: <strong>8px 10px</strong> · gap: <strong>5px</strong></div>
+    <div>.chat-pill: radius <strong>14px</strong> · padding <strong>3px 5px 3px 8px</strong></div>
+    <div>.chat-voice: <strong>20×20px</strong> · .chat-plus: <strong>22×22px</strong> · .chat-emoji: <strong>22×22px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-chat-role</span> — padding: <strong>1px 4px</strong> · radius: <strong>3px</strong> · font: <strong>7px</strong></div>
+  </div>
+
+  <div class="sg-label">Dock &amp; Glass Island</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div><span style="color:var(--blue);font-weight:600">.dock-bubble</span> — max-width: <strong>640px</strong> · width: <strong>100%</strong> · padding: <strong>8px 14px 10px</strong> · radius: <strong>22px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.glass-island</span> (right-click popup) — padding: <strong>8px 12px</strong> · gap: <strong>4px</strong> · radius: <strong>22px</strong> · bottom: <strong>24px</strong></div>
+    <div>.island-btn: <strong>44×44px</strong> · radius: <strong>14px</strong> · SVG: <strong>20×20px</strong></div>
+    <div>.island-sep: <strong>1px × 28px</strong> · margin: <strong>0 2px</strong></div>
+  </div>
+
+  <div class="sg-label">Pipeline Kanban (Shell Version)</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div><span style="color:var(--blue);font-weight:600">.ps-pipeline-kanban</span> — gap: <strong>8px</strong> between columns</div>
+    <div><span style="color:var(--blue);font-weight:600">.ps-kanban-col</span> — min-width: <strong>100px</strong> · gap: <strong>6px</strong> · border-right: 1px solid rgba(255,255,255,.06) · padding-right: <strong>8px</strong></div>
+    <div>.ps-kanban-hdr: gap <strong>5px</strong> · font: <strong>9px 600</strong> uppercase · padding-bottom: <strong>4px</strong></div>
+    <div>.ps-kanban-dot: <strong>6×6px</strong> · .ps-kanban-count: font <strong>8px</strong> · padding <strong>1px 5px</strong> · radius <strong>4px</strong></div>
+    <div>Pipeline cards in shell: aspect-ratio <strong>3/2</strong> · radius: <strong>14px</strong></div>
+    <div>.pipe-bottom: padding <strong>0 8px 6px</strong> · gap <strong>4px</strong> · .pipe-timer: padding <strong>3px 7px</strong> · .pipe-tl: height <strong>2px</strong></div>
+  </div>
+
+  <div class="sg-label">Standalone Pipeline Columns</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div><span style="color:var(--blue);font-weight:600">.pipeline-col</span> — min-width: <strong>200px</strong> · radius: <strong>24px</strong></div>
+    <div>.col-hdr: padding <strong>14px</strong> · gap <strong>8px</strong> · .col-dot: <strong>8×8px</strong> · .col-count: padding <strong>2px 7px</strong> · radius <strong>100px</strong></div>
+    <div>.col-body: padding <strong>10px</strong> · gap <strong>8px</strong> · min-height: <strong>100px</strong></div>
+    <div style="color:var(--orange);font-weight:600;margin-top:8px">Pipeline Card Width Rule: S/M/L all <strong>200px wide</strong> — only height varies (120/180/260px)</div>
+  </div>
+
+  <div class="sg-label">Portal Cards</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div><span style="color:var(--blue);font-weight:600">.stat-card</span> — padding: <strong>20px</strong> · radius: <strong>18px</strong> · .stat-value: <strong>700 28px</strong> · .stat-label: <strong>500 12px</strong> margin-top <strong>6px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.folder-card</span> — aspect-ratio: <strong>1</strong> (square) · radius: <strong>24px</strong> · .folder-icon: <strong>64×64px</strong> radius <strong>18px</strong> · SVG: <strong>36×36px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.meeting-card</span> — aspect-ratio: <strong>16/9</strong> · radius: <strong>24px</strong> · .mtg-status: top <strong>12px</strong> right <strong>12px</strong> · padding <strong>5px 12px</strong> · radius <strong>100px</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.card-916</span> — aspect-ratio: <strong>9/16</strong> · max-height: <strong>220px</strong> · radius: <strong>24px</strong></div>
+  </div>
+</div>
+
+<!-- ══════════ WEBSITE BLUEPRINT SPECS ══════════ -->
+<div class="sg-sec">
+  <h2>Website Blueprint — Layout Specs</h2>
+  <p class="sg-sub">Every section padding, container width, grid gap, and component size from the website. The 3-color section rotation system is sacred — get these wrong and the whole site looks off.</p>
+
+  <div class="sg-label">3-Section Color Rotation System</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div style="font-weight:600;color:var(--txt);margin-bottom:4px">Pattern: WHITE (3n+1) → BLUE (3n+2) → BLACK (3n)</div>
+    <div><span style="color:var(--green);font-weight:600">WHITE</span> (1st, 4th, 7th) — bg: <strong>linear-gradient(180deg, #f5f5f7 0%, #e8e8ed 60%, #d2d2d7 100%)</strong></div>
+    <div>&nbsp;&nbsp;Light-mode tokens: --t1:<strong>#1d1d1f</strong> · --t2:<strong>#6e6e73</strong> · --t3:<strong>#86868b</strong></div>
+    <div>&nbsp;&nbsp;Cards: bg gradient <strong>rgba(0,0,0,.05)</strong> · border <strong>rgba(0,0,0,.1)</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">BLUE</span> (2nd, 5th, 8th) — bg: <strong>linear-gradient(180deg, #0c1627 0%, #080f1c 25%, #050a14 55%, #020610 100%)</strong></div>
+    <div><span style="color:var(--txt);font-weight:600">BLACK</span> (3rd, 6th, 9th) — bg: <strong>linear-gradient(180deg, #0d0d0f 0%, #0a0a0c 25%, #070709 55%, #050507 100%)</strong></div>
+    <div>Hero override: <strong>.section.hero { background: #fff !important }</strong></div>
+  </div>
+
+  <div class="sg-label">Section Padding &amp; Container</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div style="color:var(--orange);font-weight:600;margin-bottom:4px">THE GOLDEN RULE: 60px top / 40px bottom / 40px sides</div>
+    <div><span style="color:var(--blue);font-weight:600">.section</span> — padding: <strong>60px 0 40px</strong> (sides = 0, handled by container)</div>
+    <div><span style="color:var(--blue);font-weight:600">.container</span> — max-width: <strong>1200px</strong> · margin: <strong>0 auto</strong> · padding: <strong>0 40px</strong></div>
+    <div>Combined effect: top <strong>60px</strong> · bottom <strong>40px</strong> · sides <strong>40px</strong> · max inner width <strong>1120px</strong></div>
+    <div style="margin-top:8px">Mobile ≤768px: .section → <strong>60px 20px 40px</strong> · .container → <strong>0 16px</strong></div>
+    <div>Mobile ≤480px: same → <strong>0 16px</strong></div>
+  </div>
+
+  <div class="sg-label">Grid Systems</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div style="display:grid;grid-template-columns:1fr 80px 60px;gap:4px 16px;font:400 11px/1.8 var(--mono)">
+      <div style="font-weight:600;color:var(--txt)">Grid Class</div><div style="font-weight:600;color:var(--txt)">Columns</div><div style="font-weight:600;color:var(--txt)">Gap</div>
+      <div>.features-grid</div><div>4</div><div>24px</div>
+      <div>.steps-grid</div><div>3</div><div>24px</div>
+      <div>.reviews-grid</div><div>3</div><div>24px</div>
+      <div>.mini-grid</div><div>3</div><div>24px</div>
+      <div>.tables-grid</div><div>2</div><div>24px</div>
+      <div>.portfolio-grid</div><div>5</div><div>24px</div>
+      <div>.showcase-grid</div><div>3</div><div>24px</div>
+      <div>.showcase-videos</div><div>3</div><div>16px</div>
+      <div>.cards (pricing)</div><div>3</div><div>16px</div>
+      <div>.value-grid</div><div>3</div><div>16px</div>
+    </div>
+  </div>
+
+  <div class="sg-label">Component Spacing (margin-bottom pattern)</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div>Every .fade-up wrapper inside a section uses <strong>margin-bottom: 48px</strong></div>
+    <div>Last element in section: <strong>margin-bottom: 32px</strong> (or 48px for large blocks)</div>
+    <div>.section-header: margin-bottom <strong>24px</strong> · .section-label: mb <strong>16px</strong> · .section-title: mb <strong>16px</strong></div>
+    <div>.section-cta: margin-top <strong>32px</strong> · gap <strong>8px</strong></div>
+    <div>.stats-row: margin-top <strong>32px</strong> · margin-bottom <strong>64px</strong> · .stat padding: <strong>0 24px</strong></div>
+  </div>
+
+  <div class="sg-label">Website Card Padding</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div><span style="color:var(--blue);font-weight:600">.ws-page .card</span> (universal) — padding: <strong>32px</strong></div>
+    <div>Step/feature cards (inline override): <strong>24px</strong></div>
+    <div>.review-card: <strong>16px</strong> · .mini-card: <strong>16px</strong></div>
+    <div>.featured-review: <strong>32px</strong></div>
+    <div>.table-header: <strong>16px 24px</strong> · .table-row: <strong>16px 24px</strong> · .table-cols: <strong>8px 24px</strong></div>
+    <div>.creator-rail-wrap: <strong>24px</strong> · .creator-chip: <strong>16px</strong> · min-width: <strong>120px</strong></div>
+    <div>Hover lift: .card <strong>translateY(-4px)</strong> · .portfolio-card <strong>translateY(-5px)</strong></div>
+  </div>
+
+  <div class="sg-label">Avatar &amp; Icon Sizing</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div>.step-number: <strong>42×42px</strong> · radius <strong>14px</strong></div>
+    <div>.feature-icon: <strong>40×40px</strong> · radius <strong>14px</strong></div>
+    <div>.review-avatar: <strong>38×38px</strong> · .mini-avatar: <strong>30×30px</strong></div>
+    <div>.featured-avatar: <strong>48×48px</strong> · .founder-avatar: <strong>92×92px</strong></div>
+    <div>.creator-chip-avatar: <strong>110×110px</strong></div>
+    <div>.portfolio-card: aspect-ratio <strong>9/16</strong></div>
+  </div>
+
+  <div class="sg-label">Website Buttons</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div style="display:grid;grid-template-columns:1fr 60px 80px 50px;gap:4px 16px;font:400 11px/1.8 var(--mono)">
+      <div style="font-weight:600;color:var(--txt)">Class</div><div style="font-weight:600;color:var(--txt)">Height</div><div style="font-weight:600;color:var(--txt)">Padding</div><div style="font-weight:600;color:var(--txt)">Font</div>
+      <div>.btn (base)</div><div>56px</div><div>0 28px</div><div>16px</div>
+      <div>.btn-hero</div><div>56px</div><div>0 32px</div><div>16px</div>
+      <div>.btn-ghost</div><div>56px</div><div>0 28px</div><div>16px</div>
+      <div>.card-cta</div><div>56px</div><div>full-w</div><div>16px</div>
+      <div>Mobile .btn-hero</div><div>48px</div><div>0 28px</div><div>16px</div>
+      <div>Mobile .card-cta</div><div>48px</div><div>—</div><div>—</div>
+      <div>.sticky-cta .btn</div><div>48px</div><div>0 24px</div><div>16px</div>
+    </div>
+  </div>
+
+  <div class="sg-label">Header &amp; Footer</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div style="font-weight:600;color:var(--txt);margin-bottom:4px">HEADER</div>
+    <div><span style="color:var(--blue);font-weight:600">.cb-header-bar</span> — padding: <strong>16px 40px</strong> · bg: <strong>#fff</strong></div>
+    <div>.cb-logo: left <strong>40px</strong> · height <strong>32px</strong></div>
+    <div>.cb-header (nav island): padding <strong>4px</strong> · radius <strong>980px</strong></div>
+    <div>.cb-nav-link: padding <strong>6px 16px</strong> · font <strong>14px</strong></div>
+    <div>Sticky offset: top <strong>12px</strong></div>
+    <div>Mobile: padding <strong>12px 20px</strong> · logo <strong>18px</strong> · nav <strong>6px 12px / 12px</strong> font</div>
+    <div style="font-weight:600;color:var(--txt);margin-top:12px;margin-bottom:4px">FOOTER</div>
+    <div>Footer wrapper: padding <strong>40px</strong> · bg: <strong>rgba(5,5,8,.98)</strong></div>
+    <div><span style="color:var(--blue);font-weight:600">.cb-footer</span> — max-width: <strong>1200px</strong> · padding: <strong>48px 32px 32px</strong> · radius: <strong>18px</strong></div>
+    <div>.cb-ft-grid: columns <strong>1.4fr 1fr 1fr 1.3fr</strong> · gap <strong>32px</strong> · mb <strong>32px</strong></div>
+    <div>.cb-ft-social a: <strong>40×40px</strong> · radius <strong>14px</strong></div>
+    <div>Mobile footer: padding <strong>32px 24px 24px</strong> · radius <strong>14px</strong> · 1-col grid · gap <strong>24px</strong></div>
+  </div>
+
+  <div class="sg-label">Responsive Breakpoints</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div style="display:grid;grid-template-columns:90px 1fr;gap:4px 16px;font:400 11px/1.8 var(--mono)">
+      <div style="font-weight:600;color:var(--blue)">≤1000px</div><div>.features-grid → 2-col · .portfolio-grid → 4-col</div>
+      <div style="font-weight:600;color:var(--blue)">≤900px</div><div>.tables-grid → 1-col · .mini-grid → 2-col · .showcase-videos → 2-col · .cards pricing → 1-col max 480px</div>
+      <div style="font-weight:600;color:var(--blue)">≤768px</div><div>Container → 16px sides · Section → 60px 20px 40px · features/steps → 1-col · reviews → 2-col · portfolio → 3-col · mini → 1-col · sticky CTA shown · ws-page pb: 70px</div>
+      <div style="font-weight:600;color:var(--blue)">≤768px hdr</div><div>Header → 12px 20px · logo → 18px · nav → 6px 12px / 12px font</div>
+      <div style="font-weight:600;color:var(--blue)">≤768px ftr</div><div>1-col grid · all center-aligned · reduced padding</div>
+      <div style="font-weight:600;color:var(--blue)">≤480px</div><div>Stats → 3-col 33.33% · reviews → 1-col max 360px · portfolio → 2-col</div>
+      <div style="font-weight:600;color:var(--blue)">769–1024px</div><div>.value-grid → 2-col</div>
+    </div>
+  </div>
+
+  <div class="sg-label">Dark Icon Wrapper (in-section)</div>
+  <div class="glass-flat" style="font-size:12px;line-height:1.8;color:var(--txt2)">
+    <div>Used when embedding animated icons on white sections:</div>
+    <div>bg: <strong>linear-gradient(135deg, #0d0d0f, #050508)</strong> · radius: <strong>20px</strong> · padding: <strong>28px</strong> · border: 1px solid rgba(255,255,255,.06)</div>
+    <div>Glass icon gap: <strong>12px</strong> · Bare icon gap: <strong>20px</strong></div>
+  </div>
+</div>
+
+<!-- ══════════ RULES ══════════ -->
+<div class="sg-sec" style="margin-bottom:0">
+  <h2>Rules</h2>
+  <div class="glass-flat" style="font-size:13px;line-height:1.8;color:var(--txt2)">
+    <div style="color:var(--red);font-weight:600;margin-bottom:8px">NEVER:</div>
+    <div>Google Fonts — self-hosted SF Pro only</div>
+    <div>Colors outside this palette (use CSS variables)</div>
+    <div>Spacing not on 4px/8px rhythm</div>
+    <div>Font-size below 11px</div>
+    <div>SF Pro Display below 20px</div>
+    <div>SF Pro Text above 19px</div>
+    <div>Animate box-shadow, filter, height, width (GPU-only: transform + opacity)</div>
+    <div>Raw hex values — always use CSS variables</div>
+    <div style="color:var(--green);font-weight:600;margin-top:16px;margin-bottom:8px">ALWAYS:</div>
+    <div>will-change:transform on anything animated</div>
+    <div>transform + opacity ONLY for animations</div>
+    <div>backdrop-filter: blur() via Apple Glass container pattern only</div>
+    <div>@media(prefers-reduced-motion:reduce) blocks</div>
+    <div>-webkit-font-smoothing: antialiased</div>
+    <div>CSS variables over raw hex</div>
+    <div>APNG icons: filter:invert(1) for dark bg, 28×28px display from 100px source</div>
+  </div>
+</div>
+
+<!-- ══════════ TOAST NOTIFICATION DEMO ══════════ -->
+<div class="sg-sec">
+  <h2>Toast Notifications</h2>
+  <p class="sg-sub">Slide-up toast messages with auto-dismiss. Appear top-right of viewport. Used for pipeline actions and status updates.</p>
+  <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
+    <button class="btn-g4" onclick="showToast('Editor moved → Alpha team','green')">Trigger Toast</button>
+    <button class="btn-g2" onclick="showToast('Pipeline saved to Airtable','blue')">Save Toast</button>
+    <button class="btn-g3" onclick="showToast('Client upgraded to Gold plan','orange')">Upgrade Toast</button>
+    <button class="btn-g4" onclick="showToast('Project archived successfully','green')">Archive Toast</button>
+    <button class="btn-g4" onclick="showToast('Blueprint duplicated','blue')">Duplicate Toast</button>
+  </div>
+</div>
+
+<!-- Toast shelf (fixed top-right) -->
+<div class="toast-shelf" id="toastShelf"></div>
+<script>
+function showToast(msg, color='green') {
+  let shelf = document.getElementById('toastShelf');
+  if (!shelf) { shelf = document.createElement('div'); shelf.className='toast-shelf'; shelf.id='toastShelf'; document.body.appendChild(shelf); }
+  const t = document.createElement('div');
+  t.className = 'toast';
+  const dotClass = color !== 'green' ? ' ' + color : '';
+  t.innerHTML = '<span class="toast-dot' + dotClass + '"></span>' + msg +
+    '<button class="toast-close" onclick="dismissToast(this.parentElement)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M18 6L6 18M6 6l12 12"/></svg></button>';
+  shelf.appendChild(t);
+  setTimeout(() => dismissToast(t), 3500);
+}
+function dismissToast(t) {
+  if (!t || t.classList.contains('out')) return;
+  t.classList.add('out');
+  t.addEventListener('animationend', () => t.remove());
+}
+</script>
+
+</div>
+
+<div style="padding:80px 32px;text-align:center;color:var(--txt3);font-size:13px">
+  Content Bug Design System · design-system.css · Single file, zero dependencies
+</div>
+
+<!-- ══════════ DRAG & DROP ENGINE — 60-120fps ══════════ -->
+<script>
+(function(){
+  // Snappy drag-and-drop for all pipeline cards in kanban columns
+  const ease = 'cubic-bezier(.2,.8,.25,1)';
+  let dragEl = null;
+  let dragGhost = null;
+  let placeholder = null;
+  let startCol = null;
+  let rafId = null;
+  let mx = 0, my = 0;
+
+  // Create lightweight placeholder
+  function makePlaceholder(h){
+    const el = document.createElement('div');
+    el.className = 'drag-placeholder';
+    el.style.cssText = `height:${h}px;border:2px dashed rgba(41,151,255,.35);border-radius:12px;background:rgba(41,151,255,.06);margin:4px 0;transition:height .12s ${ease};flex-shrink:0`;
+    return el;
+  }
+
+  // Use rAF for ghost position — 60fps minimum, clamped to kanban
+  function moveGhost(){
+    if(!dragGhost) { rafId = null; return; }
+    // Clamp ghost within the kanban container
+    const kanban = dragEl ? dragEl.closest('.ps-kanban') : null;
+    const gl = parseFloat(dragGhost.style.left);
+    const gt = parseFloat(dragGhost.style.top);
+    let dx = mx - dragGhost._ox - gl;
+    let dy = my - dragGhost._oy - gt;
+    if(kanban){
+      const kr = kanban.getBoundingClientRect();
+      const gw = parseFloat(dragGhost.style.width) || 200;
+      const gh = parseFloat(dragGhost.style.height) || 150;
+      // Clamp so ghost stays within kanban + small margin
+      const margin = 20;
+      const minX = kr.left - gl - margin;
+      const maxX = kr.right - gl - gw + margin;
+      const minY = kr.top - gt - margin;
+      const maxY = kr.bottom - gt - gh + margin;
+      dx = Math.max(minX, Math.min(maxX, dx));
+      dy = Math.max(minY, Math.min(maxY, dy));
+    }
+    dragGhost.style.transform = `translate(${dx}px, ${dy}px)`;
+    rafId = null;
+  }
+
+  document.addEventListener('pointerdown', function(e){
+    const card = e.target.closest('.pipeline-card[draggable="true"]');
+    if(!card) return;
+    const col = card.closest('.ps-kanban-col');
+    if(!col) return; // only in kanban columns
+
+    e.preventDefault();
+    card.setPointerCapture(e.pointerId);
+
+    const rect = card.getBoundingClientRect();
+    startCol = col;
+    dragEl = card;
+
+    // Build ghost — clone for speed
+    dragGhost = card.cloneNode(true);
+    dragGhost.style.cssText = card.style.cssText + `;position:fixed;left:${rect.left}px;top:${rect.top}px;width:${rect.width}px;height:${rect.height}px;z-index:9999;pointer-events:none;opacity:.92;transform:scale(1.04);transition:transform 40ms ${ease},opacity 40ms ${ease};will-change:transform;box-shadow:0 12px 40px rgba(0,0,0,.5),0 0 24px rgba(41,151,255,.08)`;
+    dragGhost.classList.add('drag-ghost');
+    dragGhost._ox = e.clientX - rect.left;
+    dragGhost._oy = e.clientY - rect.top;
+    mx = e.clientX;
+    my = e.clientY;
+    document.body.appendChild(dragGhost);
+
+    // Placeholder
+    placeholder = makePlaceholder(rect.height);
+    card.parentNode.insertBefore(placeholder, card);
+    card.style.display = 'none';
+
+    // Highlight all columns
+    document.querySelectorAll('.ps-kanban-col').forEach(c => c.classList.add('drag-active'));
+  });
+
+  document.addEventListener('pointermove', function(e){
+    if(!dragGhost) return;
+    mx = e.clientX;
+    my = e.clientY;
+    if(!rafId) rafId = requestAnimationFrame(moveGhost);
+
+    // Find column under pointer
+    const cols = document.querySelectorAll('.ps-kanban-col');
+    let targetCol = null;
+    cols.forEach(c => {
+      const r = c.getBoundingClientRect();
+      if(mx >= r.left && mx <= r.right && my >= r.top && my <= r.bottom){
+        targetCol = c;
+      }
+      c.classList.remove('drag-over');
+    });
+    if(targetCol){
+      targetCol.classList.add('drag-over');
+      // Find insertion point within column
+      const cards = [...targetCol.querySelectorAll('.pipeline-card:not([style*="display:none"])')];
+      let inserted = false;
+      for(const c of cards){
+        const cr = c.getBoundingClientRect();
+        if(my < cr.top + cr.height / 2){
+          if(placeholder.parentNode !== targetCol || placeholder.nextSibling !== c){
+            targetCol.insertBefore(placeholder, c);
+          }
+          inserted = true;
+          break;
+        }
+      }
+      if(!inserted){
+        if(placeholder.parentNode !== targetCol){
+          targetCol.appendChild(placeholder);
+        } else if(placeholder.nextSibling){
+          targetCol.appendChild(placeholder);
+        }
+      }
+    }
+  });
+
+  document.addEventListener('pointerup', function(e){
+    if(!dragGhost) return;
+
+    // Remove ghost with snap animation
+    dragGhost.style.transition = `all 80ms ${ease}`;
+    const phRect = placeholder.getBoundingClientRect();
+    dragGhost.style.transform = `translate(${phRect.left - parseFloat(dragGhost.style.left)}px, ${phRect.top - parseFloat(dragGhost.style.top)}px) scale(1)`;
+    dragGhost.style.opacity = '0';
+
+    setTimeout(()=>{
+      if(dragGhost && dragGhost.parentNode) dragGhost.parentNode.removeChild(dragGhost);
+      dragGhost = null;
+    }, 80);
+
+    // Place card at placeholder position
+    if(placeholder && placeholder.parentNode){
+      placeholder.parentNode.insertBefore(dragEl, placeholder);
+      placeholder.parentNode.removeChild(placeholder);
+    }
+    dragEl.style.display = '';
+    dragEl.style.animation = 'dropSnap .1s ' + ease;
+    setTimeout(()=>{ dragEl.style.animation = ''; }, 100);
+
+    // Cleanup
+    document.querySelectorAll('.ps-kanban-col').forEach(c => {
+      c.classList.remove('drag-active');
+      c.classList.remove('drag-over');
+    });
+
+    // Update column counts
+    document.querySelectorAll('.ps-kanban-col').forEach(col => {
+      const count = col.querySelectorAll('.pipeline-card').length;
+      const badge = col.querySelector('.ps-kanban-count');
+      if(badge) badge.textContent = count;
+    });
+
+    dragEl = null;
+    placeholder = null;
+    startCol = null;
+    if(rafId){ cancelAnimationFrame(rafId); rafId = null; }
+  });
+
+  // Prevent native drag
+  document.addEventListener('dragstart', function(e){
+    if(e.target.classList && e.target.classList.contains('pipeline-card')) e.preventDefault();
+  });
+})();
+</script>
+<style>
+@keyframes dropSnap { 0%{transform:scale(1.03);opacity:.85} 100%{transform:scale(1);opacity:1} }
+#panel-portal .drag-ghost{border-radius:var(--r-lg,12px)!important;overflow:hidden;
+  box-shadow:0 12px 40px rgba(0,0,0,.5),0 0 24px rgba(41,151,255,.08)!important}
+#panel-portal .ps-kanban-col.drag-active{transition:outline 40ms ease}
+#panel-portal .ps-kanban-col.drag-over{outline:2px solid rgba(41,151,255,.4);outline-offset:-2px;border-radius:12px;background:rgba(41,151,255,.03)}
+#panel-portal .drag-placeholder{transition:height 60ms cubic-bezier(.2,.8,.25,1)}
+</style>
+
+<!-- ══════════ DYNAMIC CODE ENGINE ══════════ -->
+<style>
+.code-toggle{display:inline-flex;align-items:center;gap:6px;margin:12px 0 4px;padding:5px 12px;font:500 11px/1 var(--font);color:var(--blue);background:rgba(41,151,255,.06);border:1px solid rgba(41,151,255,.12);border-radius:8px;cursor:pointer;transition:all .15s ease;user-select:none}
+.code-toggle:hover{background:rgba(41,151,255,.12);border-color:rgba(41,151,255,.2)}
+.code-toggle[data-open="true"]{background:rgba(41,151,255,.1);border-color:rgba(41,151,255,.25)}
+.code-toggle svg{flex-shrink:0}
+.code-panel{margin:4px 0 16px;border-radius:12px;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.06);overflow:hidden;animation:stepIn .2s var(--ease-q) both}
+.code-panel-head{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;background:rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.05)}
+.code-panel-label{font:500 10px/1 var(--mono);color:var(--txt3);text-transform:uppercase;letter-spacing:.5px}
+.code-copy{padding:4px 10px;font:500 10px/1 var(--font);color:var(--green);background:rgba(48,209,88,.06);border:1px solid rgba(48,209,88,.12);border-radius:6px;cursor:pointer;transition:all .15s ease}
+.code-copy:hover{background:rgba(48,209,88,.15)}
+.code-copy.copied{color:var(--txt2);background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)}
+.code-block{margin:0;padding:14px;font:400 11px/1.7 var(--mono);color:var(--txt2);white-space:pre-wrap;word-break:break-all;overflow-x:auto;max-height:400px;overflow-y:auto}
+.code-block::-webkit-scrollbar{width:6px;height:6px}
+.code-block::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:3px}
+</style>
+<script>
+(function(){
+  /* ── Helpers ── */
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+  function fmt(html){
+    html=html.replace(/>\s*</g,'>\n<');
+    var lines=html.split('\n'), out=[], ind=0;
+    var selfC=/^<(img|input|br|hr|meta|link|col|area|base|source|embed|track|wbr)\b/i;
+    var clos=/^<\//;
+    var open=/^<[a-zA-Z]/;
+    for(var i=0;i<lines.length;i++){
+      var l=lines[i].trim();
+      if(!l) continue;
+      if(clos.test(l)) ind=Math.max(0,ind-1);
+      out.push('  '.repeat(ind)+l);
+      if(open.test(l) && !selfC.test(l) && !l.endsWith('/>') && l.indexOf('</')===-1) ind++;
+    }
+    return out.join('\n');
+  }
+
+  /* ── Build code block UI ── */
+  function makeBlock(afterEl, label, els){
+    var btn=document.createElement('button');
+    btn.className='code-toggle';
+    btn.setAttribute('data-open','false');
+    btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><span>View Code</span>';
+    var panel=document.createElement('div');
+    panel.className='code-panel';
+    panel.style.display='none';
+    panel.innerHTML='<div class="code-panel-head"><span class="code-panel-label">'+esc(label)+'</span><button class="code-copy">Copy</button></div><pre class="code-block"></pre>';
+    var pre=panel.querySelector('pre');
+    var cp=panel.querySelector('.code-copy');
+    afterEl.after(panel);
+    afterEl.after(btn);
+    btn.addEventListener('click',function(){
+      var isOpen=btn.getAttribute('data-open')==='true';
+      if(!isOpen){
+        var html='';
+        for(var i=0;i<els.length;i++){
+          var el=els[i];
+          if(el.classList&&el.classList.contains('sg-note')) continue;
+          html+=el.outerHTML+'\n\n';
+        }
+        pre.textContent=fmt(html);
+        panel.style.display='block';
+        btn.setAttribute('data-open','true');
+        btn.querySelector('span').textContent='Hide Code';
+      } else {
+        panel.style.display='none';
+        btn.setAttribute('data-open','false');
+        btn.querySelector('span').textContent='View Code';
+      }
+    });
+    cp.addEventListener('click',function(){
+      navigator.clipboard.writeText(pre.textContent).then(function(){
+        cp.textContent='Copied!';cp.classList.add('copied');
+        setTimeout(function(){cp.textContent='Copy';cp.classList.remove('copied')},1500);
+      });
+    });
+  }
+
+  /* ── Auto-discover all sections ── */
+  var secs=document.querySelectorAll('#panel-portal > .sg-sec');
+  for(var s=0;s<secs.length;s++){
+    var sec=secs[s];
+    var h2=sec.querySelector('h2');
+    if(!h2) continue;
+    var name=h2.textContent.trim();
+    /* Skip non-component reference sections */
+    if(name==='Rules'||name==='Copy-Paste Reference') continue;
+
+    /* Find direct-child .sg-label elements */
+    var allKids=sec.children;
+    var labels=[];
+    for(var k=0;k<allKids.length;k++){
+      if(allKids[k].classList.contains('sg-label')) labels.push(allKids[k]);
+    }
+
+    if(labels.length>0){
+      /* Has labeled sub-groups — code block per group */
+      for(var g=0;g<labels.length;g++){
+        var lbl=labels[g];
+        var labelText=lbl.textContent.trim().split('—')[0].split('·')[0].trim();
+        if(labelText.length>40) labelText=labelText.substring(0,40)+'...';
+        var demoEls=[];
+        var nxt=lbl.nextElementSibling;
+        var nextLbl=labels[g+1]||null;
+        while(nxt && nxt!==nextLbl && !nxt.classList.contains('sg-label')){
+          demoEls.push(nxt);
+          nxt=nxt.nextElementSibling;
+        }
+        if(demoEls.length>0){
+          makeBlock(demoEls[demoEls.length-1], labelText, demoEls);
+        }
+      }
+    } else {
+      /* No labels — one code block for entire section content */
+      var sub=sec.querySelector('.sg-sub');
+      var start=sub||h2;
+      var demoEls2=[];
+      var nxt2=start.nextElementSibling;
+      while(nxt2){
+        demoEls2.push(nxt2);
+        nxt2=nxt2.nextElementSibling;
+      }
+      if(demoEls2.length>0){
+        makeBlock(demoEls2[demoEls2.length-1], name, demoEls2);
+      }
+    }
+  }
+})();
+</script>
+
+</div><!-- end panel-portal -->
+</body></html>
